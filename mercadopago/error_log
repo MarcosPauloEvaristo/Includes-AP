@@ -1,0 +1,14 @@
+[13-Sep-2021 20:23:55 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Wrong type NULL. It should be float for property transaction_amount in /home3/anotar08/public_html/mercadopago/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php:459
+Stack trace:
+#0 /home3/anotar08/public_html/mercadopago/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php(368): MercadoPago\Entity->tryFormat(NULL, 'float', 'transaction_amo...')
+#1 /home3/anotar08/public_html/mercadopago/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php(312): MercadoPago\Entity->_setValue('transaction_amo...', NULL)
+#2 /home3/anotar08/public_html/mercadopago/processapagamentomp.php(41): MercadoPago\Entity->__set('transaction_amo...', NULL)
+#3 {main}
+  thrown in /home3/anotar08/public_html/mercadopago/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php on line 459
+[13-Sep-2021 20:24:07 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Wrong type NULL. It should be float for property transaction_amount in /home3/anotar08/public_html/mercadopago/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php:459
+Stack trace:
+#0 /home3/anotar08/public_html/mercadopago/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php(368): MercadoPago\Entity->tryFormat(NULL, 'float', 'transaction_amo...')
+#1 /home3/anotar08/public_html/mercadopago/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php(312): MercadoPago\Entity->_setValue('transaction_amo...', NULL)
+#2 /home3/anotar08/public_html/mercadopago/processapagamentomp.php(41): MercadoPago\Entity->__set('transaction_amo...', NULL)
+#3 {main}
+  thrown in /home3/anotar08/public_html/mercadopago/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php on line 459
