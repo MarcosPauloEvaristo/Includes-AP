@@ -45,7 +45,7 @@ else:
 			top: 20px;
 		}
 	</style>
-	<script src="<?=$site;?>js/jquery.numble.min.js"></script>
+	<script src="<?php echo $site; ?>js/jquery.numble.min.js"></script>
 
 	<!--Table-->
 	<table class="table">
@@ -70,23 +70,23 @@ else:
 			?>
 
 			<tr>
-				<td><?=$nome_option;?></td>
+				<td><?php $nome_option;?></td>
 				<td>
 
-					<button class="btn btn-success btn-xs editartamanho" data-toggle="modal" data-target="#modaleditartamanho_<?=$id_option;?>">Editar</button>
+					<button class="btn btn-success btn-xs editartamanho" data-toggle="modal" data-target="#modaleditartamanho_<?php $id_option;?>">Editar</button>
 
 					<!-- MODAL -->
-					<div class="modal fade" id="modaleditartamanho_<?=$id_option;?>" style="margin-top: 80px;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="modaleditartamanho_<?php $id_option;?>" style="margin-top: 80px;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 
 								<div class="modal-body">
 									<div class="form-group">
-										<form id="formeditartamanho_<?=$id_option;?>" style="margin-top: 10px;" method="post">
+										<form id="formeditartamanho_<?php $id_option;?>" style="margin-top: 10px;" method="post">
 											<div>
 												<div class="form-group">
 													<label for="edit_nome_option">DESCRIÇÃO <small style="color: red;">*</small></label>
-													<input type="text" name="edit_nome_option" value="<?=$nome_option;?>" id="edit_nome_option" class="form-control" placeholder="Meio a Meio, Grande, Médio, Pequeno..." />
+													<input type="text" name="edit_nome_option" value="<?php $nome_option;?>" id="edit_nome_option" class="form-control" placeholder="Meio a Meio, Grande, Médio, Pequeno..." />
 													<small class="form-text text-muted">
 														Exemplo: Meio a Meio, Grande, Médio, Pequeno, etc...
 													</small>
@@ -105,7 +105,7 @@ else:
 													data-mask-reverse="true" 
 													class="form-control" 
 													placeholder="+ R$ 0,00"
-													value="<?=Check::Real($valor_tamanho);?>" />
+													value="<?php Check::Real($valor_tamanho);?>" />
 													<small id="emailHelp" class="form-text text-muted">
 														Valor do Tamanho!
 													</small>
@@ -130,32 +130,32 @@ else:
 													<br />								
 
 													<div class="icheck-material-green">
-														<input <?=($meio_a_meio == 'false' ? 'checked' : '');?> type="checkbox" name="edit_meio_a_meio" value="false" id="edit_meio_a_meio_<?=$id_option;?>" />
-														<label for="edit_meio_a_meio_<?=$id_option;?>"><strong>Permite personalizar 'meio a meio' com vários sabores?</strong></label>
+														<input <?php ($meio_a_meio == 'false' ? 'checked' : '');?> type="checkbox" name="edit_meio_a_meio" value="false" id="edit_meio_a_meio_<?php $id_option;?>" />
+														<label for="edit_meio_a_meio_<?php $id_option;?>"><strong>Permite personalizar 'meio a meio' com vários sabores?</strong></label>
 													</div>
 													<br />
 
 													<!-- codigo de selecionar number  -->
-													<div id="edit_opcao_<?=$id_option;?>">
-														<label for="edit_qtdnumero_<?=$id_option;?>">Qtd. máxima de sabores:</label>
+													<div id="edit_opcao_<?php $id_option;?>">
+														<label for="edit_qtdnumero_<?php $id_option;?>">Qtd. máxima de sabores:</label>
 														
 
 
-														<input type="number" id="edit_qtdnumero_<?=$id_option;?>" name="edit_total_qtd_itens" style="width: 50px;" />
+														<input type="number" id="edit_qtdnumero_<?php $id_option;?>" name="edit_total_qtd_itens" style="width: 50px;" />
 
 														<div class="form-group">
 												<label></label>
 												<br />
 												<div class="icheck-material-green">
-												<input type="radio" <?=($meio_a_meio_tipo == 1 || $meio_a_meio_tipo == 0 ? "checked" : "");?> id="meioameioum" value="1" required name="meio_a_meio_tipo" />
+												<input type="radio" <?php ($meio_a_meio_tipo == 1 || $meio_a_meio_tipo == 0 ? "checked" : "");?> id="meioameioum" value="1" required name="meio_a_meio_tipo" />
 													<label for="meioameioum">Soma o valor do item e do tamanho</label>
 												</div>
 												<div class="icheck-material-green">
-													<input type="radio" <?=($meio_a_meio_tipo == 2 ? "checked" : "");?> id="meioameiodois" required value="2" name="meio_a_meio_tipo" />
+													<input type="radio" <?php ($meio_a_meio_tipo == 2 ? "checked" : "");?> id="meioameiodois" required value="2" name="meio_a_meio_tipo" />
 													<label for="meioameiodois">Cobrar o valor inserido acima.</label>
 												</div>
 												<div class="icheck-material-green">
-													<input type="radio" <?=($meio_a_meio_tipo == 3 ? "checked" : "");?> id="meioameiotres" required value="3" name="meio_a_meio_tipo" />
+													<input type="radio" <?php ($meio_a_meio_tipo == 3 ? "checked" : "");?> id="meioameiotres" required value="3" name="meio_a_meio_tipo" />
 													<label for="meioameiotres">Cobrar a média de todos os valores.</label>
 												</div>
 
@@ -167,14 +167,14 @@ else:
 													<script type="text/javascript">
 														$(document).ready(function(){
 
-															$("#edit_qtdnumero_<?=$id_option;?>").numble({
+															$("#edit_qtdnumero_<?php $id_option;?>").numble({
 																minValue: 2,
 																maxValue: 100,
-																initialValue: <?=($total_qtd_itens != 'null' ? $total_qtd_itens : 2)?>
+																initialValue: <?php ($total_qtd_itens != 'null' ? $total_qtd_itens : 2)?>
 															});
 
-															$("#edit_meio_a_meio_<?=$id_option;?>").click(function(){
-																$("#edit_opcao_<?=$id_option;?>").toggle();
+															$("#edit_meio_a_meio_<?php $id_option;?>").click(function(){
+																$("#edit_opcao_<?php $id_option;?>").toggle();
 															});
 
 														});
@@ -186,9 +186,9 @@ else:
 
 												</div>
 											</div>
-											<input type="hidden" name="user_id" value="<?=$_POST['user_id'];?>">
-											<input type="hidden" name="id_option" value="<?=$id_option;?>">
-											<a id="edit_submitoption_<?=$id_option;?>" class="btn btn-primary editarotamanho" data-idoption="<?=$id_option;?>">Editar</a>					
+											<input type="hidden" name="user_id" value="<?php $_POST['user_id'];?>">
+											<input type="hidden" name="id_option" value="<?php $id_option;?>">
+											<a id="edit_submitoption_<?php $id_option;?>" class="btn btn-primary editarotamanho" data-idoption="<?php $id_option;?>">Editar</a>					
 										</form>
 										<div id="resultadoformeditoption"></div>
 									</div>
@@ -206,7 +206,7 @@ else:
 
 
 
-				<td><button class="btn btn-danger btn-xs excluirtamanho" data-iddotamanho="<?=$id_option;?>">Excluir</button></td>
+				<td><button class="btn btn-danger btn-xs excluirtamanho" data-iddotamanho="<?php $id_option;?>">Excluir</button></td>
 			</tr>
 
 			<?php
@@ -222,7 +222,7 @@ else:
 
 <?php endif; ?>
 
-<button class="btn btn-danger" id="excluirTipo" data-excluirtipo="<?=$_POST['tipo_id'];?>">EXCLUIR TIPO DE PRODUTO</button>
+<button class="btn btn-danger" id="excluirTipo" data-excluirtipo="<?php $_POST['tipo_id'];?>">EXCLUIR TIPO DE PRODUTO</button>
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -243,7 +243,7 @@ else:
 				$('#modaleditartamanho_'+getiddomanhoeditar).modal('hide');
 
 				$.ajax({
-					url: '<?=$site?>includes/processaeditarotamanho.php',
+					url: '<?php echo $site; ?>includes/processaeditarotamanho.php',
 					method: 'post',
 					data: $('#formeditartamanho_'+getiddomanhoeditar).serialize(),
 					success: function(data){
@@ -298,9 +298,9 @@ else:
         	// ajax -------------        	
         	$.ajax({
 
-        		url: '<?=$site;?>includes/processadeletaoptionstipo.php',
+        		url: '<?php echo $site; ?>includes/processadeletaoptionstipo.php',
         		method: 'post',
-        		data: {'user_id' : '<?=$_POST['user_id'];?>', 'id_tipo' : getexcluirtipo},
+        		data: {'user_id' : '<?php $_POST['user_id'];?>', 'id_tipo' : getexcluirtipo},
         		success: function(data){
 
         			if(data == 'true'){
@@ -326,7 +326,7 @@ else:
 	$(document).ready(function(){
 		$('.excluirtamanho').click(function(){
 			var getiddotamanhoexcluir = $(this).data('iddotamanho');
-			var pegaiddottipo = '<?=$_POST['tipo_id'];?>';
+			var pegaiddottipo = '<?php $_POST['tipo_id'];?>';
 
 			x0p({
 				title: 'Atênção',
@@ -353,14 +353,14 @@ else:
         	
         	$.ajax({
 
-        		url: '<?=$site;?>includes/processadeletaoptions.php',
+        		url: '<?php echo $site; ?>includes/processadeletaoptions.php',
         		method: 'post',
-        		data: {'user_id' : '<?=$_POST['user_id'];?>', 'id_tamanho' : getiddotamanhoexcluir},
+        		data: {'user_id' : '<?php $_POST['user_id'];?>', 'id_tamanho' : getiddotamanhoexcluir},
         		success: function(data){
 
         			if(data == 'true'){
         				x0p('Tamanho deletado!', null, 'ok', false);
-        				$('.table-responsive').load('<?=$site;?>includes/loadtamanhos.php', {'user_id' : '<?=$_POST['user_id'];?>', 'tipo_id' : pegaiddottipo});
+        				$('.table-responsive').load('<?php echo $site; ?>includes/loadtamanhos.php', {'user_id' : '<?php $_POST['user_id'];?>', 'tipo_id' : pegaiddottipo});
         			}else{
         				x0p('Opss...', 
         					'OCORREU UM ERRO AO DELETAR O TAMANHO!',

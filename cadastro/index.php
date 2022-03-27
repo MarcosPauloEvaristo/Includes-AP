@@ -30,18 +30,18 @@ endif;
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <title><?=$texto['titulo_site_landing'];?></title>
+  <title><?php $texto['titulo_site_landing'];?></title>
   <meta name="robots" content="index, fallow" />
-  <link rel="canonical" href="<?=$site;?>">
+  <link rel="canonical" href="<?php echo $site; ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">    
-  <meta name="keywords" content="<?=$texto['keywords_landing'];?>">
+  <meta name="keywords" content="<?php $texto['keywords_landing'];?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="author" content="<?=$texto['autor_site_landing'];?>">
-  <meta property="og:site_name" content="<?=$texto['nome_site_landing'];?>"/>
-  <meta property="og:url" content="<?=$site;?>"/>
-  <meta name="description" content="<?=$texto['descricao_site_landing'];?>" />
-  <meta property="og:description" content="<?=$texto['descricao_site_landing'];?>" />
+  <meta name="author" content="<?php $texto['autor_site_landing'];?>">
+  <meta property="og:site_name" content="<?php $texto['nome_site_landing'];?>"/>
+  <meta property="og:url" content="<?php echo $site; ?>"/>
+  <meta name="description" content="<?php $texto['descricao_site_landing'];?>" />
+  <meta property="og:description" content="<?php $texto['descricao_site_landing'];?>" />
 
   <!-- Favicons-->
   	<link rel="icon" type="image/png" href="images/icons/anotarpedido.png"/>
@@ -52,20 +52,20 @@ endif;
   <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
 
   <!-- BASE CSS -->
-  <link href="<?= $site; ?>css/base.css" rel="stylesheet">
+  <link href="<?php echo $site; ?>css/base.css" rel="stylesheet">
 
   <!-- Radio and check inputs -->
-  <link href="<?= $site; ?>css/skins/square/grey.css" rel="stylesheet">
+  <link href="<?php echo $site; ?>css/skins/square/grey.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
 
-    <script src="<?=$site;?>js/jquery-2.2.4.min.js"></script>
+    <script src="<?php echo $site; ?>js/jquery-2.2.4.min.js"></script>
 
-    <link href="<?= $site; ?>css/x0popup-master/dist/x0popup.min.css" rel="stylesheet">
-    <script src="<?= $site; ?>css/x0popup-master/dist/x0popup.min.js"></script>
+    <link href="<?php echo $site; ?>css/x0popup-master/dist/x0popup.min.css" rel="stylesheet">
+    <script src="<?php echo $site; ?>css/x0popup-master/dist/x0popup.min.js"></script>
 
   </head>
 
@@ -99,8 +99,8 @@ endif;
             </div>
             <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
             <ul>                
-              <li><a href="<?= $site; ?>">Voltar</a></li>
-              <li><a href="<?= $site.'login'; ?>">login</a></li>
+              <li><a href="<?php echo $site; ?>">Voltar</a></li>
+              <li><a href="<?php  $site.'login'; ?>">login</a></li>
             </ul>
           </div><!-- End main-menu -->
         </nav>
@@ -110,7 +110,7 @@ endif;
   <!-- End Header =============================================== -->
 
   <!-- SubHeader =============================================== -->
-  <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="<?=$site;?>img/cu88.png" data-natural-width="1400" data-natural-height="350">
+  <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="<?php echo $site; ?>img/cu88.png" data-natural-width="1400" data-natural-height="350">
     <div id="subheader">
     	<div id="sub_content">
         <h1><strong>CADASTRE-SE</strong></h1>
@@ -252,7 +252,7 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
      </div>
      <div class="col-md-6">
       <div class="form-group">
-       <label for="nome_empresa_link"><?=$site;?></label>
+       <label for="nome_empresa_link"><?php echo $site; ?></label>
        <input style="text-transform: lowercase;" type="text" autocomplete="off"  id="nome_empresa_link" name="nome_empresa_link" class="form-control" required placeholder="/ coloque o nome da sua loja aqui sem espaços">
        <a class="btn btn-success btn-xs" id="verificarDisponibilidadeLink" style="color: #ffffff;cursor: pointer;margin-top: 5px;"><strong> verificar Disponibilidade </strong></a>
      </div>
@@ -351,9 +351,9 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
   <label>Escolha seu plano</label>
   <select name="user_plano" class="form-control" >
     <option value="">Selecione um Plano</option>
-    <option value="1"><?=$texto['nomePlanoUm'];?></option>
-    <option value="2"><?=$texto['nomePlanoDois'];?></option>
-    <option value="3"><?=$texto['nomePlanoTres'];?></option>
+    <option value="1"><?php $texto['nomePlanoUm'];?></option>
+    <option value="2"><?php $texto['nomePlanoDois'];?></option>
+    <option value="3"><?php $texto['nomePlanoTres'];?></option>
   </select>
 </div>
 <div class="icheck-material-green">
@@ -390,15 +390,15 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
       <div class="col-md-12">
         <div id="social_footer">
           <ul>
-            <li><a target="_blank" href="<?=(!empty($texto['link_do_face']) ? $texto['link_do_face'] : "");?>"><i class="icon-facebook"></i></a></li>
+            <li><a target="_blank" href="<?php (!empty($texto['link_do_face']) ? $texto['link_do_face'] : "");?>"><i class="icon-facebook"></i></a></li>
             <!--<li><a href="#0"><i class="icon-twitter"></i></a></li>-->
             <!--<li><a href="#0"><i class="icon-google"></i></a></li>-->
-            <li><a target="_blank" href="<?=(!empty($texto['link_do_insta']) ? $texto['link_do_insta'] : "");?>"><i class="icon-instagram"></i></a></li>
+            <li><a target="_blank" href="<?php (!empty($texto['link_do_insta']) ? $texto['link_do_insta'] : "");?>"><i class="icon-instagram"></i></a></li>
             <!--<li><a href="#0"><i class="icon-pinterest"></i></a></li>-->
             <!--<li><a href="#0"><i class="icon-vimeo"></i></a></li>-->
-            <li><a target="_blank" href="<?=(!empty($texto['link_do_youtube']) ? $texto['link_do_youtube'] : "");?>"><i class="icon-youtube-play"></i></a></li>
+            <li><a target="_blank" href="<?php (!empty($texto['link_do_youtube']) ? $texto['link_do_youtube'] : "");?>"><i class="icon-youtube-play"></i></a></li>
           </ul>
-          <p>© <?=$texto['nome_site_landing'];?></p>
+          <p>© <?php $texto['nome_site_landing'];?></p>
         </div>
       </div>
     </div><!-- End row -->
@@ -463,15 +463,15 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
 <!-- End Search Menu -->
 
 <!-- COMMON SCRIPTS -->
-<script src="<?= $site; ?>js/jquery-2.2.4.min.js"></script>
-<script src="<?= $site; ?>assets/validate.js"></script>
-<script src="<?=$site;?>js/common_scripts_min.js"></script>
-<script src="<?=$site;?>js/functions.js"></script>
-<script src="<?=$site;?>assets/validate.js"></script>
-<script src="<?=$site; ?>notificacao/growl-notification.min.js"></script> 
-<script src="<?=$site;?>assets/sweetalert.min.js"></script>
-<script src="<?=$site;?>js/jquery.mask.js"></script>
-<script src="<?=$site;?>js/suportewats.js"></script>
+<script src="<?php echo $site; ?>js/jquery-2.2.4.min.js"></script>
+<script src="<?php echo $site; ?>assets/validate.js"></script>
+<script src="<?php echo $site; ?>js/common_scripts_min.js"></script>
+<script src="<?php echo $site; ?>js/functions.js"></script>
+<script src="<?php echo $site; ?>assets/validate.js"></script>
+<script src="<?php $site; ?>notificacao/growl-notification.min.js"></script> 
+<script src="<?php echo $site; ?>assets/sweetalert.min.js"></script>
+<script src="<?php echo $site; ?>js/jquery.mask.js"></script>
+<script src="<?php echo $site; ?>js/suportewats.js"></script>
 
 <script>
 
@@ -502,7 +502,7 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
     $(this).prop('disabled', true);
 
     $.ajax({
-      url: '<?=$site;?>controlers/processaCadastroUser.php',
+      url: '<?php echo $site; ?>controlers/processaCadastroUser.php',
       method: 'post',
       data: $('#formCadastro').serialize(),
       success: function(data){
@@ -583,7 +583,7 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
       }else{
 
         $.ajax({
-          url: '<?=$site?>controlers/processaverificadisponibilidadelink.php',
+          url: '<?php echo $site; ?>controlers/processaverificadisponibilidadelink.php',
           method: 'post',
           data: {'linkuser' : linkuser},
           success: function(data){
@@ -595,7 +595,7 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
             }else{
               $('#nome_empresa_link').val(data);
               x0p('Muito bom! 😍', 
-                '<?=$site;?>'+data+' está disponível!', 
+                '<?php echo $site; ?>'+data+' está disponível!', 
                 'ok', false);
             }          
           }
@@ -610,10 +610,10 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
 
   $(document).ready(function () {
 
-    $.getJSON('<?=$site;?>estados_cidades.json', function (data) {
+    $.getJSON('<?php echo $site; ?>estados_cidades.json', function (data) {
 
       var items = [];
-      var options = "<option value='<?=(!empty($end_uf_empresa) ? $end_uf_empresa : "");?>'><?=(!empty($end_uf_empresa) ? $end_uf_empresa : "Escolha um estado");?></option>";    
+      var options = "<option value='<?php (!empty($end_uf_empresa) ? $end_uf_empresa : "");?>'><?php (!empty($end_uf_empresa) ? $end_uf_empresa : "Escolha um estado");?></option>";    
 
       $.each(data, function (key, val) {
         options += '<option value="' + val.sigla + '">' + val.sigla + '</option>';
@@ -622,7 +622,7 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
 
       $("#estados").change(function () {              
 
-        var options_cidades = "<option value='<?=(!empty($cidade_empresa) ? $cidade_empresa : "");?>'><?=(!empty($cidade_empresa) ? $cidade_empresa : "Escolha uma Cidade");?></option>";
+        var options_cidades = "<option value='<?php (!empty($cidade_empresa) ? $cidade_empresa : "");?>'><?php (!empty($cidade_empresa) ? $cidade_empresa : "Escolha uma Cidade");?></option>";
         var str = "";                   
 
         $("#estados option:selected").each(function () {
@@ -650,7 +650,7 @@ O Usuário compromete-se a utilizar a Plataforma e seu conteúdo de forma lícit
 	        var cep = $("#cep").val();
 	        if (cep.length == 10) {
 	            $.ajax({
-	                url: '<?=$site;?>includes/api_cep.php',
+	                url: '<?php echo $site; ?>includes/api_cep.php',
                 	method: "post",
                 	dataType: "json",
                 	data: {'cep' : cep},

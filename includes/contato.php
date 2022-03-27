@@ -1,10 +1,10 @@
 <div id="contato_do_site">
 	<div style="background-color:#ffffff;" class="container margin_60">
 		<div class="main_title margin_mobile">
-			<h2 class="nomargin_top"><b><?=$texto['texto_contato_head'];?></b></h2>
+			<h2 class="nomargin_top"><b><?php $texto['texto_contato_head'];?></b></h2>
 			<br />
 			<p>
-				<?=$texto['texto_contato_paragrafo'];?>            
+				<?php $texto['texto_contato_paragrafo'];?>            
 			</p>
 			
 		</div>
@@ -19,12 +19,12 @@
 			if (in_array('', $datadadosmsg) || in_array('null', $datadadosmsg)):
 				echo "<div class=\"alert alert-info alert-dismissable\">
 			<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">X</button>
-			<center>{$texto['texto_contato_erro_vazio']}</center>
+			 {$texto['texto_contato_erro_vazio']} 
 			</div><br />";
 		elseif (!Check::Email($datadadosmsg['email'])):
 			echo "<div class=\"alert alert-warning alert-dismissable\">
 			<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">X</button>
-			<center>{$texto['texto_contato_erro_email']}</center>
+			 {$texto['texto_contato_erro_email']} 
 			</div><br />";
 		else:
 			$link = "https://api.whatsapp.com/send?phone=55{$telefone_empresa}&text=‼ *-----NOVO CONTATO-----* ‼%0A%0ACliente: *{$datadadosmsg['nome']}*%0AAssunto: *{$datadadosmsg['assunto']}*.%0A%0A📨 E-mail: {$datadadosmsg['email']}%0A%0A*Mensagem:*%0A{$datadadosmsg['msg']}%0A%0A🍔🍟🌭🍕🍰🥤🍨🥧🍛🍩%0A";
@@ -38,25 +38,25 @@
 <div class="row"> 
 	<div class="col-md-8 col-md-offset-2">
 
-		<form action="<?=$site.$Url[0].'/';?>contato#contato_do_site" method="post">
+		<form action="<?php $site.$Url[0].'/';?>contato#contato_do_site" method="post">
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
 					<div class="form-group">
-						<label><?=$texto['texto_contato_nome'];?></label>
-						<input type="text" class="form-control" id="nome" name="nome" placeholder="<?=$texto['texto_contato_nome'];?>">
+						<label><?php $texto['texto_contato_nome'];?></label>
+						<input type="text" class="form-control" id="nome" name="nome" placeholder="<?php $texto['texto_contato_nome'];?>">
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="form-group">
-						<label><?=$texto['texto_contato_assunto'];?></label>
-						<input type="text" class="form-control" id="assunto" name="assunto" placeholder="<?=$texto['texto_contato_assunto'];?>">
+						<label><?php $texto['texto_contato_assunto'];?></label>
+						<input type="text" class="form-control" id="assunto" name="assunto" placeholder="<?php $texto['texto_contato_assunto'];?>">
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
 					<div class="form-group">
-						<label><?=$texto['texto_contato_email'];?></label>
+						<label><?php $texto['texto_contato_email'];?></label>
 						<input type="email" id="email" name="email" class="form-control" placeholder="seuemail@email.com">
 					</div>
 				</div>
@@ -68,15 +68,15 @@
 				</div>
 				<div class="col-md-12 col-sm-12">
 					<div class="form-group">
-						<label><?=$texto['texto_contato_msg'];?></label>
+						<label><?php $texto['texto_contato_msg'];?></label>
 						<textarea class="form-control" type='text' name='msg' id='msg' placeholder='Escrever mensagem...'></textarea>
 					</div>
 				</div>
 			</div>
 
-			<input type='tel' name='tel' id='tel' value='<?=(!empty($telefone_empresa) ? '55'.$telefone_empresa : '');?>' hidden>
+			<input type='tel' name='tel' id='tel' value='<?php (!empty($telefone_empresa) ? '55'.$telefone_empresa : '');?>' hidden>
 			<hr style="border-color:#ddd;">
-			<div class="text-center"><button type="submit" name="enviarmsg" class="btn_full_outline"><i class="fa fa-whatsapp" aria-hidden="true"></i> <?=$texto['texto_contato_bt'];?></button></div>
+			<div class="text-center"><button type="submit" name="enviarmsg" class="btn_full_outline"><i class="fa fa-whatsapp" aria-hidden="true"></i> <?php $texto['texto_contato_bt'];?></button></div>
 		</form><br />
 	</div><!-- End col  -->
 

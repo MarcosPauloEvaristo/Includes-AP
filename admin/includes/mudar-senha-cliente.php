@@ -18,7 +18,7 @@
 		<div class="col-md-12">
 			<div class="panel">
 				<div class="panel-heading">
-					ALTERAR SENHA DA LOJA: <b style="color: blue;"><?=$nome_empresa;?></b>
+					ALTERAR SENHA DA LOJA: <b style="color: blue;"><?php $nome_empresa;?></b>
 					<br /><small style="color: green;">Depois o cliente altera fazendo o login.</small>
 				</div>
 				<div style="width: 95%;margin: 0 auto;padding-bottom: 100px;">
@@ -34,7 +34,7 @@
 							<input type="password" name="r_pass" id="r_pass" class="form-control" required placeholder="">
 						</div>
 						<button class="btn btn-success" type="submit">Alterar dados</button>
-						<a class="btn btn-default" href="<?=$site?>admin/painel.php">
+						<a class="btn btn-default" href="<?php echo $site; ?>admin/painel.php">
 					Voltar
 					</a>
 					</form>

@@ -73,9 +73,9 @@ endif;
 						<div class="form-group">
 							<label for="nome_empresa">MEU PLANO</label>
 							<select name="user_plano" class="form-control" >
-								<option <?=(!empty($userlogin['user_plano']) && $userlogin['user_plano'] == 1 ? "selected" : "");?> value="1"><?=$texto['nomePlanoUm']." = R$ ".$texto['valorPlanoUm'].",00";?></option>
-								<option <?=(!empty($userlogin['user_plano']) && $userlogin['user_plano'] == 2 ? "selected" : "");?> value="2"><?=$texto['nomePlanoDois']." = R$ ".$texto['valorPlanoDois'].",00";?></option>
-								<option <?=(!empty($userlogin['user_plano']) && $userlogin['user_plano'] == 3 ? "selected" : "");?> value="3"><?=$texto['nomePlanoTres']." = R$ ".$texto['valorPlanoTres'].",00";?></option>
+								<option <?php (!empty($userlogin['user_plano']) && $userlogin['user_plano'] == 1 ? "selected" : "");?> value="1"><?php $texto['nomePlanoUm']." = R$ ".$texto['valorPlanoUm'].",00";?></option>
+								<option <?php (!empty($userlogin['user_plano']) && $userlogin['user_plano'] == 2 ? "selected" : "");?> value="2"><?php $texto['nomePlanoDois']." = R$ ".$texto['valorPlanoDois'].",00";?></option>
+								<option <?php (!empty($userlogin['user_plano']) && $userlogin['user_plano'] == 3 ? "selected" : "");?> value="3"><?php $texto['nomePlanoTres']." = R$ ".$texto['valorPlanoTres'].",00";?></option>
 							</select>
 						</div>	
 						<?php
@@ -107,16 +107,16 @@ endif;
    window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;
    })();
 </script>
-<a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<?=PHONE_NUMBER;?>&text=Olá!%A0Gostaria de Fazer o Pagamento Via PIX, Chave Pix: +5547996992911" target="_blank"></i><span class="btn btn-success">Pagamento PIX</a>
+<a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<?php PHONE_NUMBER;?>&text=Olá!%A0Gostaria de Fazer o Pagamento Via PIX, Chave Pix: +5547996992911" target="_blank"></i><span class="btn btn-success">Pagamento PIX</a>
 							</a>
-							<a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<?=PHONE_NUMBER;?>&text=Olá!%A0Gostaria de Fazer o Pagamento Por Boleto" target="_blank"></i><span class="btn btn-success">Boleto Bancario</a>
+							<a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<?php PHONE_NUMBER;?>&text=Olá!%A0Gostaria de Fazer o Pagamento Por Boleto" target="_blank"></i><span class="btn btn-success">Boleto Bancario</a>
 							</a>
-							<a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<?=PHONE_NUMBER;?>&text=Olá!%A0Gostaria de Alterar meu plano." target="_blank"></i><span class="btn btn-danger">Alterar meu Plano</a>
+							<a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<?php PHONE_NUMBER;?>&text=Olá!%A0Gostaria de Alterar meu plano." target="_blank"></i><span class="btn btn-danger">Alterar meu Plano</a>
 							</a>
 
 						</div>
 					</form>
-					<img src="<?=$site?>img/bandeiras-mercado-pago.png" style="max-width: 400px;height: auto;" />
+					<img src="<?php echo $site; ?>img/bandeiras-mercado-pago.png" style="max-width: 400px;height: auto;" />
 					<br />				
 					<br />
 					<p style="color: red;"><br />

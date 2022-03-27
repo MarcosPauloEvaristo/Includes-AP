@@ -10,9 +10,9 @@ if(!isset($_SESSION['userlogin'])):
 	<script type="text/javascript">
 
 		$.ajax({
-			url: '<?=$site;?>includes/processaviews.php',
+			url: '<?php echo $site; ?>includes/processaviews.php',
 			method: 'post',
-			data: {'maisum' : '<?=$newnumer;?>', 'userid' : '<?=$getu;?>'},	
+			data: {'maisum' : '<?php $newnumer;?>', 'userid' : '<?php $getu;?>'},	
 			success: function(data){		
 			}		
 		});
@@ -116,7 +116,7 @@ $diadehoje   = $diasemana[$diasemana_numero];
 						if(in_array($diadehoje, $explcat)):
 							?>
 
-							<li><a href="#<?=Check::Name($nome_cat).$controlecat;?>">
+							<li><a href="#<?php Check::Name($nome_cat).$controlecat;?>">
 								<?php
 								if (!empty($icon_cat) && file_exists("{$icon_cat}") && !is_dir("{$icon_cat}")):
 									echo Check::Image($icon_cat, 'icone-categoria', 30, 30);
@@ -131,7 +131,7 @@ $diadehoje   = $diasemana[$diasemana_numero];
 								$totalDeItensPorCat = $lerbanco->getRowCount();
 							endif;
 							?>
-							<span>(<?=$totalDeItensPorCat;?>)</span></a>
+							<span>(<?php $totalDeItensPorCat;?>)</span></a>
 						</li>
 
 						<?php 
@@ -144,9 +144,9 @@ $diadehoje   = $diasemana[$diasemana_numero];
 	</div>
 	<!-- FINAL DA BOX DAS CATEGORIAS --> 	
 	<div class="box_style_2 hidden-xs" id="help">
-		<h4><?=$texto['msg_compartilhar'];?></h4>
+		<h4><?php $texto['msg_compartilhar'];?></h4>
 		<!-- AddToAny BEGIN -->
-		<div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="<?=$site.$nome_empresa_link;?>"> 		   
+		<div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="<?php $site.$nome_empresa_link;?>"> 		   
 			<a class="a2a_button_facebook"></a>
 			<a class="a2a_button_facebook_messenger"></a>
 			<a class="a2a_button_twitter"></a>
@@ -159,7 +159,7 @@ $diadehoje   = $diasemana[$diasemana_numero];
 	</div>
 </div>
 <!-- End col-md-3 -->
-<div class="col-md-6" <?=($detect->isMobile() ? "style=\"padding-left: 2px;padding-right: 2px;\"" : "");?>>
+<div class="col-md-6" <?php ($detect->isMobile() ? "style=\"padding-left: 2px;padding-right: 2px;\"" : "");?>>
 
 
 	
@@ -179,7 +179,7 @@ $diadehoje   = $diasemana[$diasemana_numero];
 		?>
 	<div class="box_style_2" id="main_menu">
 
-		<center><h2 class="inner"><!--<i class="icon-food-1"></i></i><i class="icon-fast-food"></i><i class="icon-food"></i> --> <?=$texto['msg_cardapio'];?> <!--<i class="icon-food"></i><i class="icon-fast-food"></i><i class="icon-food-1"></i></i>--></h2></center>
+		 <h2 class="inner"><!--<i class="icon-food-1"></i></i><i class="icon-fast-food"></i><i class="icon-food"></i> --> <?php $texto['msg_cardapio'];?> <!--<i class="icon-food"></i><i class="icon-fast-food"></i><i class="icon-food-1"></i></i>--></h2> 
 		
 		<?php
 		$lerbanco->ExeRead('ws_cat', "WHERE user_id = :useridd ORDER BY id", "useridd={$getu}");
@@ -198,12 +198,12 @@ $diadehoje   = $diasemana[$diasemana_numero];
 					?>
 					<div class="panel-group" id="accordion">
 
-						<div class="panel panel-default" id="<?=Check::Name($nome_cat).$controlecat2;?>">
+						<div class="panel panel-default" id="<?php Check::Name($nome_cat).$controlecat2;?>">
 							<?php
 							$controlecat2 = $controlecat2 + 1;
 							?>
 							<script type="text/javascript">
-								$(document).on("click", "#mudarsimbolo_<?=$iddacategoria;?>", function(){
+								$(document).on("click", "#mudarsimbolo_<?php $iddacategoria;?>", function(){
 									if($(this).find("i").hasClass("fa-chevron-down")){
 										$(this).find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up");
 									}else if($(this).find("i").hasClass("fa-chevron-up")){
@@ -215,22 +215,22 @@ $diadehoje   = $diasemana[$diasemana_numero];
 							</script>
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a id="mudarsimbolo_<?=$iddacategoria;?>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#<?=Check::Name($nome_cat);?>">
-										<strong class="nomargin_top"><?=$nome_cat;?></strong>
+									<a id="mudarsimbolo_<?php $iddacategoria;?>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#<?php Check::Name($nome_cat);?>">
+										<strong class="nomargin_top"><?php $nome_cat;?></strong>
 										<i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
 									</a>
 								</h4>
 							</div>
-							<div id="<?=Check::Name($nome_cat);?>" class="panel-collapse collapse">
+							<div id="<?php Check::Name($nome_cat);?>" class="panel-collapse collapse">
 								<div class="panel-body">
-									<?=($desc_cat != 'null' ? $desc_cat.'<br /><br />' : '');?>
+									<?php ($desc_cat != 'null' ? $desc_cat.'<br /><br />' : '');?>
 									<?php
 									$lerbanco->ExeRead('ws_itens', "WHERE user_id = :useridr AND id_cat = :nnn AND disponivel=1 ORDER BY posicao ASC", "useridr={$getu}&nnn={$id}");
 									if(!$lerbanco->getResult()):
 										echo "
 										<div class=\"alert alert-info fade in nomargin\">
 										<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>						  
-										<p><center><b> {$texto['msg_disponibilidadeItens']} </b></center></p>
+										<p> <b> {$texto['msg_disponibilidadeItens']} </b> </p>
 										</div>
 										";
 									else:
@@ -261,7 +261,7 @@ $diadehoje   = $diasemana[$diasemana_numero];
 													if(in_array($diadehoje, $exp)):
 														?>
 														<tr>
-															<td data-toggle="modal" data-target="#popuppedido_<?=$ido_DoItem;?>">
+															<td data-toggle="modal" data-target="#popuppedido_<?php $ido_DoItem;?>">
 																<?php
 																if (!empty($img_item) && $img_item != "null" && file_exists("uploads/{$img_item}") && !is_dir("uploads/{$img_item}")):										
 																	if($detect->isMobile()): 
@@ -274,9 +274,9 @@ $diadehoje   = $diasemana[$diasemana_numero];
 										//echo "<figure class=\"thumb_menu_list\"><img src=\"img/menu-thumb-1.jpg\" alt=\"thumb\"></figure>";
 																endif;
 																?>									
-																<h5 style="margin-top: 3px;"><?=$nome_do_item;?></h5>
+																<h5 style="margin-top: 3px;"><?php $nome_do_item;?></h5>
 																<p>
-																	<?=$descricao_item;?>
+																	<?php $descricao_item;?>
 
 																</p>
 																<strong style="float: right;"><?php
@@ -294,18 +294,18 @@ $diadehoje   = $diasemana[$diasemana_numero];
 															</td>
 
 
-															<form id="addItemPost_<?=$ido_DoItem;?>" name="addItemPost_<?=$ido_DoItem;?>" method="post">
+															<form id="addItemPost_<?php $ido_DoItem;?>" name="addItemPost_<?php $ido_DoItem;?>" method="post">
 																<td class="options">
 																	<div class="dropdown dropdown-options">
 
 																		<!-- Modal -->
-																		<div style="margin-top: 10px;" class="modal fade popuppedido" id="popuppedido_<?=$ido_DoItem;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+																		<div style="margin-top: 10px;" class="modal fade popuppedido" id="popuppedido_<?php $ido_DoItem;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 																			<div class="modal-dialog">
 																				<div class="modal-content">													
 																					<div class="modal-body">
 																						<div class="dropdown-menupop" style="border-bottom: none;">
 																							<a data-dismiss="modal" style="float: right;cursor: pointer;"id="fecharmodallogin" class="close-link"><i class="icon_close_alt2"></i></a>										
-																							<center><b><?=$nome_item;?> <?php
+																							 <b><?php $nome_item;?> <?php
 																							$lerbanco->ExeRead("ws_relacao_tamanho", "WHERE id_user = :useriid AND id_item = :idiitem", "useriid={$getu}&idiitem={$ido_DoItem}");
 																							if(!$lerbanco->getResult()):
 																								echo "<br /><b style='color: #4eb93e;'>R$ ".Check::real($preco_item)."</b>";
@@ -314,15 +314,15 @@ $diadehoje   = $diasemana[$diasemana_numero];
 																							endif;
 
 
-																							?></b></center>
-																							<center>
+																							?></b> 
+																							 
 																								<?php
 																								if (!empty($img_item) && $img_item != "null" && file_exists("uploads/{$img_item}") && !is_dir("uploads/{$img_item}")):										
 
 																									echo "<br /><img width=\"70%\" height=\"\" src=\"{$site}uploads/{$img_item}\" /><br /><br />";
 																							endif;
 																							?>
-																						</center>
+																						 
 																						<?php
 												// INICIO DAS OPÇÕES DE TAMANHO
 																						$condum = 1;
@@ -366,7 +366,7 @@ $diadehoje   = $diasemana[$diasemana_numero];
 																							}
 
 																							?>
-																							<div id="mostrarmeioameio_<?=$ido_DoItem;?>" class="ocultarmeioameio" >
+																							<div id="mostrarmeioameio_<?php $ido_DoItem;?>" class="ocultarmeioameio" >
 
 
 
@@ -456,13 +456,13 @@ if($lerbanco->getResult()):
 	$addt = $lerbanco->getResult();
     for ($i = 0; $i < count($addt); $i++) {
 	    ?>
-	    <div style="" id="div_Cat_<?=$addt[$i]['id_cat'];?>_IdItem_<?=$addt[$i]['id_itens'];?>_addtCat_<?=$addt[$i]['id'];?>" data-amount="<?=($addt[$i]['amount'] == -1 ? 1000 : $addt[$i]['amount']);?>">
+	    <div style="" id="div_Cat_<?php $addt[$i]['id_cat'];?>_IdItem_<?php $addt[$i]['id_itens'];?>_addtCat_<?php $addt[$i]['id'];?>" data-amount="<?php ($addt[$i]['amount'] == -1 ? 1000 : $addt[$i]['amount']);?>">
     	    <div class="row bg-info" style="padding-top: 5px; padding-bottom: 5px;">
     	        <div class="col-sm-6">
-    	            <?=($addt[$i]['img_cat'] != "" ? '<img src="'.$site.'img/'.$addt[$i]['img_cat'].'" style="width: 20px;" />' : "");?><strong> <?=$addt[$i]['name_adicionais_cat'];?></strong>
+    	            <?php ($addt[$i]['img_cat'] != "" ? '<img src="'.$site.'img/'.$addt[$i]['img_cat'].'" style="width: 20px;" />' : "");?><strong> <?php $addt[$i]['name_adicionais_cat'];?></strong>
     	        </div>
     	        <div class="col-sm-6 text-right">
-    	            <span> <?=($addt[$i]['amount'] != -1 ? "Escolha até {$addt[$i]['amount']} opções" : "");?></span>
+    	            <span> <?php ($addt[$i]['amount'] != -1 ? "Escolha até {$addt[$i]['amount']} opções" : "");?></span>
     	        </div>
     	    </div>
     	    <?
@@ -499,7 +499,7 @@ endif;
 ?>		
 
 <script type="text/javascript">
-    $(document).on('click', '#cf_group_adicionais<?=$ido_DoItem;?> input[type=checkbox]', function(){
+    $(document).on('click', '#cf_group_adicionais<?php $ido_DoItem;?> input[type=checkbox]', function(){
         //var input_class = $(this).attr("class");
         var input_class = $(this).attr("class").indexOf(" ") != -1 ? $(this).attr("class").substring(0,$(this).attr("class").indexOf(" ")) : $(this).attr("class");
         var div_id = $(this).attr("data-target-amount-id");
@@ -520,9 +520,9 @@ endif;
     });
 
     /*$(document).ready(function(){
-        $('#cf_group_adicionais<?=$ido_DoItem;?> input[type=checkbox]').change(function(){
-		    var maximopermitidoo = <?=(!empty($numeroadicionais) && $numeroadicionais != 0 ? $numeroadicionais : 1000)?>;
-			var controlee = $('#cf_group_adicionais<?=$ido_DoItem;?> input[type=checkbox]:checked').length;
+        $('#cf_group_adicionais<?php $ido_DoItem;?> input[type=checkbox]').change(function(){
+		    var maximopermitidoo = <?php (!empty($numeroadicionais) && $numeroadicionais != 0 ? $numeroadicionais : 1000)?>;
+			var controlee = $('#cf_group_adicionais<?php $ido_DoItem;?> input[type=checkbox]:checked').length;
 
 			if(controlee > maximopermitidoo){
 				$(this).prop('checked', '');
@@ -591,13 +591,13 @@ if($lerbanco->getResult()):
 	$addtp = $lerbanco->getResult();
     for ($i = 0; $i < count($addtp); $i++) {
 	    ?>
-	    <div style="" id="div_Cat_<?=$addtp[$i]['id_cat'];?>_IdItem_<?=$addtp[$i]['id_itens'];?>_addtCat_<?=$addtp[$i]['id'];?>_p" data-amount="<?=($addtp[$i]['amount'] == -1 ? 1000 : $addtp[$i]['amount']);?>">
+	    <div style="" id="div_Cat_<?php $addtp[$i]['id_cat'];?>_IdItem_<?php $addtp[$i]['id_itens'];?>_addtCat_<?php $addtp[$i]['id'];?>_p" data-amount="<?php ($addtp[$i]['amount'] == -1 ? 1000 : $addtp[$i]['amount']);?>">
     	    <div class="row bg-info" style="padding-top: 5px; padding-bottom: 5px;">
     	        <div class="col-sm-6">
-    	            <?=($addtp[$i]['img_cat'] != "" ? '<img src="'.$site.'img/'.$addtp[$i]['img_cat'].'" style="width: 20px;" />' : "");?><strong> <?=$addtp[$i]['name_adicionais_cat'];?></strong>
+    	            <?php ($addtp[$i]['img_cat'] != "" ? '<img src="'.$site.'img/'.$addtp[$i]['img_cat'].'" style="width: 20px;" />' : "");?><strong> <?php $addtp[$i]['name_adicionais_cat'];?></strong>
     	        </div>
     	        <div class="col-sm-6 text-right">
-    	            <span> <?=($addtp[$i]['amount'] != -1 ? "Escolha até {$addtp[$i]['amount']} opções" : "");?></span>
+    	            <span> <?php ($addtp[$i]['amount'] != -1 ? "Escolha até {$addtp[$i]['amount']} opções" : "");?></span>
     	        </div>
     	    </div>
     	    <?
@@ -631,7 +631,7 @@ endif;
 ?>	
 
 <script type="text/javascript">
-    $(document).on('click', '#cf_group_adicionais_pagos<?=$ido_DoItem;?> input[type=checkbox]', function(){
+    $(document).on('click', '#cf_group_adicionais_pagos<?php $ido_DoItem;?> input[type=checkbox]', function(){
         var input_class = $(this).attr("class").indexOf(" ") != -1 ? $(this).attr("class").substring(0,$(this).attr("class").indexOf(" ")) : $(this).attr("class");
         var div_id = $(this).attr("data-target-amount-id");
         var div_amount = $(div_id).attr("data-amount");
@@ -652,9 +652,9 @@ endif;
 
 	/*$(document).ready(function(){	
 
-		$('#cf_group_adicionais_pagos<?=$ido_DoItem;?> input[type=checkbox]').change(function(){
-			var maximopermitidooo = <?=(!empty($numeroadicionaisPagos) && $numeroadicionaisPagos != 0 ? $numeroadicionaisPagos : 1000)?>;
-			var controleee = $('#cf_group_adicionais_pagos<?=$ido_DoItem;?> input[type=checkbox]:checked').length;
+		$('#cf_group_adicionais_pagos<?php $ido_DoItem;?> input[type=checkbox]').change(function(){
+			var maximopermitidooo = <?php (!empty($numeroadicionaisPagos) && $numeroadicionaisPagos != 0 ? $numeroadicionaisPagos : 1000)?>;
+			var controleee = $('#cf_group_adicionais_pagos<?php $ido_DoItem;?> input[type=checkbox]:checked').length;
 
 			if(controleee > maximopermitidooo){
 				$(this).prop('checked', '');
@@ -720,7 +720,7 @@ endif;
 
 
 <!--INICIO DA QUANTIDADE-->
-<h5><?=$texto['msg_quantidade'];?></h5>							
+<h5><?php $texto['msg_quantidade'];?></h5>							
 <div class="input-group">
 	<span class="input-group-btn">
 		<button style="height: 34px;" type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quantidade">
@@ -740,7 +740,7 @@ endif;
 $lerbanco->FullRead("SELECT * FROM ws_observacoes WHERE user_id = :userid AND id_categoria = :idcatt", "userid={$getu}&idcatt={$iddacategoria}");
 if(!$lerbanco->getResult()):	
 	?>
-	<textarea class="form-control obsitem" rows="3" placeholder="<?=$texto['msg_obsItem'];?>" name="observacao"></textarea>
+	<textarea class="form-control obsitem" rows="3" placeholder="<?php $texto['msg_obsItem'];?>" name="observacao"></textarea>
 	<?php
 else:
 	echo "
@@ -761,17 +761,17 @@ else:
 endif;
 ?>
 
-<input type="hidden" name="id-item" value="<?=$ido_DoItem;?>">
+<input type="hidden" name="id-item" value="<?php $ido_DoItem;?>">
 <input type="hidden" name="add-Item" value="true">
-<input type="hidden" name="userid" value="<?=$getu;?>">
-<input type="hidden" name="nome_item" value="<?=$nome_do_item;?>">
-<input type="hidden" name="nomeloja" value="<?=$Url[0];?>">
+<input type="hidden" name="userid" value="<?php $getu;?>">
+<input type="hidden" name="nome_item" value="<?php $nome_do_item;?>">
+<input type="hidden" name="nomeloja" value="<?php $Url[0];?>">
 <br />
 
 
 </div>
 <div class="modal-footer">
-	<center><button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar janela</button></center>
+	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar janela</button> 
 	<br>
 	<br>
 	<br>
@@ -784,9 +784,9 @@ endif;
 <?php
 if(!empty($disponivel) && $disponivel == 1):
 	?>	
-	<a class="adicionarItemPedido_<?=$ido_DoItem;?>">
+	<a class="adicionarItemPedido_<?php $ido_DoItem;?>">
 		<div id="footer">
-			<b><?=$texto['msg_purchase'];?></b>
+			<b><?php $texto['msg_purchase'];?></b>
 		</div>
 	</a>
 
@@ -795,7 +795,7 @@ if(!empty($disponivel) && $disponivel == 1):
 else:
 	?>	
 	<div id="footerr">
-		<b><?=$texto['msg_indisponivel'];?></b>
+		<b><?php $texto['msg_indisponivel'];?></b>
 	</div>
 	<?php
 endif;
@@ -804,11 +804,11 @@ endif;
 <script type="text/javascript">
 	$(document).ready(function(){
 
-		$('.adicionarItemPedido_<?=$ido_DoItem;?>').click(function(){
+		$('.adicionarItemPedido_<?php $ido_DoItem;?>').click(function(){
 			$.ajax({
-				url: '<?= $site; ?>includes/processaAddItem.php',
+				url: '<?php echo $site; ?>includes/processaAddItem.php',
 				method: "post",
-				data: $('#addItemPost_<?=$ido_DoItem;?>').serialize(),
+				data: $('#addItemPost_<?php $ido_DoItem;?>').serialize(),
 
 				success: function(data){				
 					$('#resultadoAddItem').html(data);					
@@ -866,7 +866,7 @@ endif;
 
 	<div class="theiaStickySidebar">
 		<div id="cart_box" >
-			<h3><?=$texto['msg_seu_pedido'];?> <i class="icon_cart_alt pull-right"></i></h3>					
+			<h3><?php $texto['msg_seu_pedido'];?> <i class="icon_cart_alt pull-right"></i></h3>					
 			<?php
 			if($cart->isEmpty()):
 				
@@ -928,9 +928,9 @@ endif;
 						$('#limparcarrinho').prop('disabled', true);
 
 						$.ajax({
-							url: '<?= $site; ?>includes/processalimparcarrinho.php',
+							url: '<?php echo $site; ?>includes/processalimparcarrinho.php',
 							method: 'post',
-							data: {'limparcart':statusclean, 'getlojal' : '<?=$Url[0];?>'},
+							data: {'limparcart':statusclean, 'getlojal' : '<?php $Url[0];?>'},
 							success: function(data){
 								$('#limparcarrinho').prop('disabled', false);
 								$('#divlimparcarrinho').html(data);
@@ -940,7 +940,7 @@ endif;
 					});
 				});
 			</script>
-			<form data-toggle="validator" action="<?=$site.$Url[0].'/';?>carrinho" method="post">
+			<form data-toggle="validator" action="<?php $site.$Url[0].'/';?>carrinho" method="post">
 				<hr>
 				<div class="row" id="options_2" style="padding-left: 12px;">
 					<?php if(!empty($confirm_delivery) && $confirm_delivery == "true"): ?>
@@ -950,7 +950,7 @@ endif;
 								required />
 								<label for="enterega">
 									<span style="color:#444;">
-										<p style="font-size: 14px;"><?=$texto['msg_delivery'];?></p>
+										<p style="font-size: 14px;"><?php $texto['msg_delivery'];?></p>
 									</span>
 								</label>
 							</div>
@@ -963,7 +963,7 @@ endif;
 								required />
 								<label for="buscar">
 									<span style="color:#444;">
-										<p style="font-size: 14px;"><?=$texto['msg_Buscar_pedido'];?></p>
+										<p style="font-size: 14px;"><?php $texto['msg_Buscar_pedido'];?></p>
 									</span>
 								</label>
 							</div>
@@ -976,7 +976,7 @@ endif;
 								required />
 								<label for="mesa">
 									<span style="color:#444;">
-										<p style="font-size: 14px;"><?=$texto['msg_pedido_mesa'];?></p>
+										<p style="font-size: 14px;"><?php $texto['msg_pedido_mesa'];?></p>
 									</span>
 								</label>
 							</div>
@@ -990,14 +990,14 @@ endif;
 							<td>
 								Pedido 
 								<span class="pull-right">
-									R$ <?=(!empty($cart->getAttributeTotal('preco')) ? Check::Real($cart->getAttributeTotal('preco')) : '0,00');?>
+									R$ <?php (!empty($cart->getAttributeTotal('preco')) ? Check::Real($cart->getAttributeTotal('preco')) : '0,00');?>
 
 								</span>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<?=$texto['msg_adicionais'];?> <span class="pull-right">
+								<?php $texto['msg_adicionais'];?> <span class="pull-right">
 									R$ 
 									<?php
 
@@ -1039,8 +1039,8 @@ endif;
 										<a style="color: green">
 											Desconto
 											<span class="pull-right">
-												<!--<?=$_SESSION['desconto_cupom']['desconto'];?> %-->
-												<?=($_SESSION['desconto_cupom']['type_discount'] == 1 ? $_SESSION['desconto_cupom']['desconto']." %" : "R$ ".str_replace('.',',',$_SESSION['desconto_cupom']['desconto']));?>
+												<!--<?php $_SESSION['desconto_cupom']['desconto'];?> %-->
+												<?php ($_SESSION['desconto_cupom']['type_discount'] == 1 ? $_SESSION['desconto_cupom']['desconto']." %" : "R$ ".str_replace('.',',',$_SESSION['desconto_cupom']['desconto']));?>
 											</span>
 										</a>
 									</td>
@@ -1074,8 +1074,8 @@ endif;
 
 					<hr>
 
-                    <a class="btn_full_outline validarCupom" style="margin-bottom: 5px;"><?=$texto['msg_btn_cupom'];?> </a>
-					<button type="submit" class="btn_full"><?=$texto['msg_confirmar_puschase'];?></button>
+                    <a class="btn_full_outline validarCupom" style="margin-bottom: 5px;"><?php $texto['msg_btn_cupom'];?> </a>
+					<button type="submit" class="btn_full"><?php $texto['msg_confirmar_puschase'];?></button>
 					<script type="text/javascript">
 						$(document).ready(function(){
 							$('.validarCupom').click(function(){
@@ -1083,9 +1083,9 @@ endif;
 									function(button, text) {
 										if(button == 'info'){
 											$.ajax({
-												url: '<?=$site;?>includes/processaativacupom.php',
+												url: '<?php echo $site; ?>includes/processaativacupom.php',
 												method: 'post',
-												data: {'codigocupom' : text, 'iduser' : '<?=$getu;?>'},
+												data: {'codigocupom' : text, 'iduser' : '<?php $getu;?>'},
 												success: function(data){											
 													if(data == 'erro0'){
 														x0p('Opss...', 
@@ -1111,7 +1111,7 @@ endif;
 														x0p('Parabéns!', 
 															'Desconto aplicado!', 
 															'ok', false);
-														$('#sidebar').load('<?=$site;?>includes/sidebar.php', {"getloja" : "<?=$Url[0];?>"});
+														$('#sidebar').load('<?php echo $site; ?>includes/sidebar.php', {"getloja" : "<?php $Url[0];?>"});
 													}
 
 												}
@@ -1131,9 +1131,9 @@ endif;
 				<?php if($detect->isMobile()): ?>
 					<hr />
 					<div class="box_style_2" id="help">
-						<h4><?=$texto['msg_compartilhar'];?></h4>
+						<h4><?php $texto['msg_compartilhar'];?></h4>
 						<!-- AddToAny BEGIN -->
-						<div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="<?=$site.$nome_empresa_link;?>"> 		   
+						<div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="<?php $site.$nome_empresa_link;?>"> 		   
 							<a class="a2a_button_facebook"></a>
 							<a class="a2a_button_facebook_messenger"></a>
 							<a class="a2a_button_twitter"></a>
@@ -1152,7 +1152,7 @@ endif;
 		<?php if(!$cart->isEmpty()):?>
 			<div id="whatsapp"  >
 				
-				<a href="#sidebar" title="<?=$texto['msg_seu_pedido'];?>"><span style="opacity: 0.9;" class="cart-count"><?=($cart->getTotalItem() > 0 ? (int)$cart->getTotalItem() : 0);?></span><i style="opacity: 0.6;font-size:45px;color:#27771b;" class="icon-bag"></i>
+				<a href="#sidebar" title="<?php $texto['msg_seu_pedido'];?>"><span style="opacity: 0.9;" class="cart-count"><?php ($cart->getTotalItem() > 0 ? (int)$cart->getTotalItem() : 0);?></span><i style="opacity: 0.6;font-size:45px;color:#27771b;" class="icon-bag"></i>
 				</a>
 				
 			</div>
@@ -1221,10 +1221,10 @@ if($lerbanco->getResult()):
 		<script type="text/javascript">
 			x0p({
 				title: '',
-				text: 'Parabéns! Você ganhou um desconto de <?=($getcupommostrar[0]['type_discount'] == 1 ? $getcupommostrar[0]['porcentagem']."%" : "R$ ".Check::Real($getcupommostrar[0]['fixed_value']));?>. Ativar cupom?',
+				text: 'Parabéns! Você ganhou um desconto de <?php ($getcupommostrar[0]['type_discount'] == 1 ? $getcupommostrar[0]['porcentagem']."%" : "R$ ".Check::Real($getcupommostrar[0]['fixed_value']));?>. Ativar cupom?',
 				animationType: 'slideUp',
 				icon: 'custom',
-				iconURL: '<?=$site?>img/cupomsdesconto.png',
+				iconURL: '<?php echo $site; ?>img/cupomsdesconto.png',
 				buttons: [
 				{
 					type: 'error',
@@ -1242,7 +1242,7 @@ if($lerbanco->getResult()):
 				if(data.button == 'error'){
 					$.ajax({
 						method: 'post',
-						data: {'user_id' : '<?=$getu;?>', 'idcupom' : '<?=$getcupommostrar[0]['id_cupom'];?>'},
+						data: {'user_id' : '<?php $getu;?>', 'idcupom' : '<?php $getcupommostrar[0]['id_cupom'];?>'},
 						success: function(data){
 						}
 					});
@@ -1250,7 +1250,7 @@ if($lerbanco->getResult()):
 				}else if(data.button == 'info'){
 					$.ajax({
 						method: 'post',
-						data: {'codigodocupom' : '<?=$getcupommostrar[0]['ativacao'];?>', 'user_id' : '<?=$getu;?>'},
+						data: {'codigodocupom' : '<?php $getcupommostrar[0]['ativacao'];?>', 'user_id' : '<?php $getu;?>'},
 						success: function(data){
 							if(data == 'erro0'){
 								x0p('Opss...', 
@@ -1276,7 +1276,7 @@ if($lerbanco->getResult()):
 								x0p('Parabéns!', 
 									'Desconto aplicado!', 
 									'ok', false);
-								$('#sidebar').load('<?=$site;?>includes/sidebar.php', {"getloja" : "<?=$Url[0];?>"});
+								$('#sidebar').load('<?php echo $site; ?>includes/sidebar.php', {"getloja" : "<?php $Url[0];?>"});
 							}
 						}
 					});
@@ -1326,9 +1326,9 @@ endif;
 		$('.id_checkbox'+iddoitem).attr("readonly", true);
 
 		$.ajax({
-			url: '<?=$site;?>controlers/mostrar-meioameio.php',
+			url: '<?php echo $site; ?>controlers/mostrar-meioameio.php',
 			method: 'post',
-			data: {'iditem' : iddoitem, 'idcat' : iddacategoria, 'idoption' : vaaloridtamahoclick, 'userid' : '<?=$getu;?>'},
+			data: {'iditem' : iddoitem, 'idcat' : iddacategoria, 'idoption' : vaaloridtamahoclick, 'userid' : '<?php $getu;?>'},
 			success:function(data){
 
 				if(data == 0){
@@ -1346,9 +1346,9 @@ endif;
 
 
 		$.ajax({
-			url: '<?=$site;?>controlers/alterar-tipo-meioameio.php',
+			url: '<?php echo $site; ?>controlers/alterar-tipo-meioameio.php',
 			method: 'post',
-			data: {'iditem' : iddoitem, 'idcat' : iddacategoria, 'idoption' : vaaloridtamahoclick, 'userid' : '<?=$getu;?>'},
+			data: {'iditem' : iddoitem, 'idcat' : iddacategoria, 'idoption' : vaaloridtamahoclick, 'userid' : '<?php $getu;?>'},
 			success:function(data){		
 
 				document.getElementById('alterarmeioameio_'+iddoitem).value=data;	

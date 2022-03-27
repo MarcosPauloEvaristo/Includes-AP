@@ -340,7 +340,7 @@ endif;
       $numerodeviews = $dadosview[0]['contar'];
     endif;
     ?>
-    <p class="card__number"><?=$numerodeviews;?></p>
+    <p class="card__number"><?php $numerodeviews;?></p>
     <p style="text-align: center;" class="card__followers">Visualizações de seus Itens</p>
   </div><!-- CARD-->
   <?php
@@ -384,14 +384,14 @@ endif;
   <div class="col-md-3">
     <div class="card-counter success">
       <i class="fa fa-money" aria-hidden="true"></i>
-      <span class="count-numbers">R$ <?=(!empty($valorTotalAtras) ? Check::Real($valorTotalAtras) : Check::Real(0));?></span>
+      <span class="count-numbers">R$ <?php (!empty($valorTotalAtras) ? Check::Real($valorTotalAtras) : Check::Real(0));?></span>
       <span class="count-name">Total Mês Anterior</span>
     </div>
   </div>
   <div class="col-md-3">
     <div class="card-counter primary">
       <i class="fa fa-money" aria-hidden="true"></i>
-      <span class="count-numbers">R$ <?=(!empty($valorTotalAtual) ? Check::Real($valorTotalAtual) : Check::Real(0));?></span>
+      <span class="count-numbers">R$ <?php (!empty($valorTotalAtual) ? Check::Real($valorTotalAtual) : Check::Real(0));?></span>
       <span class="count-name">Total Mês Atual</span>
 
     </div>
@@ -399,14 +399,14 @@ endif;
   <div class="col-md-3">
     <div class="card-counter info">
       <i class="fa fa-money" aria-hidden="true"></i>
-      <span class="count-numbers">R$ <?=(!empty($valorTotalAbertos) ? Check::Real($valorTotalAbertos) : Check::Real(0));?></span>
+      <span class="count-numbers">R$ <?php (!empty($valorTotalAbertos) ? Check::Real($valorTotalAbertos) : Check::Real(0));?></span>
       <span class="count-name">Total Abertos</span>
     </div>
   </div>
   <div class="col-md-3">
     <div class="card-counter danger">
       <i class="fa fa-money" aria-hidden="true"></i>
-      <span class="count-numbers">R$ <?=(!empty($valorTotalCancelados) ? Check::Real($valorTotalCancelados) : Check::Real(0));?></span>
+      <span class="count-numbers">R$ <?php (!empty($valorTotalCancelados) ? Check::Real($valorTotalCancelados) : Check::Real(0));?></span>
       <span class="count-name">Total Cancelados</span>
     </div>
   </div> 
@@ -464,7 +464,7 @@ endif;
       transition: .25s all ease;
     }
   </style>
-  <center>
+   
     <div id="verM"></div>    
     <form>
       <div class="dropdown">
@@ -487,35 +487,35 @@ endif;
   <script type="text/javascript">
     $('.dropdown-select-version').on('change', function() {
       if (this.value == '01') {
-        location.href="<?=$site.$Url[0].'/estatisticas&m=1#verM';?>";
+        location.href="<?php $site.$Url[0].'/estatisticas&m=1#verM';?>";
       }else if (this.value == '02') {
-       location.href="<?=$site.$Url[0].'/estatisticas&m=2#verM';?>";
+       location.href="<?php $site.$Url[0].'/estatisticas&m=2#verM';?>";
      }else if (this.value == '03') {
-      location.href="<?=$site.$Url[0].'/estatisticas&m=3#verM';?>";
+      location.href="<?php $site.$Url[0].'/estatisticas&m=3#verM';?>";
     }else if (this.value == '04') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=4#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=4#verM';?>";
    }else if (this.value == '05') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=5#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=5#verM';?>";
    }else if (this.value == '06') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=6#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=6#verM';?>";
    }else if (this.value == '07') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=7#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=7#verM';?>";
    }else if (this.value == '08') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=8#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=8#verM';?>";
    }else if (this.value == '09') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=9#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=9#verM';?>";
    }else if (this.value == '10') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=10#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=10#verM';?>";
    }else if (this.value == '11') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=11#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=11#verM';?>";
    }else if (this.value == '12') {
-     location.href="<?=$site.$Url[0].'/estatisticas&m=12#verM';?>";
+     location.href="<?php $site.$Url[0].'/estatisticas&m=12#verM';?>";
    }else {
-     location.href="<?=$site.$Url[0].'/estatisticas#verM';?>";      
+     location.href="<?php $site.$Url[0].'/estatisticas#verM';?>";      
    } 
  });
 </script>
-</center>
+ 
 
 <div class="row">  
   <div class="col-lg-12">
@@ -528,7 +528,7 @@ endif;
         endif;
         ?>
 
-        <h4><i class="icon-chart-line"></i> <strong>Resumo: <?=$meses[date($verAgoraM)].' de '.date('Y');?></strong></h4>                
+        <h4><i class="icon-chart-line"></i> <strong>Resumo: <?php $meses[date($verAgoraM)].' de '.date('Y');?></strong></h4>                
       </div>
       <div class="widget-content">
         <div id="website-statistic" class="statistic-chart">    
@@ -551,7 +551,7 @@ endif;
   <div class="col-lg-12">
     <div id="website-statistics1" class="widget">
       <div class="widget-header transparent">
-        <h4><i class="icon-chart-line"></i> <strong>Statísticas -</strong> Pedidos <?= date('Y'); ?></h4>                
+        <h4><i class="icon-chart-line"></i> <strong>Statísticas -</strong> Pedidos <?php  date('Y'); ?></h4>                
       </div>
       <div class="widget-content">
         <div id="website-statistic" class="statistic-chart">    

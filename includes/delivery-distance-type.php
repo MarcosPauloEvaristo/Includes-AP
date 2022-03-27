@@ -77,7 +77,7 @@ $updatebanco = new Update();
       ?>
       <form class="form-horizontal" action="#addDeliveryDistanceType" role="form" method="post">
         <br />
-        <input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+        <input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
         <div class="form-group">
           <select required class="form-control" name="type" id="type">
             <option value="district">Bairro</option>

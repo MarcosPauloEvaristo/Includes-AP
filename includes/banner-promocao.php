@@ -83,7 +83,7 @@ endif;
 												<input type="hidden" name="confirma_banner" value="1">
 												<label>Tamanho ideal 1000x333 pixels</label>
 												<input type="file" name="img_banner" id="img_banner" class="form-control" required>
-												<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>" />
+												<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>" />
 											</div>
 										</div>
 									</div>
@@ -146,7 +146,7 @@ endif;
 										echo "<img src=\"{$site}uploads/{$img_banner}\" width=\"350\"/>";
 										echo "<br />";
 										echo "<br />";
-										echo "<center style='margin-top:10px;'><a href='{$site}{$Url[0]}/banner-promocao&del=1'><button class=\"btn btn-danger\">Remover banner</button></a></center>";
+										echo "<center style='margin-top:10px;'><a href='{$site}{$Url[0]}/banner-promocao&del=1'><button class=\"btn btn-danger\">Remover banner</button></a> ";
 									else:
 									endif;
 									?>

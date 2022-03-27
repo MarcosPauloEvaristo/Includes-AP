@@ -35,9 +35,9 @@ endif;
 			$(this).prop('disabled', true);
 
 			$.ajax({
-				url: '<?=$site?>includes/loadtamanhos.php',
+				url: '<?php echo $site; ?>includes/loadtamanhos.php',
 				method: 'post',
-				data: {'user_id' : '<?=$_POST['user_id'];?>', 'tipo_id' : getidtipo},
+				data: {'user_id' : '<?php $_POST['user_id'];?>', 'tipo_id' : getidtipo},
 				success: function(data){								
 					$('.table-responsive').html(data);
 					$('.btngettipo').prop('disabled', false);

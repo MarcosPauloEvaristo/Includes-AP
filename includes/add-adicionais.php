@@ -26,7 +26,7 @@ endif;
 <script type="text/javascript">
 
 </script>
-<script src="<?=$site;?>js/MSFmultiSelect.js"></script>
+<script src="<?php echo $site; ?>js/MSFmultiSelect.js"></script>
 
 <style type="text/css">
 	.msf_multiselect_container .msf_multiselect {
@@ -177,7 +177,7 @@ endif;
 								foreach ($lerbanco->getResult() as $cat):
 									extract($cat);
 									?>
-									<a id="<?=$id;?>" class="list-group-item list-group-item-action" style="cursor: pointer;"><?=$nome_cat;?></a>
+									<a id="<?php $id;?>" class="list-group-item list-group-item-action" style="cursor: pointer;"><?php $nome_cat;?></a>
 								    <?
 								endforeach;
 							endif;
@@ -210,7 +210,7 @@ endif;
                         
                         </br>
 
-						<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+						<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
 						<input type="hidden" name="status_adicional" value="1">
 						<button class="btn btn-primary">Cadastrar</button>
 						
@@ -339,7 +339,7 @@ endif;
 						foreach ($lerbanco->getResult() as $extractdadositens):
 							extract($extractdadositens);
 							?>
-							<form method="post" id="formEditaradicional_<?=$id_adicionais;?>">
+							<form method="post" id="formEditaradicional_<?php $id_adicionais;?>">
 								<tr>	
 									<td>
 										<?php
@@ -374,7 +374,7 @@ endif;
 										?>
 									</td>
 									<td>
-										<?=$medida_adicional;?>
+										<?php $medida_adicional;?>
 									</td>						
 									<td>
 										<?php
@@ -400,17 +400,17 @@ endif;
 										?>
 									</td>
 
-									<input type="hidden" name="id_adicionais" value="<?=$id_adicionais;?>">
-									<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
-									<td><button data-id_adicional="<?=$id_adicionais;?>" id="btnEditarAdicional_<?=$id_adicionais;?>" type="button" class="btn btn-success editarbtnadicional">Editar</button></td>
+									<input type="hidden" name="id_adicionais" value="<?php $id_adicionais;?>">
+									<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
+									<td><button data-id_adicional="<?php $id_adicionais;?>" id="btnEditarAdicional_<?php $id_adicionais;?>" type="button" class="btn btn-success editarbtnadicional">Editar</button></td>
 								</form>
 
 								<td>
-									<button id="btnExcluiradicional_<?=$id_adicionais;?>" data-excluir_adicional="<?=$id_adicionais;?>" type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
+									<button id="btnExcluiradicional_<?php $id_adicionais;?>" data-excluir_adicional="<?php $id_adicionais;?>" type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
 								</td>
 								<td>
-									<button id="btnPausarAdicional_<?=$id_adicionais;?>" data-pausar_adicional="<?=$id_adicionais;?>" class="btn <?=($status_adicional == 1 ? 'btn-info' : 'btn-warning')?> btnpausaradicional">
-										<?=($status_adicional == 1 ? '<i style="font-size: 20px;" class="fa fa-pause" aria-hidden="true"></i>' : '<i style="font-size: 20px;" class="fa fa-play" aria-hidden="true"></i>')?>					
+									<button id="btnPausarAdicional_<?php $id_adicionais;?>" data-pausar_adicional="<?php $id_adicionais;?>" class="btn <?php ($status_adicional == 1 ? 'btn-info' : 'btn-warning')?> btnpausaradicional">
+										<?php ($status_adicional == 1 ? '<i style="font-size: 20px;" class="fa fa-pause" aria-hidden="true"></i>' : '<i style="font-size: 20px;" class="fa fa-play" aria-hidden="true"></i>')?>					
 									</button>
 								</td>
 							</tr>
@@ -467,7 +467,7 @@ endif;
 			}else{
 
 				$.ajax({
-					url: '<?=$site;?>includes/processaeditaradicional.php',
+					url: '<?php echo $site; ?>includes/processaeditaradicional.php',
 					method: 'post',
 					data: $('#formEditaradicional_'+idAdicional).serialize(),
 					success: function(data){
@@ -504,7 +504,7 @@ endif;
 				type: 'error',
 				image: {
 					visible: true,
-					customImage: '<?=$site;?>img/danger.png'
+					customImage: '<?php echo $site; ?>img/danger.png'
 				},
 				position: 'bottom-left',
 				showProgress: true,
@@ -514,9 +514,9 @@ endif;
 						text: 'SIM',
 						callback: function(){
 							$.ajax({
-								url: '<?=$site;?>includes/processadeletaadicional.php',
+								url: '<?php echo $site; ?>includes/processadeletaadicional.php',
 								method: 'post',
-								data: {'user_id' : '<?=$userlogin['user_id'];?>', 'id_adicionais' : btnexcluirad},
+								data: {'user_id' : '<?php $userlogin['user_id'];?>', 'id_adicionais' : btnexcluirad},
 								success: function(data){
 									if(data == 'true'){
 										window.location.reload(1);
@@ -547,9 +547,9 @@ endif;
 			$('#btnPausarAdicional_'+idadicionalpausar).prop('disabled', true);
 
 			$.ajax({
-				url: '<?=$site;?>includes/processapausaradicional.php',
+				url: '<?php echo $site; ?>includes/processapausaradicional.php',
 				method: 'post',
-				data: {'user_id' : '<?=$userlogin['user_id'];?>', 'id_adicionais' : idadicionalpausar},
+				data: {'user_id' : '<?php $userlogin['user_id'];?>', 'id_adicionais' : idadicionalpausar},
 				success: function(data){
 					if(data == 'true'){
 						$('#btnPausarAdicional_'+idadicionalpausar).prop('disabled', false);
@@ -597,11 +597,11 @@ endif;
         
         if (category.length > 0) {
             $.ajax({
-                url: '<?= $site; ?>includes/adicionais-categoria-func.php',
+                url: '<?php echo $site; ?>includes/adicionais-categoria-func.php',
     		    method: "post",
     		    type: "post",
     		    dataType: "json",
-    		    data: {"action" : "listAdicionaisCatP", "user_id" : "<?=$userlogin['user_id'];?>", "cat_id" : category},
+    		    data: {"action" : "listAdicionaisCatP", "user_id" : "<?php $userlogin['user_id'];?>", "cat_id" : category},
     		    success: function(response) {
     		        var res = response;
     		        //alert(res.toString());
@@ -647,11 +647,11 @@ endif;
             var class_a = $(this).attr("class");
             if (class_a.indexOf("active") != -1) {
                 $.ajax({
-                    url: '<?= $site; ?>includes/adicionais-categoria-func.php',
+                    url: '<?php echo $site; ?>includes/adicionais-categoria-func.php',
 				    method: "post",
 				    type: "post",
 				    dataType: "json",
-				    data: {"action" : "listAdicionaisCatP", "user_id" : "<?=$userlogin['user_id'];?>", "cat_id" : $(this).attr("id")},
+				    data: {"action" : "listAdicionaisCatP", "user_id" : "<?php $userlogin['user_id'];?>", "cat_id" : $(this).attr("id")},
 				    success: function(response) {
 				        $("#content_listItens").html("");
 				        arr_listItens = [];

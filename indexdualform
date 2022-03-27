@@ -29,7 +29,7 @@ endif;
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title><?=$texto['titulo_site_landing'];?></title>
+    <title><?php $texto['titulo_site_landing'];?></title>
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="assets_land/images/favicon.png">
     <!--Bootstrap CSS-->
@@ -180,7 +180,7 @@ endif;
                             <p class="wow fadeInUp" data-wow-delay="0.3s">Diferentes de outras plataformas que querem ser "sócios" nós queremos apenas te ajudar, não cobramos porcentagem sobre suas vendas, apenas um valor mensal fixo para a manutenção do seu cardápio.</p>
                         </div>
                         <div class="about-btn btn-lg p-0 wow fadeInUp" data-wow-delay="0.3s">
-                            <a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<?=PHONE_NUMBER;?>&text=Olá!%A0Gostaria de conhecer mais sobre o sistema." target="_blank"></i><span class="float-right text-center font-w-700">Quero Conhecer</a>
+                            <a class="gradient-bg-1" href="https://api.whatsapp.com/send?phone=55<?php PHONE_NUMBER;?>&text=Olá!%A0Gostaria de conhecer mais sobre o sistema." target="_blank"></i><span class="float-right text-center font-w-700">Quero Conhecer</a>
                         </div>
                     </div>
                     <!--End About Content-->
@@ -455,7 +455,7 @@ endif;
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="font-600" href="https://api.whatsapp.com/send?phone=55<?=PHONE_NUMBER;?>&text=Olá! Gostaria de assinar o plano mensal.">Assinar</a>
+                                <a class="font-600" href="https://api.whatsapp.com/send?phone=55<?php PHONE_NUMBER;?>&text=Olá! Gostaria de assinar o plano mensal.">Assinar</a>
                             </div>
                         </div>
                     </div>
@@ -481,7 +481,7 @@ endif;
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="font-600" href="https://api.whatsapp.com/send?phone=55<?=PHONE_NUMBER;?>&text=Olá! Gostaria de assinar o plano trimestral.">Assinar</a>
+                                <a class="font-600" href="https://api.whatsapp.com/send?phone=55<?php PHONE_NUMBER;?>&text=Olá! Gostaria de assinar o plano trimestral.">Assinar</a>
                             </div>
                         </div>
                     </div>
@@ -507,7 +507,7 @@ endif;
                                 </ul>
                             </div>
                             <div class="pricing-btn">
-                                <a class="font-600" href="https://api.whatsapp.com/send?phone=55<?=PHONE_NUMBER;?>&text=Olá! Gostaria de assinar o plano anual.">Assinar</a>
+                                <a class="font-600" href="https://api.whatsapp.com/send?phone=55<?php PHONE_NUMBER;?>&text=Olá! Gostaria de assinar o plano anual.">Assinar</a>
                             </div>
                         </div>
                     </div>

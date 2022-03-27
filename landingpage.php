@@ -1,6 +1,4 @@
-<?php
-$login = new Login(3);
-$site = HOME;
+<?php $login = new Login(3);
 
 if($login->CheckLogin()):
   $idusuar = $_SESSION['userlogin']['user_id'];
@@ -29,7 +27,7 @@ endif;
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title><?=$texto['titulo_site_landing'];?></title>
+    <title><?php $texto['titulo_site_landing'];?></title>
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="assets_land/images/anotarpedido.png">
     <!--Bootstrap CSS-->
@@ -248,7 +246,7 @@ endif;
                     <!--End Why Choose Content-->
 
                     <!--Start Why Choose Image-->
-                    <center><iframe width="400" height="480" src="https://www.youtube.com/embed/T6xmTqXHjZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><center/>
+                     <iframe width="400" height="480" src="https://www.youtube.com/embed/T6xmTqXHjZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><center/>
                      <!--End Container-->
                                  
               </div>

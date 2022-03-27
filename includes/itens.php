@@ -23,7 +23,7 @@ if(!empty($logoff) && $logoff == true):
 endif;
 
 ?>
-<script src="<?=$site;?>js/MSFmultiSelect.js"></script>
+<script src="<?php echo $site; ?>js/MSFmultiSelect.js"></script>
 
 <style type="text/css">
   .msf_multiselect_container .msf_multiselect {
@@ -171,9 +171,9 @@ endif;
                   var buscartamanhos = $(this).val();
 
                   $.ajax({
-                    url: '<?=$site;?>includes/buscartamanhosadditem.php',
+                    url: '<?php echo $site; ?>includes/buscartamanhosadditem.php',
                     method: 'post',
-                    data: {'user_id' : '<?=$userlogin['user_id'];?>', 'tipo_id' : buscartamanhos},
+                    data: {'user_id' : '<?php $userlogin['user_id'];?>', 'tipo_id' : buscartamanhos},
                     success: function(data){                      
                       $('#getResultmostrartamanhos').html(data);
                     }
@@ -187,7 +187,7 @@ endif;
            <div class="add_more_cat">
              <input type="hidden" name="disponivel" value="1">
            
-             <input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+             <input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
              <input type="submit" class="btn_1" value="ADICIONAR ITEM" name="add_item" />
            </div>
          </div>

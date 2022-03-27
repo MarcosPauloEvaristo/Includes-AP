@@ -333,23 +333,23 @@ endif;
 
 <div class="form-group">
 	<label for="nome_empresa">Nome do seu negócio:</label>
-	<input class="form-control" required value="<?=(!empty($nome_empresa) ? $nome_empresa : '');?>" name="nome_empresa" id="nome_empresa" type="text">
+	<input class="form-control" required value="<?php (!empty($nome_empresa) ? $nome_empresa : '');?>" name="nome_empresa" id="nome_empresa" type="text">
 </div>
 <div class="form-group">
 	<label for="descricao_empresa">Breve descrição do seu negócio:</label>
-	<input type="text" required maxlength="297" name="descricao_empresa" class="form-control" placeholder="Digite uma descrição..." value="<?=(!empty($descricao_empresa) ? $descricao_empresa : '');?>" />
+	<input type="text" required maxlength="297" name="descricao_empresa" class="form-control" placeholder="Digite uma descrição..." value="<?php (!empty($descricao_empresa) ? $descricao_empresa : '');?>" />
 </div>
 <div class="row">
 	<div class="col-sm-6">
 		<div class="form-group">
 			<label for="telefone_empresa">Suporte WhatsApp:</label>
-			<input required type="tel" placeholder="(99) 99999-9999" data-mask="(00) 00000-0000" maxlength="15" id="telefone_empresa" name="telefone_empresa" value="<?=(!empty($telefone_empresa) ? $telefone_empresa : '');?>" class="form-control">
+			<input required type="tel" placeholder="(99) 99999-9999" data-mask="(00) 00000-0000" maxlength="15" id="telefone_empresa" name="telefone_empresa" value="<?php (!empty($telefone_empresa) ? $telefone_empresa : '');?>" class="form-control">
 		</div>
 	</div>
 	<div class="col-sm-6">
 		<div class="form-group">
 			<label for="email_empresa">E-mail:</label>
-			<input required type="email" id="email_empresa" value="<?=(!empty($email_empresa) ? $email_empresa : '');?>" name="email_empresa" class="form-control">
+			<input required type="email" id="email_empresa" value="<?php (!empty($email_empresa) ? $email_empresa : '');?>" name="email_empresa" class="form-control">
 		</div>
 	</div>
 </div>
@@ -390,13 +390,13 @@ endif;
 		<div class="col-sm-6">
 			<div class="form-group">
 				<label required for="end_rua_n_empresa">RUA / Nº:</label>
-				<input type="text" id="end_rua_n_empresa" value="<?=(!empty($end_rua_n_empresa) ? $end_rua_n_empresa : '');?>" name="end_rua_n_empresa" class="form-control">
+				<input type="text" id="end_rua_n_empresa" value="<?php (!empty($end_rua_n_empresa) ? $end_rua_n_empresa : '');?>" name="end_rua_n_empresa" class="form-control">
 			</div>
 		</div>
 		<div class="col-sm-6">
 			<div class="form-group">
 				<label for="end_bairro_empresa">BAIRRO:</label>
-				<input required type="text" id="end_bairro_empresa" value="<?=(!empty($end_bairro_empresa) ? $end_bairro_empresa : '');?>" name="end_bairro_empresa" class="form-control">
+				<input required type="text" id="end_bairro_empresa" value="<?php (!empty($end_bairro_empresa) ? $end_bairro_empresa : '');?>" name="end_bairro_empresa" class="form-control">
 			</div>
 		</div>
 	</div>
@@ -410,15 +410,15 @@ endif;
 	<div class="form-group">	
 
 		<div class="icheck-material-green">
-			<input <?=(!empty($confirm_delivery) && $confirm_delivery == "true" ? "checked" : "");?> type="checkbox" name="confirm_delivery" value="true" id="confirm_delivery" />
+			<input <?php (!empty($confirm_delivery) && $confirm_delivery == "true" ? "checked" : "");?> type="checkbox" name="confirm_delivery" value="true" id="confirm_delivery" />
 			<label for="confirm_delivery"><strong>Permitir delivery</strong></label>
 		</div>
 		<div class="icheck-material-green">
-			<input <?=(!empty($confirm_balcao) && $confirm_balcao == "true" ? "checked" : "");?> type="checkbox" name="confirm_balcao" value="true" id="confirm_balcao" />
+			<input <?php (!empty($confirm_balcao) && $confirm_balcao == "true" ? "checked" : "");?> type="checkbox" name="confirm_balcao" value="true" id="confirm_balcao" />
 			<label for="confirm_balcao"><strong>Permitir retirada no balcão</strong></label>
 		</div>
 		<div class="icheck-material-green">
-			<input <?=(!empty($confirm_mesa) && $confirm_mesa == "true" ? "checked" : "");?> type="checkbox" name="confirm_mesa" value="true" id="confirm_mesa" />
+			<input <?php (!empty($confirm_mesa) && $confirm_mesa == "true" ? "checked" : "");?> type="checkbox" name="confirm_mesa" value="true" id="confirm_mesa" />
 			<label for="confirm_mesa"><strong>Permitir pedido na mesa</strong></label>
 		</div>
 	</div>
@@ -434,14 +434,14 @@ endif;
 		<div class="col-md-6 col-sm-6">
 			<div class="form-group">
 				<label for="config_delivery">Custo padrão de entrega:</label>
-				<input type="text" required maxlength="11" onkeypress="return formatar_moeda(this, '.', ',', event);" data-mask="#.##0,00" data-mask-reverse="true" class="form-control" id="config_delivery" name="config_delivery" value="<?=(!empty($config_delivery) ? Check::Real($config_delivery) : '0,00');?>" />
+				<input type="text" required maxlength="11" onkeypress="return formatar_moeda(this, '.', ',', event);" data-mask="#.##0,00" data-mask-reverse="true" class="form-control" id="config_delivery" name="config_delivery" value="<?php (!empty($config_delivery) ? Check::Real($config_delivery) : '0,00');?>" />
 			</div>
 		</div>
 
 		<div class="col-md-6 col-sm-6">
 			<div class="form-group">
 				<label for="minimo_delivery">Valor Mínimo do Delivery: <small style="color: red;">Opcional</small></label>
-				<input type="text" required maxlength="11" onkeypress="return formatar_moeda(this, '.', ',', event);" data-mask="#.##0,00" data-mask-reverse="true" class="form-control" id="minimo_delivery" name="minimo_delivery" value="<?=(!empty($minimo_delivery) ? Check::Real($minimo_delivery) : '0,00');?>" />
+				<input type="text" required maxlength="11" onkeypress="return formatar_moeda(this, '.', ',', event);" data-mask="#.##0,00" data-mask-reverse="true" class="form-control" id="minimo_delivery" name="minimo_delivery" value="<?php (!empty($minimo_delivery) ? Check::Real($minimo_delivery) : '0,00');?>" />
 			</div>
 		</div>
 	</div>	
@@ -449,13 +449,13 @@ endif;
 		<div class="col-md-6 col-sm-6">
 			<div class="form-group">
 				<label>Mensagem sobre tempo de Delivery:</label>
-				<input type="text" required class="form-control" id="msg_tempo_delivery" name="msg_tempo_delivery" value="<?=(!empty($msg_tempo_delivery) ? $msg_tempo_delivery : "Entre 30 e 60 minutos.");?>" />
+				<input type="text" required class="form-control" id="msg_tempo_delivery" name="msg_tempo_delivery" value="<?php (!empty($msg_tempo_delivery) ? $msg_tempo_delivery : "Entre 30 e 60 minutos.");?>" />
 			</div>
 		</div>
 		<div class="col-md-6 col-sm-6">
 			<div class="form-group">
 				<label>Mensagem sobre retirar no local:</label>
-				<input type="text" required class="form-control" id="msg_tempo_buscar" name="msg_tempo_buscar" value="<?=(!empty($msg_tempo_buscar) ? $msg_tempo_buscar : "Em 30 minutos.");?>" />
+				<input type="text" required class="form-control" id="msg_tempo_buscar" name="msg_tempo_buscar" value="<?php (!empty($msg_tempo_buscar) ? $msg_tempo_buscar : "Em 30 minutos.");?>" />
 			</div>
 		</div>
 	</div>
@@ -475,7 +475,7 @@ endif;
 	<div style="background-color: #85c99d;color: #ffffff;" class="panel-heading">
 		<h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
 			<div class="right-arrow pull-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
-			<center><a style="color: #ffffff;" href="#">Cique aqui para Configurar Horários.</a></center>
+			 <a style="color: #ffffff;" href="#">Cique aqui para Configurar Horários.</a> 
 		</h4>
 	</div>
 	<div id="collapse1" class="panel-collapse collapse">
@@ -484,33 +484,33 @@ endif;
 			<div class="wrapper_indent">
 				 <label>SEGUNDA FEIRA</label>
 				<br />
-				<input id="config_segunda" name="config_segunda" type="checkbox" <?=(!empty($config_segunda) && $config_segunda == 'true' ? 'checked' : '');?> value="true" /> <label for="config_segunda"><strong style="color:#85c99d;"> PERIODO DA MANHÃ </strong></label>
+				<input id="config_segunda" name="config_segunda" type="checkbox" <?php (!empty($config_segunda) && $config_segunda == 'true' ? 'checked' : '');?> value="true" /> <label for="config_segunda"><strong style="color:#85c99d;"> PERIODO DA MANHÃ </strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="segunda_manha_de">de:</label>									
-							<input required type="time" name="segunda_manha_de" id="segunda_manha_de" data-mask="00:00" value="<?=(!empty($segunda_manha_de) && $segunda_manha_de != "00:00" ? $segunda_manha_de : "00:00");?>" class="form-control"/>									
+							<input required type="time" name="segunda_manha_de" id="segunda_manha_de" data-mask="00:00" value="<?php (!empty($segunda_manha_de) && $segunda_manha_de != "00:00" ? $segunda_manha_de : "00:00");?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="segunda_manha_ate">até:</label>
-							<input required type="time" name="segunda_manha_ate" id="segunda_manha_ate" data-mask="00:00" value="<?=(!empty($segunda_manha_ate) && $segunda_manha_ate != "00:00" ? $segunda_manha_ate : "00:00");?>" class="form-control"/> 
+							<input required type="time" name="segunda_manha_ate" id="segunda_manha_ate" data-mask="00:00" value="<?php (!empty($segunda_manha_ate) && $segunda_manha_ate != "00:00" ? $segunda_manha_ate : "00:00");?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
-				<input id="config_segundaa" name="config_segundaa" type="checkbox" <?=(!empty($config_segundaa) && $config_segundaa == 'true' ? 'checked' : '');?> value="true" /> <label for="config_segundaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
+				<input id="config_segundaa" name="config_segundaa" type="checkbox" <?php (!empty($config_segundaa) && $config_segundaa == 'true' ? 'checked' : '');?> value="true" /> <label for="config_segundaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="segunda_tarde_de">de:</label>									
-							<input required type="time" name="segunda_tarde_de" id="segunda_tarde_de" data-mask="00:00" value="<?=(!empty($segunda_tarde_de) && $segunda_tarde_de != "00:00" ? $segunda_tarde_de : '00:00');?>" class="form-control"/>									
+							<input required type="time" name="segunda_tarde_de" id="segunda_tarde_de" data-mask="00:00" value="<?php (!empty($segunda_tarde_de) && $segunda_tarde_de != "00:00" ? $segunda_tarde_de : '00:00');?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="segunda_tarde_ate">até:</label>
-							<input required type="time" name="segunda_tarde_ate" id="segunda_tarde_ate" data-mask="00:00" value="<?=(!empty($segunda_tarde_ate) && $segunda_tarde_ate != "00:00" ? $segunda_tarde_ate : '00:00');?>" class="form-control"/> 
+							<input required type="time" name="segunda_tarde_ate" id="segunda_tarde_ate" data-mask="00:00" value="<?php (!empty($segunda_tarde_ate) && $segunda_tarde_ate != "00:00" ? $segunda_tarde_ate : '00:00');?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
@@ -520,33 +520,33 @@ endif;
 			<div class="wrapper_indent">
 				<label>TERÇA FEIRA</label>
 				<br />
-				<input <?=(!empty($config_terca) && $config_terca == 'true' ? 'checked' : '');?> id="config_terca" name="config_terca" value="true" type="checkbox"> <label for="config_terca"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
+				<input <?php (!empty($config_terca) && $config_terca == 'true' ? 'checked' : '');?> id="config_terca" name="config_terca" value="true" type="checkbox"> <label for="config_terca"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="terca_manha_de">de:</label>									
-							<input required type="time" name="terca_manha_de" id="segunda_manha_de" data-mask="00:00" value="<?=(!empty($terca_manha_de) && $terca_manha_de != "00:00" ? $terca_manha_de : "00:00");?>" class="form-control"/>									
+							<input required type="time" name="terca_manha_de" id="segunda_manha_de" data-mask="00:00" value="<?php (!empty($terca_manha_de) && $terca_manha_de != "00:00" ? $terca_manha_de : "00:00");?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="terca_manha_ate">até:</label>
-							<input required type="time" name="terca_manha_ate" id="terca_manha_ate" data-mask="00:00" value="<?=(!empty($terca_manha_ate) && $terca_manha_ate != "00:00" ? $terca_manha_ate : "00:00");?>" class="form-control"/> 
+							<input required type="time" name="terca_manha_ate" id="terca_manha_ate" data-mask="00:00" value="<?php (!empty($terca_manha_ate) && $terca_manha_ate != "00:00" ? $terca_manha_ate : "00:00");?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
-				<input <?=(!empty($config_tercaa) && $config_tercaa == 'true' ? 'checked' : '');?> id="config_tercaa" name="config_tercaa" value="true" type="checkbox"><label for="config_tercaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
+				<input <?php (!empty($config_tercaa) && $config_tercaa == 'true' ? 'checked' : '');?> id="config_tercaa" name="config_tercaa" value="true" type="checkbox"><label for="config_tercaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="terca_tarde_de">de:</label>									
-							<input required type="time" name="terca_tarde_de" id="terca_tarde_de" data-mask="00:00" value="<?=(!empty($terca_tarde_de) && $terca_tarde_de != "00:00" ? $terca_tarde_de : '00:00');?>" class="form-control"/>									
+							<input required type="time" name="terca_tarde_de" id="terca_tarde_de" data-mask="00:00" value="<?php (!empty($terca_tarde_de) && $terca_tarde_de != "00:00" ? $terca_tarde_de : '00:00');?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="terca_tarde_ate">até:</label>
-							<input required type="time" name="terca_tarde_ate" id="terca_tarde_ate" data-mask="00:00" value="<?=(!empty($terca_tarde_ate) && $terca_tarde_ate != "00:00" ? $terca_tarde_ate : '00:00');?>" class="form-control"/> 
+							<input required type="time" name="terca_tarde_ate" id="terca_tarde_ate" data-mask="00:00" value="<?php (!empty($terca_tarde_ate) && $terca_tarde_ate != "00:00" ? $terca_tarde_ate : '00:00');?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
@@ -556,33 +556,33 @@ endif;
 			<div class="wrapper_indent">
 				<label>QUARTA FEIRA</label>
 				<br />
-				<input <?=(!empty($config_quarta) && $config_quarta == 'true' ? 'checked' : '');?> id="config_quarta" name="config_quarta" value="true" type="checkbox"> <label for="config_quarta"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
+				<input <?php (!empty($config_quarta) && $config_quarta == 'true' ? 'checked' : '');?> id="config_quarta" name="config_quarta" value="true" type="checkbox"> <label for="config_quarta"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="quarta_manha_de">de:</label>									
-							<input required type="time" name="quarta_manha_de" id="quarta_manha_de" data-mask="00:00" value="<?=(!empty($quarta_manha_de) && $quarta_manha_de != "00:00" ? $quarta_manha_de : "00:00");?>" class="form-control"/>									
+							<input required type="time" name="quarta_manha_de" id="quarta_manha_de" data-mask="00:00" value="<?php (!empty($quarta_manha_de) && $quarta_manha_de != "00:00" ? $quarta_manha_de : "00:00");?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="quarta_manha_ate">até:</label>
-							<input required type="time" name="quarta_manha_ate" id="quarta_manha_ate" data-mask="00:00" value="<?=(!empty($quarta_manha_ate) && $quarta_manha_ate != "00:00" ? $quarta_manha_ate : "00:00");?>" class="form-control"/> 
+							<input required type="time" name="quarta_manha_ate" id="quarta_manha_ate" data-mask="00:00" value="<?php (!empty($quarta_manha_ate) && $quarta_manha_ate != "00:00" ? $quarta_manha_ate : "00:00");?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
-				<input <?=(!empty($config_quartaa) && $config_quartaa == 'true' ? 'checked' : '');?> id="config_quartaa" name="config_quartaa" value="true" type="checkbox"><label for="config_quartaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
+				<input <?php (!empty($config_quartaa) && $config_quartaa == 'true' ? 'checked' : '');?> id="config_quartaa" name="config_quartaa" value="true" type="checkbox"><label for="config_quartaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="quarta_tarde_de">de:</label>									
-							<input required type="time" name="quarta_tarde_de" id="quarta_tarde_de" data-mask="00:00" value="<?=(!empty($quarta_tarde_de) && $quarta_tarde_de != "00:00" ? $quarta_tarde_de : '00:00');?>" class="form-control"/>									
+							<input required type="time" name="quarta_tarde_de" id="quarta_tarde_de" data-mask="00:00" value="<?php (!empty($quarta_tarde_de) && $quarta_tarde_de != "00:00" ? $quarta_tarde_de : '00:00');?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="quarta_tarde_ate">até:</label>
-							<input required type="time" name="quarta_tarde_ate" id="quarta_tarde_ate" data-mask="00:00" value="<?=(!empty($quarta_tarde_ate) && $quarta_tarde_ate != "00:00" ? $quarta_tarde_ate : '00:00');?>" class="form-control"/> 
+							<input required type="time" name="quarta_tarde_ate" id="quarta_tarde_ate" data-mask="00:00" value="<?php (!empty($quarta_tarde_ate) && $quarta_tarde_ate != "00:00" ? $quarta_tarde_ate : '00:00');?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
@@ -591,33 +591,33 @@ endif;
 			<div class="wrapper_indent">
 				<label>QUINTA FEIRA</label>
 				<br />
-				<input <?=(!empty($config_quinta) && $config_quinta == 'true' ? 'checked' : '');?> id="config_quinta" name="config_quinta" value="true" type="checkbox"> <label for="config_quinta"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
+				<input <?php (!empty($config_quinta) && $config_quinta == 'true' ? 'checked' : '');?> id="config_quinta" name="config_quinta" value="true" type="checkbox"> <label for="config_quinta"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="quinta_manha_de">de:</label>									
-							<input required type="time" name="quinta_manha_de" id="quinta_manha_de" data-mask="00:00" value="<?=(!empty($quinta_manha_de) && $quinta_manha_de != "00:00" ? $quinta_manha_de : "00:00");?>" class="form-control"/>									
+							<input required type="time" name="quinta_manha_de" id="quinta_manha_de" data-mask="00:00" value="<?php (!empty($quinta_manha_de) && $quinta_manha_de != "00:00" ? $quinta_manha_de : "00:00");?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="quinta_manha_ate">até:</label>
-							<input required type="time" name="quinta_manha_ate" id="quinta_manha_ate" data-mask="00:00" value="<?=(!empty($quinta_manha_ate) && $quinta_manha_ate != "00:00" ? $quinta_manha_ate : "00:00");?>" class="form-control"/> 
+							<input required type="time" name="quinta_manha_ate" id="quinta_manha_ate" data-mask="00:00" value="<?php (!empty($quinta_manha_ate) && $quinta_manha_ate != "00:00" ? $quinta_manha_ate : "00:00");?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
-				<input <?=(!empty($config_quintaa) && $config_quintaa == 'true' ? 'checked' : '');?> id="config_quintaa" name="config_quintaa" value="true" type="checkbox"><label for="config_quintaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
+				<input <?php (!empty($config_quintaa) && $config_quintaa == 'true' ? 'checked' : '');?> id="config_quintaa" name="config_quintaa" value="true" type="checkbox"><label for="config_quintaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="quinta_tarde_de">de:</label>									
-							<input required type="time" name="quinta_tarde_de" id="quinta_tarde_de" data-mask="00:00" value="<?=(!empty($quinta_tarde_de) && $quinta_tarde_de != "00:00" ? $quinta_tarde_de : '00:00');?>" class="form-control"/>									
+							<input required type="time" name="quinta_tarde_de" id="quinta_tarde_de" data-mask="00:00" value="<?php (!empty($quinta_tarde_de) && $quinta_tarde_de != "00:00" ? $quinta_tarde_de : '00:00');?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="quinta_tarde_ate">até:</label>
-							<input required type="time" name="quinta_tarde_ate" id="quinta_tarde_ate" data-mask="00:00" value="<?=(!empty($quinta_tarde_ate) && $quinta_tarde_ate != "00:00" ? $quinta_tarde_ate : '00:00');?>" class="form-control"/> 
+							<input required type="time" name="quinta_tarde_ate" id="quinta_tarde_ate" data-mask="00:00" value="<?php (!empty($quinta_tarde_ate) && $quinta_tarde_ate != "00:00" ? $quinta_tarde_ate : '00:00');?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
@@ -627,33 +627,33 @@ endif;
 			<div class="wrapper_indent">
 				<label>SEXTA FEIRA</label>
 				<br />
-				<input <?=(!empty($config_sexta) && $config_sexta == 'true' ? 'checked' : '');?> id="config_sexta" name="config_sexta" value="true" type="checkbox"> <label for="config_sexta"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
+				<input <?php (!empty($config_sexta) && $config_sexta == 'true' ? 'checked' : '');?> id="config_sexta" name="config_sexta" value="true" type="checkbox"> <label for="config_sexta"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="sexta_manha_de">de:</label>									
-							<input required type="time" name="sexta_manha_de" id="sexta_manha_de" data-mask="00:00" value="<?=(!empty($sexta_manha_de) && $sexta_manha_de != "00:00" ? $sexta_manha_de : "00:00");?>" class="form-control"/>									
+							<input required type="time" name="sexta_manha_de" id="sexta_manha_de" data-mask="00:00" value="<?php (!empty($sexta_manha_de) && $sexta_manha_de != "00:00" ? $sexta_manha_de : "00:00");?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="sexta_manha_ate">até:</label>
-							<input required type="time" name="sexta_manha_ate" id="sexta_manha_ate" data-mask="00:00" value="<?=(!empty($sexta_manha_ate) && $sexta_manha_ate != "00:00" ? $sexta_manha_ate : "00:00");?>" class="form-control"/> 
+							<input required type="time" name="sexta_manha_ate" id="sexta_manha_ate" data-mask="00:00" value="<?php (!empty($sexta_manha_ate) && $sexta_manha_ate != "00:00" ? $sexta_manha_ate : "00:00");?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
-				<input <?=(!empty($config_sextaa) && $config_sextaa == 'true' ? 'checked' : '');?> id="config_sextaa" name="config_sextaa" value="true" type="checkbox"> <label for="config_sextaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
+				<input <?php (!empty($config_sextaa) && $config_sextaa == 'true' ? 'checked' : '');?> id="config_sextaa" name="config_sextaa" value="true" type="checkbox"> <label for="config_sextaa"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="sexta_tarde_de">de:</label>									
-							<input required type="time" name="sexta_tarde_de" id="sexta_tarde_de" data-mask="00:00" value="<?=(!empty($sexta_tarde_de) && $sexta_tarde_de != "00:00" ? $sexta_tarde_de : '00:00');?>" class="form-control"/>									
+							<input required type="time" name="sexta_tarde_de" id="sexta_tarde_de" data-mask="00:00" value="<?php (!empty($sexta_tarde_de) && $sexta_tarde_de != "00:00" ? $sexta_tarde_de : '00:00');?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="sexta_tarde_ate">até:</label>
-							<input required type="time" name="sexta_tarde_ate" id="sexta_tarde_ate" data-mask="00:00" value="<?=(!empty($sexta_tarde_ate) && $sexta_tarde_ate != "00:00" ? $sexta_tarde_ate : '00:00');?>" class="form-control"/> 
+							<input required type="time" name="sexta_tarde_ate" id="sexta_tarde_ate" data-mask="00:00" value="<?php (!empty($sexta_tarde_ate) && $sexta_tarde_ate != "00:00" ? $sexta_tarde_ate : '00:00');?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
@@ -663,33 +663,33 @@ endif;
 			<div class="wrapper_indent">
 				<label>SABADO</label>
 				<br />
-				<input <?=(!empty($config_sabado) && $config_sabado == 'true' ? 'checked' : '');?> id="config_sabado" name="config_sabado" value="true" type="checkbox"> <label for="config_sabado"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
+				<input <?php (!empty($config_sabado) && $config_sabado == 'true' ? 'checked' : '');?> id="config_sabado" name="config_sabado" value="true" type="checkbox"> <label for="config_sabado"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="sabado_manha_de">de:</label>									
-							<input required type="time" name="sabado_manha_de" id="sabado_manha_de" data-mask="00:00" value="<?=(!empty($sabado_manha_de) && $sabado_manha_de != "00:00" ? $sabado_manha_de : "00:00");?>" class="form-control"/>									
+							<input required type="time" name="sabado_manha_de" id="sabado_manha_de" data-mask="00:00" value="<?php (!empty($sabado_manha_de) && $sabado_manha_de != "00:00" ? $sabado_manha_de : "00:00");?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="sabado_manha_ate">até:</label>
-							<input required type="time" name="sabado_manha_ate" id="sabado_manha_ate" data-mask="00:00" value="<?=(!empty($sabado_manha_ate) && $sabado_manha_ate != "00:00" ? $sabado_manha_ate : "00:00");?>" class="form-control"/> 
+							<input required type="time" name="sabado_manha_ate" id="sabado_manha_ate" data-mask="00:00" value="<?php (!empty($sabado_manha_ate) && $sabado_manha_ate != "00:00" ? $sabado_manha_ate : "00:00");?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
-				<input <?=(!empty($config_sabadoo) && $config_sabadoo == 'true' ? 'checked' : '');?> id="config_sabadoo" name="config_sabadoo" value="true" type="checkbox"> <label for="config_sabadoo"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
+				<input <?php (!empty($config_sabadoo) && $config_sabadoo == 'true' ? 'checked' : '');?> id="config_sabadoo" name="config_sabadoo" value="true" type="checkbox"> <label for="config_sabadoo"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="sabado_tarde_de">de:</label>									
-							<input required type="time" name="sabado_tarde_de" id="sabado_tarde_de" data-mask="00:00" value="<?=(!empty($sabado_tarde_de) && $sabado_tarde_de != "00:00" ? $sabado_tarde_de : '00:00');?>" class="form-control"/>									
+							<input required type="time" name="sabado_tarde_de" id="sabado_tarde_de" data-mask="00:00" value="<?php (!empty($sabado_tarde_de) && $sabado_tarde_de != "00:00" ? $sabado_tarde_de : '00:00');?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="sabado_tarde_ate">até:</label>
-							<input required type="time" name="sabado_tarde_ate" id="sabado_tarde_ate" data-mask="00:00" value="<?=(!empty($sabado_tarde_ate) && $sabado_tarde_ate != "00:00" ? $sabado_tarde_ate : '00:00');?>" class="form-control"/> 
+							<input required type="time" name="sabado_tarde_ate" id="sabado_tarde_ate" data-mask="00:00" value="<?php (!empty($sabado_tarde_ate) && $sabado_tarde_ate != "00:00" ? $sabado_tarde_ate : '00:00');?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
@@ -699,33 +699,33 @@ endif;
 			<div class="wrapper_indent">
 				<label>DOMINGO</label>
 				<br />
-				<input <?=(!empty($config_domingo) && $config_domingo == 'true' ? 'checked' : '');?> id="config_domingo" name="config_domingo" value="true" type="checkbox"> <label for="config_domingo"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
+				<input <?php (!empty($config_domingo) && $config_domingo == 'true' ? 'checked' : '');?> id="config_domingo" name="config_domingo" value="true" type="checkbox"> <label for="config_domingo"><strong style="color:#85c99d;"> PERIODO DA MANHÃ</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="domingo_manha_de">de:</label>									
-							<input required type="time" name="domingo_manha_de" id="domingo_manha_de" data-mask="00:00" value="<?=(!empty($domingo_manha_de) && $domingo_manha_de != "00:00" ? $domingo_manha_de : "00:00");?>" class="form-control"/>									
+							<input required type="time" name="domingo_manha_de" id="domingo_manha_de" data-mask="00:00" value="<?php (!empty($domingo_manha_de) && $domingo_manha_de != "00:00" ? $domingo_manha_de : "00:00");?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="domingo_manha_ate">até:</label>
-							<input required type="time" name="domingo_manha_ate" id="domingo_manha_ate" data-mask="00:00" value="<?=(!empty($domingo_manha_ate) && $domingo_manha_ate != "00:00" ? $domingo_manha_ate : "00:00");?>" class="form-control"/> 
+							<input required type="time" name="domingo_manha_ate" id="domingo_manha_ate" data-mask="00:00" value="<?php (!empty($domingo_manha_ate) && $domingo_manha_ate != "00:00" ? $domingo_manha_ate : "00:00");?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
-				<input <?=(!empty($config_domingoo) && $config_domingoo == 'true' ? 'checked' : '');?> id="config_domingoo" name="config_domingoo" value="true" type="checkbox"><label for="config_domingoo"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
+				<input <?php (!empty($config_domingoo) && $config_domingoo == 'true' ? 'checked' : '');?> id="config_domingoo" name="config_domingoo" value="true" type="checkbox"><label for="config_domingoo"><strong style="color:#85c99d;"> PERIODO DA TARDE</strong></label>
 				<div class="row">						
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="domingo_tarde_de">de:</label>									
-							<input required type="time" name="domingo_tarde_de" id="domingo_tarde_de" data-mask="00:00" value="<?=(!empty($domingo_tarde_de) && $domingo_tarde_de != "00:00" ? $domingo_tarde_de : '00:00');?>" class="form-control"/>									
+							<input required type="time" name="domingo_tarde_de" id="domingo_tarde_de" data-mask="00:00" value="<?php (!empty($domingo_tarde_de) && $domingo_tarde_de != "00:00" ? $domingo_tarde_de : '00:00');?>" class="form-control"/>									
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label for="domingo_tarde_ate">até:</label>
-							<input required type="time" name="domingo_tarde_ate" id="domingo_tarde_ate" data-mask="00:00" value="<?=(!empty($domingo_tarde_ate) && $domingo_tarde_ate != "00:00" ? $domingo_tarde_ate : '00:00');?>" class="form-control"/> 
+							<input required type="time" name="domingo_tarde_ate" id="domingo_tarde_ate" data-mask="00:00" value="<?php (!empty($domingo_tarde_ate) && $domingo_tarde_ate != "00:00" ? $domingo_tarde_ate : '00:00');?>" class="form-control"/> 
 						</div>
 					</div>
 				</div>
@@ -749,7 +749,7 @@ endif;
 		<div style="background-color: #85c99d;color: #ffffff;" class="panel-heading">
 			<h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
 				<div class="right-arrow pull-right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
-				<center><a style="color: #ffffff;" href="#">Clique aqui para adicionar uma data</a></center>
+				 <a style="color: #ffffff;" href="#">Clique aqui para adicionar uma data</a> 
 			</h4>
 		</div>
 
@@ -774,9 +774,9 @@ endif;
 							if(isDateExpired($i, 1)):
 								?>
 
-								<a title="Deletar" href="<?=$site.$Url[0].'/admin-loja&dellDate='.$id.'#sendempresa';?>">
+								<a title="Deletar" href="<?php $site.$Url[0].'/admin-loja&dellDate='.$id.'#sendempresa';?>">
 									<button type="button" class="btn btn-danger">
-										<strong><?=$data;?> = </strong> <span class="glyphicon glyphicon-trash"></span>
+										<strong><?php $data;?> = </strong> <span class="glyphicon glyphicon-trash"></span>
 									</button>
 								</a>
 								<?php
@@ -828,7 +828,7 @@ endif;
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="facebook_empresa">Facebook URL:</label>
-					<input type="text" placeholder="https://www.facebook.com/Meu_Perfil" class="form-control" value="<?=(!empty($facebook_empresa) ? $facebook_empresa : "");?>" name="facebook_empresa" >
+					<input type="text" placeholder="https://www.facebook.com/Meu_Perfil" class="form-control" value="<?php (!empty($facebook_empresa) ? $facebook_empresa : "");?>" name="facebook_empresa" >
 				</div>
 			</div>
 		</div>
@@ -857,7 +857,7 @@ endif;
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="instagram_empresa">Instgram URL:</label>
-					<input type="text" placeholder="https://www.instagram.com/Meu_Perfil" class="form-control" value="<?=(!empty($instagram_empresa) ? $instagram_empresa : "");?>" name="instagram_empresa" >
+					<input type="text" placeholder="https://www.instagram.com/Meu_Perfil" class="form-control" value="<?php (!empty($instagram_empresa) ? $instagram_empresa : "");?>" name="instagram_empresa" >
 				</div>
 			</div>
 		</div>
@@ -886,7 +886,7 @@ endif;
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="twitter_empresa">Twitter URL:</label>
-					<input type="text" placeholder="https://twitter.com/Meu_Perfil" class="form-control" value="<?=(!empty($twitter_empresa) ? $twitter_empresa : "");?>" name="twitter_empresa" >
+					<input type="text" placeholder="https://twitter.com/Meu_Perfil" class="form-control" value="<?php (!empty($twitter_empresa) ? $twitter_empresa : "");?>" name="twitter_empresa" >
 				</div>
 			</div>
 		</div>
@@ -910,7 +910,7 @@ endif;
 			</div>
 			<p class="file-return"></p>
 			<br />
-			<?=(!empty($img_header) ? "<spa style=\"color:#70bb0f;\">VOCÊ JÁ ENVIOU UMA IMAGEM!</span>" : "");?>
+			<?php (!empty($img_header) ? "<spa style=\"color:#70bb0f;\">VOCÊ JÁ ENVIOU UMA IMAGEM!</span>" : "");?>
 		</div>	
 
 		<div class="form-group">
@@ -921,7 +921,7 @@ endif;
 			</div>
 			<p class="file-return"></p>
 			<br />
-			<?=(!empty($img_logo) ? "<spa style=\"color:#70bb0f;\">VOCÊ JÁ ENVIOU UMA IMAGEM!</span>" : "");?>
+			<?php (!empty($img_logo) ? "<spa style=\"color:#70bb0f;\">VOCÊ JÁ ENVIOU UMA IMAGEM!</span>" : "");?>
 		</div>
 		<!-- BACKGROUND IMAGEM FUNDO
 		<div class="form-group">
@@ -932,7 +932,7 @@ endif;
 			</div>
 			<p class="file-return"></p>
 			<br />
-			<?=(!empty($img_fundo) ? "<spa style=\"color:#70bb0f;\">VOCÊ JÁ ENVIOU UMA IMAGEM!</span>" : "");?>
+			<?php (!empty($img_fundo) ? "<spa style=\"color:#70bb0f;\">VOCÊ JÁ ENVIOU UMA IMAGEM!</span>" : "");?>
 		</div> FIM-->
 	</div><!-- End wrapper_indent -->
 	<div class="wrapper_indent add_bottom_45">
@@ -953,30 +953,30 @@ endif;
 				<div class="form-group">
 					<label for="type_pay">Tipo de Pagamento:</label>
 					<select required class="form-control" name="type_pay">
-						<option value="0" <?=($type_pay == 0 ? 'selected' : '');?>>Pagar online ou na entrega</option>
-						<option value="1" <?=($type_pay == 1 ? 'selected' : '');?>>Pagar somente na entrega</option>
-						<option value="2" <?=($type_pay == 2 ? 'selected' : '');?>>Pagar somente online (MercadoPago)</option>
-						<option value="3" <?=($type_pay == 3 ? 'selected' : '');?>>Pagar somente online (PagSeguro)</option>
-						<option value="4" <?=($type_pay == 4 ? 'selected' : '');?>>Pagar somente online (Todos)</option>
+						<option value="0" <?php ($type_pay == 0 ? 'selected' : '');?>>Pagar online ou na entrega</option>
+						<option value="1" <?php ($type_pay == 1 ? 'selected' : '');?>>Pagar somente na entrega</option>
+						<option value="2" <?php ($type_pay == 2 ? 'selected' : '');?>>Pagar somente online (MercadoPago)</option>
+						<option value="3" <?php ($type_pay == 3 ? 'selected' : '');?>>Pagar somente online (PagSeguro)</option>
+						<option value="4" <?php ($type_pay == 4 ? 'selected' : '');?>>Pagar somente online (Todos)</option>
 					</select>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="form-group">
 					<label for="facebook_empresa">Access Token (MercadoPago):</label>
-					<input type="text" placeholder="Insira seu token de acesso" class="form-control" value="<?=(!empty($access_token_mp) ? $access_token_mp : "");?>" name="access_token_mp" >
+					<input type="text" placeholder="Insira seu token de acesso" class="form-control" value="<?php (!empty($access_token_mp) ? $access_token_mp : "");?>" name="access_token_mp" >
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="facebook_empresa">Email (PagSeguro):</label>
-					<input type="text" placeholder="Insira seu email do pagseguro" class="form-control" value="<?=(!empty($email_pagseguro) ? $email_pagseguro : "");?>" name="email_pagseguro" >
+					<input type="text" placeholder="Insira seu email do pagseguro" class="form-control" value="<?php (!empty($email_pagseguro) ? $email_pagseguro : "");?>" name="email_pagseguro" >
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="facebook_empresa">Access Token (PagSeguro):</label>
-					<input type="text" placeholder="Insira seu token de acesso" class="form-control" value="<?=(!empty($token_pagseguro) ? $token_pagseguro : "");?>" name="token_pagseguro" >
+					<input type="text" placeholder="Insira seu token de acesso" class="form-control" value="<?php (!empty($token_pagseguro) ? $token_pagseguro : "");?>" name="token_pagseguro" >
 				</div>
 			</div>
 		</div>
@@ -988,14 +988,14 @@ endif;
     	<div class="col-sm-6">
     		<div class="form-group">
     			<label for="cor_topo">COR DO TOPO:</label>
-    			<input type="color" required type="cor_topo" maxlength="15" id="cor_topo" name="cor_topo" value="<?=(!empty($cor_topo) ? $cor_topo : '');?>" class="form-control">
+    			<input type="color" required type="cor_topo" maxlength="15" id="cor_topo" name="cor_topo" value="<?php (!empty($cor_topo) ? $cor_topo : '');?>" class="form-control">
     		</div>
     	</div>
     	
     	<div class="col-sm-6">
     		<div class="form-group">
     			<label for="cor_titulo_produtos">COR TITULO TOPO PRODUTOS:</label>
-    			<input type="color" required type="cor_titulo_produtos" maxlength="15" id="cor_titulo_produtos" name="cor_titulo_produtos" value="<?=(!empty($cor_titulo_produtos) ? $cor_titulo_produtos : '');?>" class="form-control">
+    			<input type="color" required type="cor_titulo_produtos" maxlength="15" id="cor_titulo_produtos" name="cor_titulo_produtos" value="<?php (!empty($cor_titulo_produtos) ? $cor_titulo_produtos : '');?>" class="form-control">
     		</div>
     	</div>
     </div>
@@ -1005,13 +1005,13 @@ endif;
     	<div class="col-sm-6">
     		<div class="form-group">
     			<label for="cor_loading">COR LOADING:</label>
-    			<input type="color" required type="cor_loading" maxlength="15" id="cor_loading" name="cor_loading" value="<?=(!empty($cor_loading) ? $cor_loading : '');?>" class="form-control">
+    			<input type="color" required type="cor_loading" maxlength="15" id="cor_loading" name="cor_loading" value="<?php (!empty($cor_loading) ? $cor_loading : '');?>" class="form-control">
     		</div>
     	</div>
     </div>
 	
 	<div class="wrapper_indent">
-		<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>" />
+		<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>" />
 		<input type="hidden" name="sendempresa" value="true" />
 		<button type="input" class="btn_1">SALVAR ALTERAÇOES</button>
 		<b style="float: right;color: green;font-weight: bold;">Data de Renovação: 

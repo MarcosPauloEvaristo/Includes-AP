@@ -269,7 +269,7 @@ endfor;
   // Chart data records -- each entry in this array corresponds to a point on
   // the chart.
   data: [
-  <?=$dias;?>    
+  <?php $dias;?>    
   ],
   // The name of the data record attribute that contains x-values.
   xkey: 'period',

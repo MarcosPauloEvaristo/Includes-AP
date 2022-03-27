@@ -2,6 +2,7 @@
 ob_start();
 session_cache_expire(60);
 session_start();
+
 require('_app/Config.inc.php');
 require('_app/Mobile_Detect.php');
 require('_app/Models/Login.class.php');
@@ -77,21 +78,21 @@ else:
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
 		<meta name="robots" content="index, fallow" />
-		<link rel="canonical" href="<?=$site.$Url[0];?>">
+		<link rel="canonical" href="<?php $site.$Url[0];?>">
 		<meta name="author" content="Alex Silva">
-		<meta name="og:title" content="<?=(!empty($nome_empresa) ? 'Cardápio | '.$nome_empresa : 'Nome_do_seu_negócio');?>" />
+		<meta name="og:title" content="<?php (!empty($nome_empresa) ? 'Cardápio | '.$nome_empresa : 'Nome_do_seu_negócio');?>" />
 		<meta name="og:type" content="website">
-		<meta property="og:site_name" content="<?=$texto['nome_site_landing'];?>"/>
-		<meta property="og:url" content="<?=$site.$nome_empresa_link?>"/>
-		<meta property="og:description" content="<?=(!empty($descricao_empresa) ? $descricao_empresa : '');?>" />
-		<meta name="description" content="<?=(!empty($descricao_empresa) ? $descricao_empresa : '');?>">
-		<meta property="og:image"content="<?=(!empty($img_logo) ? $site.'uploads/'.$img_logo : '')?>"/>
+		<meta property="og:site_name" content="<?php $texto['nome_site_landing'];?>"/>
+		<meta property="og:url" content="<?php $site.$nome_empresa_link?>"/>
+		<meta property="og:description" content="<?php (!empty($descricao_empresa) ? $descricao_empresa : '');?>" />
+		<meta name="description" content="<?php (!empty($descricao_empresa) ? $descricao_empresa : '');?>">
+		<meta property="og:image"content="<?php (!empty($img_logo) ? $site.'uploads/'.$img_logo : '')?>"/>
 
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
-		<title><?=(!empty($nome_empresa) ? 'Cardápio | '.$nome_empresa : 'Nome_do_seu_negócio');?></title>
+		<title><?php (!empty($nome_empresa) ? 'Cardápio | '.$nome_empresa : 'Nome_do_seu_negócio');?></title>
 
 		<!-- Favicons-->
-		<link rel="shortcut icon" href="<?= $site; ?>img/favicon.png" type="image/x-icon">
+		<link rel="shortcut icon" href="<?php echo $site; ?>img/favicon.png" type="image/x-icon">
 		<!-- GOOGLE WEB FONT -->
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,300,300italic' rel='stylesheet' type='text/css'>
 		
@@ -99,14 +100,14 @@ else:
         <?php include "alterarcores.php"; ?>
 
 		<!-- BASE CSS -->
-		<link href="<?= $site; ?>css/base.css" rel="stylesheet">
-		<link href="<?= $site; ?>css/custom.css" rel="stylesheet">
-		<link href="<?= $site; ?>css/reset.css" rel="stylesheet">
-		<link href="<?= $site; ?>css/datepicker.css" rel="stylesheet">
-		<link href="<?= $site; ?>css/style-bt-file.css" rel="stylesheet">
-		<link href="<?=$site;?>css/suportewats.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/base.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/custom.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/reset.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/datepicker.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/style-bt-file.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/suportewats.css" rel="stylesheet">
 		
-		<link href="<?=$site;?>css/icheck/icheck-material.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/icheck/icheck-material.css" rel="stylesheet">
 		
 
 		
@@ -125,7 +126,7 @@ else:
 			}
 
 			.omb_login .omb_socialButtons a {
-				color: white; // In yourUse @body-bg 
+				color: white; 
 				opacity:0.9;
 			}
 			.omb_login .omb_socialButtons a:hover {
@@ -262,7 +263,7 @@ else:
 
 
 			#img-head-loja{
-				background-image:url(<?=(!empty($img_header) ? $site."uploads/".$img_header : '');?>);
+				background-image:url(<?php (!empty($img_header) ? $site."uploads/".$img_header : '');?>);
 				background-attachment:fixed;
 				background-size:100%;
 				background-repeat:no-repeat;
@@ -338,7 +339,7 @@ else:
 
 
 		<!-- Radio and check inputs -->
-		<link href="<?= $site; ?>css/skins/square/grey.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/skins/square/grey.css" rel="stylesheet">
 		
 
 
@@ -346,26 +347,26 @@ else:
 		<?php
 		if(!empty($_SESSION['userlogin'])):
 			?>
-			<link href="<?= $site; ?>css/skins/square/green.css" rel="stylesheet">
-			<link href="<?= $site; ?>css/admin.css" rel="stylesheet">
-			<link href="<?= $site; ?>css/bootstrap3-wysihtml5.min.css" rel="stylesheet">
-			<link href="<?= $site; ?>css/dropzone.css" rel="stylesheet">
+			<link href="<?php echo $site; ?>css/skins/square/green.css" rel="stylesheet">
+			<link href="<?php echo $site; ?>css/admin.css" rel="stylesheet">
+			<link href="<?php echo $site; ?>css/bootstrap3-wysihtml5.min.css" rel="stylesheet">
+			<link href="<?php echo $site; ?>css/dropzone.css" rel="stylesheet">
 
 
-			<link rel="stylesheet" type="text/css" href="<?= $site; ?>css/uploads/normalize.css" />
-			<link rel="stylesheet" type="text/css" href="<?= $site; ?>css/uploads/demo.css" />
-			<link rel="stylesheet" type="text/css" href="<?= $site; ?>css/uploads/component.css" />
-			<link href="<?= $site; ?>css/color_scheme.css" rel="stylesheet"> 
+			<link rel="stylesheet" type="text/css" href="<?php echo $site; ?>css/uploads/normalize.css" />
+			<link rel="stylesheet" type="text/css" href="<?php echo $site; ?>css/uploads/demo.css" />
+			<link rel="stylesheet" type="text/css" href="<?php echo $site; ?>css/uploads/component.css" />
+			<link href="<?php echo $site; ?>css/color_scheme.css" rel="stylesheet"> 
 			<?php
 		else:
 		endif;
 		?>
 
-		<link rel="stylesheet" type="text/css" href="<?= $site; ?>css/modal/frappuccino-modal.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $site; ?>css/modal/frappuccino-modal.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="<?= $site; ?>css/modal/popupmodal.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $site; ?>css/modal/popupmodal.css" />
 
-		<script src="<?= $site; ?>js/jquery-2.2.4.min.js"></script>
+		<script src="<?php echo $site; ?>js/jquery-2.2.4.min.js"></script>
 
 		
 
@@ -378,18 +379,18 @@ else:
 
 
 		<!--https://gao-sun.github.io/x0popup/-->
-		<link href="<?= $site; ?>css/x0popup-master/dist/x0popup.min.css" rel="stylesheet">
-		<script src="<?= $site; ?>css/x0popup-master/dist/x0popup.min.js"></script>
+		<link href="<?php echo $site; ?>css/x0popup-master/dist/x0popup.min.css" rel="stylesheet">
+		<script src="<?php echo $site; ?>css/x0popup-master/dist/x0popup.min.js"></script>
 
-		<script src="<?= $site; ?>js/jquery.gotop.js"></script>
+		<script src="<?php echo $site; ?>js/jquery.gotop.js"></script>
 		<script type="text/javascript">	
 
 			$(document).ready(function () {
 
-				$.getJSON('<?=$site;?>estados_cidades.json', function (data) {
+				$.getJSON('<?php echo $site; ?>estados_cidades.json', function (data) {
 
 					var items = [];
-					var options = "<option value='<?=(!empty($end_uf_empresa) ? $end_uf_empresa : "");?>'><?=(!empty($end_uf_empresa) ? $end_uf_empresa : "Escolha um estado");?></option>";	
+					var options = "<option value='<?php (!empty($end_uf_empresa) ? $end_uf_empresa : "");?>'><?php (!empty($end_uf_empresa) ? $end_uf_empresa : "Escolha um estado");?></option>";	
 
 					$.each(data, function (key, val) {
 						options += '<option value="' + val.sigla + '">' + val.sigla + '</option>';
@@ -398,7 +399,7 @@ else:
 
 					$("#estados").change(function () {				
 
-						var options_cidades = "<option value='<?=(!empty($cidade_empresa) ? $cidade_empresa : "");?>'><?=(!empty($cidade_empresa) ? $cidade_empresa : "Escolha uma Cidade");?></option>";
+						var options_cidades = "<option value='<?php (!empty($cidade_empresa) ? $cidade_empresa : "");?>'><?php (!empty($cidade_empresa) ? $cidade_empresa : "Escolha uma Cidade");?></option>";
 						var str = "";					
 
 						$("#estados option:selected").each(function () {
@@ -427,7 +428,7 @@ else:
 
 			$(document).ready(function () {
 
-				$.getJSON('<?=$site;?>estados_cidades.json', function (data) {
+				$.getJSON('<?php echo $site; ?>estados_cidades.json', function (data) {
 
 					var items = [];
 					var options = '<option value="">Selecione o Estado</option>';	
@@ -463,29 +464,29 @@ else:
 			});
 
 		</script>
-		<script src="<?= $site; ?>js/player.js"></script>
-		<script src="<?= $site; ?>js/howler.js"></script>
+		<script src="<?php echo $site; ?>js/player.js"></script>
+		<script src="<?php echo $site; ?>js/howler.js"></script>
 
-		<link href="<?= $site; ?>notificacao/light-theme.min.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>notificacao/light-theme.min.css" rel="stylesheet">
 
-		<script type="text/javascript" src="<?= $site; ?>notificacao/growl-notification.min.js"></script> 
+		<script type="text/javascript" src="<?php echo $site; ?>notificacao/growl-notification.min.js"></script> 
 
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css@0.2.1/output/moretoggles.min.css">
 
 		<!-- Select da pagina carrinho -->
-		<link href="<?=$site?>css/selectcarrinho/dist/css/select2.min.css" rel="stylesheet" />
-		<script src="<?=$site?>css/selectcarrinho/dist/js/select2.min.js"></script>
+		<link href="<?php echo $site; ?>css/selectcarrinho/dist/css/select2.min.css" rel="stylesheet" />
+		<script src="<?php echo $site; ?>css/selectcarrinho/dist/js/select2.min.js"></script>
 		<!-- Select da pagina carrinho -->
 
 
 		<!-- Radio and check inputs -->
-		<link href="<?= $site; ?>css/radio-check.css" rel="stylesheet">
-		<link href="<?= $site; ?>css/modal.css" rel="stylesheet">
-		<script type="text/javascript" src="<?= $site; ?>js/modalhorarios.js"></script> 
+		<link href="<?php echo $site; ?>css/radio-check.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/modal.css" rel="stylesheet">
+		<script type="text/javascript" src="<?php echo $site; ?>js/modalhorarios.js"></script> 
 		<!-- https://www.cssscript.com/pure-css-checkbox-radio-button-replacement-bootstrap-icheck/ -->
 		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-		<link href="<?= $site; ?>css/chackbox/dist/css/checkboxes.css" rel="stylesheet">
+		<link href="<?php echo $site; ?>css/chackbox/dist/css/checkboxes.css" rel="stylesheet">
 
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -496,9 +497,9 @@ else:
 					var rash_item = $(this).data('item_hash');
 
 					$.ajax({
-						url: '<?= $site; ?>includes/processaremovercart.php',
+						url: '<?php echo $site; ?>includes/processaremovercart.php',
 						method: 'post',
-						data: {'iditem':id_item,'itemrash':rash_item, 'getpegaloja' : '<?=$Url[0];?>'},
+						data: {'iditem':id_item,'itemrash':rash_item, 'getpegaloja' : '<?php $Url[0];?>'},
 
 						success: function(data){
 							$('.remove_item').prop('disabled', false);
@@ -510,14 +511,14 @@ else:
 		</script>
 
 		
-		<script src="<?= $site; ?>css/multiselect/dist/bundle.min.js"></script>
+		<script src="<?php echo $site; ?>css/multiselect/dist/bundle.min.js"></script>
 
 
 		<!-- MUDAR CORES DO TEMPLATE -->
-		<link href="<?= $site; ?>css/color_scheme.css" rel="stylesheet"> 
+		<link href="<?php echo $site; ?>css/color_scheme.css" rel="stylesheet"> 
 	</head>
 
-	<body style="background: #e5ddd5 url(<?= $site; ?>img/body-bg.jpg) repeat center;">
+	<body style="background: #e5ddd5 url(<?php echo $site; ?>img/body-bg.jpg) repeat center;">
 		<!-- inicio do loader 
 		<div id="preloader">
 			<div class="sk-spinner sk-spinner-wave" id="status">
@@ -538,70 +539,70 @@ else:
 
 <!-- Header ================================================== -->
 <header <?php if(!empty($Url[1]) && $Url[1] != 'carrinho' && $Url[1] != 'home' && $Url[1] != 'contato' && file_exists('includes/'.$Url[1] . '.php')):?>style="background-color: #000000;"<?php endif; ?>>
-<!--<header <?php if(!empty($Url[1]) && $Url[1] != 'carrinho' && $Url[1] != 'home' && $Url[1] != 'contato' && file_exists('includes/'.$Url[1] . '.php')):?>style="background-color: <?=(isset($cor_topo) ? $cor_topo : '');?>;"<?php endif; ?>>-->
+<!--<header <?php if(!empty($Url[1]) && $Url[1] != 'carrinho' && $Url[1] != 'home' && $Url[1] != 'contato' && file_exists('includes/'.$Url[1] . '.php')):?>style="background-color: <?php (isset($cor_topo) ? $cor_topo : '');?>;"<?php endif; ?>>-->
 	
 
 	<div class="container-fluid">
 		<div class="row">			
 			<div class="col--md-4 col-sm-4 col-xs-4">
-				<a href="<?=$site.$Url[0];?>" id="logo">
-					<img src="<?= $site; ?>img/test5.png" height="30" width="40" alt="" data-retina="true" class="hidden-xs">
-					<img src="<?= $site; ?>img/test5.png" height="30" width="40" alt="" data-retina="true" class="hidden-lg hidden-md hidden-sm">
+				<a href="<?php $site.$Url[0];?>" id="logo">
+					<img src="<?php echo $site; ?>img/test5.png" height="30" width="40" alt="" data-retina="true" class="hidden-xs">
+					<img src="<?php echo $site; ?>img/test5.png" height="30" width="40" alt="" data-retina="true" class="hidden-lg hidden-md hidden-sm">
 				</a>
 			</div>
 			<nav class="col--md-8 col-sm-8 col-xs-8">
 				<a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
 				<div class="main-menu">
 					<div id="header_menu">
-						<img src="<?= $site; ?>img/test5.png" height="40" alt="" data-retina="true">
+						<img src="<?php echo $site; ?>img/test5.png" height="40" alt="" data-retina="true">
 
 					</div>
 					<a class="open_close" id="close_in"><i class="icon_close"></i></a>
 					<ul>
-						<li><a href="<?=$site.$Url[0];?>"><?=$texto['home'];?></a></li>
+						<li><a href="<?php $site.$Url[0];?>"><?php $texto['home'];?></a></li>
 							<li class="submenu">
 						<a class="gradient-bg-1" href="https://www.youtube.com/channel/UCUVhSNdrLyQ64i123Uc8btg/videos" target="_blank"></i><span class="float-right text-center font-w-700"><strong>Tutorial</strong></a>
 						<li class="submenu">
 						    
-								<a class="show-submenu"><?=$texto['Conf_loja'];?><i class="icon-down-open-mini"></i></a>
+								<a class="show-submenu"><?php $texto['Conf_loja'];?><i class="icon-down-open-mini"></i></a>
 								<ul>
-										<li><a href="<?=$site.$Url[0].'/';?>admin-loja"><?=$texto['Conf_loja'];?></a></li>	
-										<li><a href="<?=$site.$Url[0].'/';?>fuso-horario">Fuso horário</a></li>	
+										<li><a href="<?php $site.$Url[0].'/';?>admin-loja"><?php $texto['Conf_loja'];?></a></li>	
+										<li><a href="<?php $site.$Url[0].'/';?>fuso-horario">Fuso horário</a></li>	
 								</ul>
 							</li>
 							    
 							    
 								<li class="submenu">
-								<a class="show-submenu"><?=$texto['cadastros-menu'];?><i class="icon-down-open-mini"></i></a>
+								<a class="show-submenu"><?php $texto['cadastros-menu'];?><i class="icon-down-open-mini"></i></a>
 								<ul>
 								
 								    
-									<li><a href="<?=$site.$Url[0].'/';?>categoria">1- Cadastrar <?=$texto['cadastros-cat'];?></a></li>
-									<li><a href="<?=$site.$Url[0].'/';?>itens">2- Cadastrar <?=$texto['cadastros-iten'];?></a></li>
-									<li><a href="<?=$site.$Url[0].'/';?>add-adicionais-categoria">3- <?=$texto['cadastros-complementos-categoria'];?> <span class="badge" style="background-color: #dc3545; color: #ffffff;"></span></a></li>
-									<li><a href="<?=$site.$Url[0].'/';?>add-adicionais">4- <?=$texto['cadastros-complementos'];?></a></li>
-									<li><a href="<?=$site.$Url[0].'/';?>add-adicionais-gratis">5- <?=$texto['cadastros-complementos-gratis'];?></a></li>
-										<li><a href="<?=$site.$Url[0].'/';?>cadastrar-formas-pagamento">6- <?=$texto['cadastro-pagamentos'];?></a></li>
-										<li><a href="<?=$site.$Url[0].'/';?>add-complemento-unico">7- <?=$texto['cadastros-opcao'];?></a></li>
-										<li><a href="<?=$site.$Url[0].'/';?>add-options">8- <?=$texto['cadastros-tipostamanhos'];?></a></li>
-										<li><a href="<?=$site.$Url[0].'/';?>delivery-distance-config">9- <?=$texto['delivery-distance-config'];?></a></li>
-										<li><a href="<?=$site.$Url[0].'/';?>add-observacao">10- <?=$texto['cadastros-observacoes'];?></a></li>
-										<li><a href="<?=$site.$Url[0].'/';?>cupom-desconto">11- <?=$texto['cadastros-cupons'];?></a></li>
-										<li><a href="<?=$site.$Url[0].'/';?>add-motoboys">12- <?=$texto['cadastros-motoboys'];?> <span class="badge" style="background-color: #dc3545; color: #ffffff;"></span></a></li>
-									<li><a href="<?=$site.$Url[0].'/';?>banner-promocao">13- Banner Promocional</a></li>
-									<li><a href="<?=$site.$Url[0].'/';?>qrcodeurl">14- QR code & compartilhamento</a></li>
+									<li><a href="<?php $site.$Url[0].'/';?>categoria">1- Cadastrar <?php $texto['cadastros-cat'];?></a></li>
+									<li><a href="<?php $site.$Url[0].'/';?>itens">2- Cadastrar <?php $texto['cadastros-iten'];?></a></li>
+									<li><a href="<?php $site.$Url[0].'/';?>add-adicionais-categoria">3- <?php $texto['cadastros-complementos-categoria'];?> <span class="badge" style="background-color: #dc3545; color: #ffffff;"></span></a></li>
+									<li><a href="<?php $site.$Url[0].'/';?>add-adicionais">4- <?php $texto['cadastros-complementos'];?></a></li>
+									<li><a href="<?php $site.$Url[0].'/';?>add-adicionais-gratis">5- <?php $texto['cadastros-complementos-gratis'];?></a></li>
+										<li><a href="<?php $site.$Url[0].'/';?>cadastrar-formas-pagamento">6- <?php $texto['cadastro-pagamentos'];?></a></li>
+										<li><a href="<?php $site.$Url[0].'/';?>add-complemento-unico">7- <?php $texto['cadastros-opcao'];?></a></li>
+										<li><a href="<?php $site.$Url[0].'/';?>add-options">8- <?php $texto['cadastros-tipostamanhos'];?></a></li>
+										<li><a href="<?php $site.$Url[0].'/';?>delivery-distance-config">9- <?php $texto['delivery-distance-config'];?></a></li>
+										<li><a href="<?php $site.$Url[0].'/';?>add-observacao">10- <?php $texto['cadastros-observacoes'];?></a></li>
+										<li><a href="<?php $site.$Url[0].'/';?>cupom-desconto">11- <?php $texto['cadastros-cupons'];?></a></li>
+										<li><a href="<?php $site.$Url[0].'/';?>add-motoboys">12- <?php $texto['cadastros-motoboys'];?> <span class="badge" style="background-color: #dc3545; color: #ffffff;"></span></a></li>
+									<li><a href="<?php $site.$Url[0].'/';?>banner-promocao">13- Banner Promocional</a></li>
+									<li><a href="<?php $site.$Url[0].'/';?>qrcodeurl">14- QR code & compartilhamento</a></li>
 									
 									
 								</ul>
 							</li>
 							
-								<li><a href="<?=$site.$Url[0].'/';?>view-item"><?=$texto['itens'];?></a></li>							
+								<li><a href="<?php $site.$Url[0].'/';?>view-item"><?php $texto['itens'];?></a></li>							
 							<li class="submenu">
 							    
-							<li><a href="<?=$site.$Url[0].'/';?>pedidos"><?=$texto['msg_pedidos']?></a></li>
-							<li><a href="<?=$site.$Url[0].'/';?>estatisticas"><?=$texto['estatisticas'];?></a></li>
-							<li><a href="<?=$site.$Url[0].'/';?>alterar-plano">Meu Plano</a></li>
-							<li><a href="<?=$site.$Url[0].'/';?>login-senha"><?=$texto['login-senha'];?></a></li>
+							<li><a href="<?php $site.$Url[0].'/';?>pedidos"><?php $texto['msg_pedidos']?></a></li>
+							<li><a href="<?php $site.$Url[0].'/';?>estatisticas"><?php $texto['estatisticas'];?></a></li>
+							<li><a href="<?php $site.$Url[0].'/';?>alterar-plano">Meu Plano</a></li>
+							<li><a href="<?php $site.$Url[0].'/';?>login-senha"><?php $texto['login-senha'];?></a></li>
 </li>
 
 											
@@ -609,7 +610,7 @@ else:
 						<?php if(!empty($_SESSION['userlogin'])):?>							
 							
 
-							<li><a href="<?=$site.$Url[0].'/';?>admin-loja&logoff=true"><?=$texto['sair'];?></a></li>
+							<li><a href="<?php $site.$Url[0].'/';?>admin-loja&logoff=true"><?php $texto['sair'];?></a></li>
 						<?php endif;?>
 
 
@@ -632,7 +633,7 @@ else:
 		?><section id="img-head-loja">
 			<?php else:?>
 
-				<section class="parallax-window" data-parallax="scroll" data-image-src="<?=(!empty($img_header) ? $site."uploads/".$img_header : $site.'img/sub_header.jpg');?>" data-natural-width="1400" data-natural-height="470" style="background-image: url(<?=(!empty($img_header) ? $site."uploads/".$img_header : $site.'img/sub_header.jpg');?>); background-size: cover; background-position: center center;">
+				<section class="parallax-window" data-parallax="scroll" data-image-src="<?php (!empty($img_header) ? $site."uploads/".$img_header : $site.'img/sub_header.jpg');?>" data-natural-width="1400" data-natural-height="470" style="background-image: url(<?php (!empty($img_header) ? $site."uploads/".$img_header : $site.'img/sub_header.jpg');?>); background-size: cover; background-position: center center;">
 				<?php endif; ?>
 				<div id="subheader">
 					<div id="sub_content">
@@ -644,7 +645,7 @@ else:
 							echo "<div id=\"thumb\"><img src=\"{$site}img/thumb_restaurant.jpg\" alt=\"\"></div>";
 						endif;
 						?>
-						<h1><?=(!empty($nome_empresa) ? $nome_empresa : 'Nome_do_seu_negócio');?></h1>
+						<h1><?php (!empty($nome_empresa) ? $nome_empresa : 'Nome_do_seu_negócio');?></h1>
 
 						<?php
 
@@ -779,7 +780,7 @@ if($store_hours->is_open()) {
 }?>
 <br />
 <br />
-<a data-toggle="modal" data-target=".bd-example-modal-sm" style="color: #ffffff;font-size: 14px;cursor: pointer; text-decoration: none;"><i class="icon-clock-circled"></i> <?=$texto['msg_ver_horarios'];?> <i class="fa fa-chevron-down arrow-down"></i></a>
+<a data-toggle="modal" data-target=".bd-example-modal-sm" style="color: #ffffff;font-size: 14px;cursor: pointer; text-decoration: none;"><i class="icon-clock-circled"></i> <?php $texto['msg_ver_horarios'];?> <i class="fa fa-chevron-down arrow-down"></i></a>
 
 
 &nbsp;&nbsp;
@@ -829,13 +830,13 @@ if($store_hours->is_open()) {
 
 	<div class="alert alert-danger alert-dismissible" role="alert">
 		<strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> OBSERVAÇÃO: </strong>Seu plano expirou. Por favor renove a sua assinatura.
-		<form action="<?=$site;?>mercadopago/processapagamentomp.php" method="POST">
+		<form action="<?php echo $site; ?>mercadopago/processapagamentomp.php" method="POST">
 			<script
 			src="https://www.mercadopago.com.br/integrations/v1/web-tokenize-checkout.js"
-			data-public-key="<?=$texto['publickey'];?>"				
+			data-public-key="<?php $texto['publickey'];?>"				
 			data-button-label="Pagar assinatura"
-			data-transaction-amount="<?=$valorplano;?>"
-			data-summary-product-label="<?=$nomeplano;?>">
+			data-transaction-amount="<?php $valorplano;?>"
+			data-summary-product-label="<?php $nomeplano;?>">
 		</script>
 	</form>
 </div>
@@ -846,13 +847,13 @@ elseif(diasDatas(date('Y-m-d'), $empresa_data_renovacao) == 0 && !empty($_SESSIO
 
 <div class="alert alert-danger alert-dismissible" role="alert">
 	<strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> OBSERVAÇÃO: </strong>Seu plano expira hoje.
-	<form action="<?=$site;?>mercadopago/processapagamentomp.php" method="POST">
+	<form action="<?php echo $site; ?>mercadopago/processapagamentomp.php" method="POST">
 		<script
 		src="https://www.mercadopago.com.br/integrations/v1/web-tokenize-checkout.js"
-		data-public-key="<?=$texto['publickey'];?>"				
+		data-public-key="<?php $texto['publickey'];?>"				
 		data-button-label="Pagar assinatura"
-		data-transaction-amount="<?=$valorplano;?>"
-		data-summary-product-label="<?=$nomeplano;?>">
+		data-transaction-amount="<?php $valorplano;?>"
+		data-summary-product-label="<?php $nomeplano;?>">
 	</script>
 </form>
 </div>
@@ -862,14 +863,14 @@ elseif(diasDatas(date('Y-m-d'), $empresa_data_renovacao) >= 1 && diasDatas(date(
 	?>
 
 <div class="alert alert-danger alert-dismissible" role="alert">
-	<strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> OBSERVAÇÃO: </strong>Seu plano expira em <?=diasDatas(date('Y-m-d'), $empresa_data_renovacao)?> dias.
-	<form action="<?=$site;?>mercadopago/processapagamentomp.php" method="POST">
+	<strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> OBSERVAÇÃO: </strong>Seu plano expira em <?php diasDatas(date('Y-m-d'), $empresa_data_renovacao)?> dias.
+	<form action="<?php echo $site; ?>mercadopago/processapagamentomp.php" method="POST">
 		<script
 		src="https://www.mercadopago.com.br/integrations/v1/web-tokenize-checkout.js"
-		data-public-key="<?=$texto['publickey'];?>"				
+		data-public-key="<?php $texto['publickey'];?>"				
 		data-button-label="Pagar assinatura"
-		data-transaction-amount="<?=$valorplano;?>"
-		data-summary-product-label="<?=$nomeplano;?>">
+		data-transaction-amount="<?php $valorplano;?>"
+		data-summary-product-label="<?php $nomeplano;?>">
 	</script>
 </form>
 </div>
@@ -898,7 +899,7 @@ endif;
 				<b style="color: #61617a;"><i class="icon_pin"></i>  Endereço para retirar pedidos</b>
 				<br />
 				<br />
-				<p style="color: #61617a;font-size: 15px;"><?=(!empty($end_rua_n_empresa) && !empty($end_bairro_empresa) && !empty($cidade_empresa) && !empty($end_uf_empresa) ? $end_rua_n_empresa.' <br /> '.$end_bairro_empresa : 'Defina_um_endereço').' - '.$cidade_empresa.' - '.$end_uf_empresa;?>
+				<p style="color: #61617a;font-size: 15px;"><?php (!empty($end_rua_n_empresa) && !empty($end_bairro_empresa) && !empty($cidade_empresa) && !empty($end_uf_empresa) ? $end_rua_n_empresa.' <br /> '.$end_bairro_empresa : 'Defina_um_endereço').' - '.$cidade_empresa.' - '.$end_uf_empresa;?>
 				<?php 
 				$lerbanco->ExeRead('bairros_delivery', "WHERE user_id = :badeliv", "badeliv={$getu}");
 				if($lerbanco->getResult()):
@@ -939,8 +940,8 @@ endif;
 								extract($getBancoBairros);						
 							?>
 								<tr>
-									<th><?=$bairro;?></th>
-									<td>R$ <?=Check::real($taxa)?></td>
+									<th><?php $bairro;?></th>
+									<td>R$ <?php Check::real($taxa)?></td>
 								</tr>
 							<?php
 							endforeach;
@@ -968,8 +969,8 @@ endif;
 						<tbody>
 							<?php foreach ($lerbanco->getResult() as $delivery_distance_rate): ?>
 								<tr>
-									<th><?= 'Até ' . $delivery_distance_rate['distance_rate'] . ' Km'; ?></th>
-									<td>R$ <?=Check::real($delivery_distance_rate['price'])?></td>
+									<th><?php  'Até ' . $delivery_distance_rate['distance_rate'] . ' Km'; ?></th>
+									<td>R$ <?php Check::real($delivery_distance_rate['price'])?></td>
 								</tr>
 							<?php endforeach; ?>
 						</tbody>
@@ -981,7 +982,7 @@ endif;
 		?>
 	</div>
 	<div class="modal-footer">
-		<center><button type="button" class="btn btn-secondary" data-dismiss="modal"><?=$texto['msg_btn_fechar'];?></button></center>
+		 <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php $texto['msg_btn_fechar'];?></button> 
 	</div>
 </div>
 
@@ -995,7 +996,7 @@ endif;
 <div style="margin-top: 50px;" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
-			<center><h3><?=$texto['msg_btn_horarios'];?></h3></center>
+			 <h3><?php $texto['msg_btn_horarios'];?></h3> 
 			<?php
 			
 
@@ -1005,32 +1006,32 @@ endif;
 			if(!empty($config_segunda) && $config_segunda == "true" && !empty($config_segundaa) && $config_segundaa == "true"):
 
 				$segunda  = $segunda_manha_de.' ás '.$segunda_manha_ate.'<br />'.$segunda_tarde_de.' ás '.$segunda_tarde_ate;	
-			echo "<center><b>".$texto['msg_h_segunda']."</b><br /><span style='background-color: #efefef'>".$segunda."</span></center>";
+			echo " <b>".$texto['msg_h_segunda']."</b><br /><span style='background-color: #efefef'>".$segunda."</span> ";
 		elseif(!empty($config_segunda) && $config_segunda == "true" && !empty($config_segundaa) && $config_segundaa == "false"):
 			$segunda  = $segunda_manha_de.' ás '.$segunda_manha_ate;
-		echo "<center><b>".$texto['msg_h_segunda']."</b><br /><span style='background-color: #efefef'>".$segunda."</span></center>";
+		echo " <b>".$texto['msg_h_segunda']."</b><br /><span style='background-color: #efefef'>".$segunda."</span> ";
 	elseif(!empty($config_segunda) && $config_segunda == "false" && !empty($config_segundaa) && $config_segundaa == "true"):
 		$segunda  = $segunda_tarde_de.' ás '.$segunda_tarde_ate;
-	echo "<center><b>".$texto['msg_h_segunda']."</b><br /><span style='background-color: #efefef'>".$segunda."</span></center>";
+	echo " <b>".$texto['msg_h_segunda']."</b><br /><span style='background-color: #efefef'>".$segunda."</span> ";
 else:		
 	$segunda  = 'Não abrimos';
-	echo "<center><b>".$texto['msg_h_segunda']."</b><br /><span style=\"style='background-color: #efefef';color: red;\">".$segunda."</span></center>";
+	echo " <b>".$texto['msg_h_segunda']."</b><br /><span style=\"style='background-color: #efefef';color: red;\">".$segunda."</span> ";
 endif;
 			//-----------------------------------------------------------------------------------------------------------------------------
 			//------------------------------------------------------------------------------------------------------------
 if(!empty($config_terca) && $config_terca == "true" && !empty($config_tercaa) && $config_tercaa == "true"):
 
 	$terca  = $terca_manha_de.' ás '.$terca_manha_ate.'<br />'.$terca_tarde_de.' ás '.$terca_tarde_ate;	
-echo "<center><b>".$texto['msg_h_terca']."</b><br /><span style='background-color: #efefef'>".$terca."</span></center>";
+echo " <b>".$texto['msg_h_terca']."</b><br /><span style='background-color: #efefef'>".$terca."</span> ";
 elseif(!empty($config_terca) && $config_terca == "true" && !empty($config_tercaa) && $config_tercaa == "false"):
 	$terca  = $terca_manha_de.' ás '.$terca_manha_ate;
-echo "<center><b>".$texto['msg_h_terca']."</b><br /><span style='background-color: #efefef'>".$terca."</span></center>";
+echo " <b>".$texto['msg_h_terca']."</b><br /><span style='background-color: #efefef'>".$terca."</span> ";
 elseif(!empty($config_terca) && $config_terca == "false" && !empty($config_tercaa) && $config_tercaa == "true"):
 	$terca  = $terca_tarde_de.' ás '.$terca_tarde_ate;
-echo "<center><b>".$texto['msg_h_terca']."</b><br /><span style='background-color: #efefef'>".$terca."</span></center>";
+echo " <b>".$texto['msg_h_terca']."</b><br /><span style='background-color: #efefef'>".$terca."</span> ";
 else:		
 	$terca  = 'Não abrimos';
-	echo "<center><b>".$texto['msg_h_terca']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$terca."</span></center>";
+	echo " <b>".$texto['msg_h_terca']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$terca."</span> ";
 endif;
 
 				//------------------------------------------------------------------------------------------------------------
@@ -1038,85 +1039,85 @@ endif;
 if(!empty($config_quarta) && $config_quarta == "true" && !empty($config_quartaa) && $config_quartaa == "true"):
 
 	$quarta  = $quarta_manha_de.' ás '.$quarta_manha_ate.'<br />'.$quarta_tarde_de.' ás '.$quarta_tarde_ate;	
-echo "<center><b>".$texto['msg_h_quarta']."</b><br /><span style='background-color: #efefef'>".$quarta."</span></center>";
+echo " <b>".$texto['msg_h_quarta']."</b><br /><span style='background-color: #efefef'>".$quarta."</span> ";
 elseif(!empty($config_quarta) && $config_quarta == "true" && !empty($config_quartaa) && $config_quartaa == "false"):
 	$quarta  = $quarta_manha_de.' ás '.$quarta_manha_ate;
-echo "<center><b>".$texto['msg_h_quarta']."</b><br /><span style='background-color: #efefef'>".$quarta."</span></center>";
+echo " <b>".$texto['msg_h_quarta']."</b><br /><span style='background-color: #efefef'>".$quarta."</span> ";
 elseif(!empty($config_quarta) && $config_quarta == "false" && !empty($config_quartaa) && $config_quartaa == "true"):
 	$quarta  = $quarta_tarde_de.' ás '.$quarta_tarde_ate;
-echo "<center><b>".$texto['msg_h_quarta']."</b><br /><span style='background-color: #efefef'>".$quarta."</span></center>";
+echo " <b>".$texto['msg_h_quarta']."</b><br /><span style='background-color: #efefef'>".$quarta."</span> ";
 else:		
 	$quarta  = 'Não abrimos';
-	echo "<center><b>".$texto['msg_h_quarta']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$quarta."</span></center>";
+	echo " <b>".$texto['msg_h_quarta']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$quarta."</span> ";
 endif;
 
 			//------------------------------------------------------------------------------------------------------------
 if(!empty($config_quinta) && $config_quinta == "true" && !empty($config_quintaa) && $config_quintaa == "true"):
 
 	$quinta  = $quinta_manha_de.' ás '.$quinta_manha_ate.'<br />'.$quinta_tarde_de.' ás '.$quinta_tarde_ate;	
-echo "<center><b>".$texto['msg_h_quinta']."</b><br /><span style='background-color: #efefef'>".$quinta."</span></center>";
+echo " <b>".$texto['msg_h_quinta']."</b><br /><span style='background-color: #efefef'>".$quinta."</span> ";
 elseif(!empty($config_quinta) && $config_quinta == "true" && !empty($config_quintaa) && $config_quintaa == "false"):
 	$quinta  = $quinta_manha_de.' ás '.$quinta_manha_ate;
-echo "<center><b>".$texto['msg_h_quinta']."</b><br /><span style='background-color: #efefef'>".$quinta."</span></center>";
+echo " <b>".$texto['msg_h_quinta']."</b><br /><span style='background-color: #efefef'>".$quinta."</span> ";
 elseif(!empty($config_quinta) && $config_quinta == "false" && !empty($config_quintaa) && $config_quintaa == "true"):
 	$quinta  = $quinta_tarde_de.' ás '.$quinta_tarde_ate;
-echo "<center><b>".$texto['msg_h_quinta']."</b><br /><span style='background-color: #efefef'>".$quinta."</span></center>";
+echo " <b>".$texto['msg_h_quinta']."</b><br /><span style='background-color: #efefef'>".$quinta."</span> ";
 else:		
 	$quinta  = 'Não abrimos';
-	echo "<center><b>".$texto['msg_h_quinta']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$quinta."</span></center>";
+	echo " <b>".$texto['msg_h_quinta']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$quinta."</span> ";
 endif;
 
 				//------------------------------------------------------------------------------------------------------------
 if(!empty($config_sexta) && $config_sexta == "true" && !empty($config_sextaa) && $config_sextaa == "true"):
 
 	$sexta  = $sexta_manha_de.' ás '.$sexta_manha_ate.'<br />'.$sexta_tarde_de.' ás '.$sexta_tarde_ate;	
-echo "<center><b>".$texto['msg_h_sexta']."</b><br /><span style='background-color: #efefef'>".$sexta."</span></center>";
+echo " <b>".$texto['msg_h_sexta']."</b><br /><span style='background-color: #efefef'>".$sexta."</span> ";
 elseif(!empty($config_sexta) && $config_sexta == "true" && !empty($config_sextaa) && $config_sextaa == "false"):
 	$sexta  = $sexta_manha_de.' ás '.$sexta_manha_ate;
-echo "<center><b>".$texto['msg_h_sexta']."</b><br /><span style='background-color: #efefef'>".$sexta."</span></center>";
+echo " <b>".$texto['msg_h_sexta']."</b><br /><span style='background-color: #efefef'>".$sexta."</span> ";
 elseif(!empty($config_sexta) && $config_sexta == "false" && !empty($config_sextaa) && $config_sextaa == "true"):
 	$sexta  = $sexta_tarde_de.' ás '.$sexta_tarde_ate;
-echo "<center><b>".$texto['msg_h_sexta']."</b><br /><span style='background-color: #efefef'>".$sexta."</span></center>";
+echo " <b>".$texto['msg_h_sexta']."</b><br /><span style='background-color: #efefef'>".$sexta."</span> ";
 else:		
 	$sexta  = 'Não abrimos';
-	echo "<center><b>".$texto['msg_h_sexta']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$sexta."</span></center>";
+	echo " <b>".$texto['msg_h_sexta']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$sexta."</span> ";
 endif;
 
 				//------------------------------------------------------------------------------------------------------------
 if(!empty($config_sabado) && $config_sabado == "true" && !empty($config_sabadoo) && $config_sabadoo == "true"):
 
 	$sabado  = $sabado_manha_de.' ás '.$sabado_manha_ate.'<br />'.$sabado_tarde_de.' ás '.$sabado_tarde_ate;	
-echo "<center><b>".$texto['msg_h_sabado']."</b><br /><span style='background-color: #efefef'>".$sabado."</span></center>";
+echo " <b>".$texto['msg_h_sabado']."</b><br /><span style='background-color: #efefef'>".$sabado."</span> ";
 elseif(!empty($config_sabado) && $config_sabado == "true" && !empty($config_sabadoo) && $config_sabadoo == "false"):
 	$sabado  = $sabado_manha_de.' ás '.$sabado_manha_ate;
-echo "<center><b>".$texto['msg_h_sabado']."</b><br /><span style='background-color: #efefef'>".$sabado."</span></center>";
+echo " <b>".$texto['msg_h_sabado']."</b><br /><span style='background-color: #efefef'>".$sabado."</span> ";
 elseif(!empty($config_sabado) && $config_sabado == "false" && !empty($config_sabadoo) && $config_sabadoo == "true"):
 	$sabado  = $sabado_tarde_de.' ás '.$sabado_tarde_ate;
-echo "<center><b>".$texto['msg_h_sabado']."</b><br /><span style='background-color: #efefef'>".$sabado."</span></center>";
+echo " <b>".$texto['msg_h_sabado']."</b><br /><span style='background-color: #efefef'>".$sabado."</span> ";
 else:		
 	$sabado  = 'Não abrimos';
-	echo "<center><b>".$texto['msg_h_sabado']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$sabado."</span></center>";
+	echo " <b>".$texto['msg_h_sabado']."</b><br /><span style=\"background-color: #efefef;color: red;\">".$sabado."</span> ";
 endif;
 
 			//-------------------------------------------------------------------------------------------------------------
 if(!empty($config_domingo) && $config_domingo == "true" && !empty($config_domingoo) && $config_domingoo == "true"):
 
 	$domingo  = $domingo_manha_de.' ás '.$domingo_manha_ate.'<br />'.$domingo_tarde_de.' ás '.$domingo_tarde_ate;	
-echo "<center><b>".$texto['msg_h_dimingo']."</b><br /><span style='background-color: #efefef'>".$domingo."</span></center>";
+echo " <b>".$texto['msg_h_dimingo']."</b><br /><span style='background-color: #efefef'>".$domingo."</span> ";
 elseif(!empty($config_domingo) && $config_domingo == "true" && !empty($config_domingoo) && $config_domingoo == "false"):
 	$domingo  = $domingo_manha_de.' ás '.$domingo_manha_ate;
-echo "<center><b>".$texto['msg_h_dimingo']."</b><br /><span style='background-color: #efefef'>".$domingo."</span></center>";
+echo " <b>".$texto['msg_h_dimingo']."</b><br /><span style='background-color: #efefef'>".$domingo."</span> ";
 elseif(!empty($config_domingo) && $config_domingo == "false" && !empty($config_domingoo) && $config_domingoo == "true"):
 	$domingo  = $domingo_tarde_de.' ás '.$domingo_tarde_ate;
-echo "<center><b>".$texto['msg_h_dimingo']."</b><br /><span style='background-color: #efefef'>".$domingo."</span></center>";
+echo " <b>".$texto['msg_h_dimingo']."</b><br /><span style='background-color: #efefef'>".$domingo."</span> ";
 else:		
 	$domingo  = 'Não abrimos';
-	echo "<center><b>".$texto['msg_h_dimingo']."</b><br /><span style='background-color: #efefef;color: red;'>".$domingo."</span></center>";
+	echo " <b>".$texto['msg_h_dimingo']."</b><br /><span style='background-color: #efefef;color: red;'>".$domingo."</span> ";
 endif;
 ?>
 <br />
 <div class="modal-footer">
-	<center><button type="button" class="btn btn-secondary" data-dismiss="modal"><?=$texto['msg_btn_fechar'];?></button></center>
+	 <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php $texto['msg_btn_fechar'];?></button> 
 </div>
 </div>
 
@@ -1126,13 +1127,13 @@ endif;
 </div><!-- FINAL DO MODAL QUE APRESENHA OS HORÁRIOS -->
 <footer id="footeroriginal">		
 	<div id="social_footer">
-		<center><b>Siga-nos nas redes sociais:</b></center><br />
+		 <b>Siga-nos nas redes sociais:</b> <br />
 		<ul>
 			<?php echo ($facebook_status == 2 && !empty($facebook_empresa) ? "<li><a target=\"_blank\" href=\"{$facebook_empresa}\"><i class=\"icon-facebook\"></i></a></li>" : "");?>
 			<?php echo ($instagram_status == 2 && !empty($instagram_empresa) ? "<li><a target=\"_blank\" href=\"{$instagram_empresa}\"><i class=\"icon-instagram\"></i></a></li>" : "");?>
 			<?php echo ($twitter_status == 2 && !empty($twitter_empresa) ? "<li><a target=\"_blank\" href=\"{$twitter_empresa}\"><i class=\"icon-twitter\"></i></a></li>" : "");?>
 		</ul>
-		<p>© <?=(!empty($nome_empresa) ? $nome_empresa : 'Nome_do_seu_negócio').' - '.date('Y');?></p>
+		<p>© <?php (!empty($nome_empresa) ? $nome_empresa : 'Nome_do_seu_negócio').' - '.date('Y');?></p>
 	</div>		
 </footer>
 <!-- End Footer =============================================== -->
@@ -1143,19 +1144,19 @@ endif;
 
 <!-- COMMON SCRIPTS -->
 
-<script src="<?= $site; ?>js/common_scripts_min.js"></script>
-<script src="<?= $site; ?>js/functions.js"></script>
-<script src="<?= $site; ?>assets/validate.js"></script>
-<script src="<?= $site; ?>js/jquery.mask.js"></script>
-<script src="<?= $site; ?>js/index-btn-file.js"></script>
-<script src="<?= $site; ?>js/funcoesjs.js"></script>
-<script src="<?= $site; ?>js/custom-file-input.js"></script>
-<script src="<?= $site; ?>js/bootstrap-datepicker.js"></script>
+<script src="<?php echo $site; ?>js/common_scripts_min.js"></script>
+<script src="<?php echo $site; ?>js/functions.js"></script>
+<script src="<?php echo $site; ?>assets/validate.js"></script>
+<script src="<?php echo $site; ?>js/jquery.mask.js"></script>
+<script src="<?php echo $site; ?>js/index-btn-file.js"></script>
+<script src="<?php echo $site; ?>js/funcoesjs.js"></script>
+<script src="<?php echo $site; ?>js/custom-file-input.js"></script>
+<script src="<?php echo $site; ?>js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-<script src="<?= $site; ?>js/parallax.js"></script>
-<script src="<?= $site; ?>js/parallax.min.js"></script>
-<script src="<?= $site; ?>js/printThis.js"></script>
-<script src="<?=$site;?>js/suportewats.js"></script>
+<script src="<?php echo $site; ?>js/parallax.js"></script>
+<script src="<?php echo $site; ?>js/parallax.min.js"></script>
+<script src="<?php echo $site; ?>js/printThis.js"></script>
+<script src="<?php echo $site; ?>js/suportewats.js"></script>
 
 
 
@@ -1179,9 +1180,9 @@ endif;
 
 
 <!-- SPECIFIC SCRIPTS -->
-<script  src="<?= $site; ?>js/cat_nav_mobile.js"></script>
+<script  src="<?php echo $site; ?>js/cat_nav_mobile.js"></script>
 <script>$('#cat_nav').mobileMenu();</script>
-<script src="<?= $site; ?>js/theia-sticky-sidebar.js"></script>
+<script src="<?php echo $site; ?>js/theia-sticky-sidebar.js"></script>
 <script>
 	jQuery('#sidebar').theiaStickySidebar({
 		additionalMarginTop: 80
@@ -1205,7 +1206,7 @@ endif;
 if(!empty($_SESSION['userlogin'])):
 	?>
 	<!-- Specific scripts -->
-	<script src="<?= $site; ?>js/tabs.js"></script>
+	<script src="<?php echo $site; ?>js/tabs.js"></script>
 
 	<script type="text/javascript">
 		$('#delete').on('show.bs.modal', function (event) {
@@ -1402,23 +1403,23 @@ if(!empty($Url[1]) && $Url[1] != 'carrinho' && $Url[1] != 'home' && $Url[1] != '
 						<div class='home-chat'>
 							<!-- Info Contact Start -->
 							<a class='informasi' style="cursor: pointer;"  title='Chat Whatsapp'>
-								<div class='info-avatar'><img src='<?=$site?>img/supportmale.png'/></div>
+								<div class='info-avatar'><img src='<?php echo $site; ?>img/supportmale.png'/></div>
 								<div class='info-chat'>
 									<span class='chat-label'>Suporte Técnico</span>
 									<span class='chat-nama'>Atendimento Rafael</span>
-								</div><span class='my-number'><?=$texto['telefoneAdministracaoTecnica'];?></span>
+								</div><span class='my-number'><?php $texto['telefoneAdministracaoTecnica'];?></span>
 							</a>
 							<!-- Info Contact End -->
 							<!-- Info Contact Start -->
 							<a class='informasi' style="cursor: pointer;" title='Chat Whatsapp'>
-								<div class='info-avatar'><img src='<?=$site?>img/supportmale.png'/></div>
+								<div class='info-avatar'><img src='<?php echo $site; ?>img/supportmale.png'/></div>
 								<div class='info-chat'>
 									<span class='chat-label'>Suporte Técnico</span>
 									<span class='chat-nama'>Atendimento Gabriel</span>
-								</div><span class='my-number'><?=$texto['telefoneAdministracaoVendas'];?></span>
+								</div><span class='my-number'><?php $texto['telefoneAdministracaoVendas'];?></span>
 							</a>
 							<!-- Info Contact End -->
-							<div class='blanter-msg'><b>HORÁRIOS: </b> de <i><?=$texto['horariosSuporteSite']?></i></div></div>
+							<div class='blanter-msg'><b>HORÁRIOS: </b> de <i><?php $texto['horariosSuporteSite']?></i></div></div>
 							<div class='start-chat hide'>
 								<div class='first-msg'><span>Olá, Como posso te ajudar?</span></div>
 								<div class='blanter-msg'>

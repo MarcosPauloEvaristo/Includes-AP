@@ -65,7 +65,7 @@ endif;
                                 $nomedaimpressora = $nimpressora[0]['nome_impressora'];
                                 endif;
                                 ?>
-                                <p style="font-weight: bold;" id="impresoraSeleccionadaa"><?=$nomedaimpressora;?></p>							
+                                <p style="font-weight: bold;" id="impresoraSeleccionadaa"><?php $nomedaimpressora;?></p>							
 								<p>Use o botão a seguir para imprimir um comprovante de teste na impressora padrão:</p>
 								<br />
 								<button class="btn btn-success" id="btnImprimir">impressão de Teste</button>
@@ -352,7 +352,7 @@ const establecerImpresoraComoPredeterminada = nombreImpresora => {
             if (respuesta) {
                 loguear(`Impresora ${nombreImpresora} configurada corretamente`);
                 $.ajax({
-                    url: '<?=$site?>includes/cadastraimperssora.php',
+                    url: '<?php echo $site; ?>includes/cadastraimperssora.php',
                     method: 'post',
                     data: {'nomeImpresora' : nombreImpresora},
                     success: function(data){
@@ -385,9 +385,9 @@ $btnImprimir.addEventListener("click", () => {
     $('#btnImprimir').prop('disabled', true);
      loguear(`Imprimindo...`);
     $.ajax({
-        url: '<?=$site?>includes/impressaoDeteste.php',
+        url: '<?php echo $site; ?>includes/impressaoDeteste.php',
         method: 'post',
-        data: {'imprimir' : 'true', 'idcliente': '<?=$userlogin['user_id'];?>'},
+        data: {'imprimir' : 'true', 'idcliente': '<?php $userlogin['user_id'];?>'},
         success: function(data){
             $('#btnImprimir').prop('disabled', false);
             if(data == 'erro1'){

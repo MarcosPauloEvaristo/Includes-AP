@@ -38,9 +38,9 @@ $pager->ExePager($getpage, 10);
 					<form method="post">
 						<div class="input-group m-b-30">  
 						<select name="s" class="form-control">
-							<option value="1"><?=$texto['nomePlanoUm'];?></option>
-							<option value="2"><?=$texto['nomePlanoDois'];?></option>
-							<option value="3"><?=$texto['nomePlanoTres'];?></option>
+							<option value="1"><?php $texto['nomePlanoUm'];?></option>
+							<option value="2"><?php $texto['nomePlanoDois'];?></option>
+							<option value="3"><?php $texto['nomePlanoTres'];?></option>
 						</select>                 
 							
 							<span class="input-group-btn"> 
@@ -90,18 +90,18 @@ $pager->ExePager($getpage, 10);
 
 								<tr>
 									<td>
-										<?=(!empty($user_cpf) ? $user_cpf: "");?>
+										<?php (!empty($user_cpf) ? $user_cpf: "");?>
 									</td>
 									<td>
-										<?=(!empty($user_name) ? $user_name: "");?>
-									</td>
-
-									<td>
-										<?=(!empty($user_lastname) ? $user_lastname: "");?>
+										<?php (!empty($user_name) ? $user_name: "");?>
 									</td>
 
 									<td>
-										<?=(!empty($user_email) ? $user_email: "");?>
+										<?php (!empty($user_lastname) ? $user_lastname: "");?>
+									</td>
+
+									<td>
+										<?php (!empty($user_email) ? $user_email: "");?>
 
 									</td>
 
@@ -114,17 +114,17 @@ $pager->ExePager($getpage, 10);
 									endif;
 									?>
 
-									<td><?=(!empty($cidade_empresa) ? $cidade_empresa: "");?></td>
-									<td><?=(!empty($end_uf_empresa) ? $end_uf_empresa: "");?></td>
-									<td><?=(!empty($end_bairro_empresa) ? $end_bairro_empresa: "");?></td>
-									<td><?=(!empty($end_rua_n_empresa) ? $end_rua_n_empresa: "");?></td>
+									<td><?php (!empty($cidade_empresa) ? $cidade_empresa: "");?></td>
+									<td><?php (!empty($end_uf_empresa) ? $end_uf_empresa: "");?></td>
+									<td><?php (!empty($end_bairro_empresa) ? $end_bairro_empresa: "");?></td>
+									<td><?php (!empty($end_rua_n_empresa) ? $end_rua_n_empresa: "");?></td>
 
 									<td >
 										<?php
 											$user_telefonee = preg_replace("/[^0-9]/", "", $user_telefone);
 										?>
-										 <a style="font-weight: bold;color: green;" href="https://api.whatsapp.com/send?1=pt_BR&phone=55<?=$user_telefonee;?>" target="_blank">
-										<?=(!empty($user_telefone) ? $user_telefone : "");?>
+										 <a style="font-weight: bold;color: green;" href="https://api.whatsapp.com/send?1=pt_BR&phone=55<?php $user_telefonee;?>" target="_blank">
+										<?php (!empty($user_telefone) ? $user_telefone : "");?>
 									</a>
 									</td>							
 

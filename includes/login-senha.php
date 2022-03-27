@@ -112,7 +112,7 @@ $updatebanco = new Update();
 								<div class="col-sm-10">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="icon-key" aria-hidden="true"></i></span>
-										<input type="text" name="user_email" value="<?=$user_email?>" class="form-control text-input" placeholder="e-mail">
+										<input type="text" name="user_email" value="<?php $user_email?>" class="form-control text-input" placeholder="e-mail">
 									</div>
 								</div>
 							</div>

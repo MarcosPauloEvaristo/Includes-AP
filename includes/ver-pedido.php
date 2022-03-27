@@ -42,7 +42,7 @@ endif;
 <div style="background-color:#ffffff;" class="container margin_60">
 
   <div class="big-title3 text-center">
-    <h3 class="big_title3"><?=$codigo_pedido;?></h3>
+    <h3 class="big_title3"><?php $codigo_pedido;?></h3>
     <p style=" border-bottom: 5px solid red;border-bottom-width: medium; padding-bottom: 10px;" class="title-para3">Código do Pedido!</p>
   </div>
 
@@ -64,23 +64,23 @@ endif;
     if(in_array('', $pegaStatusPost)):
       echo "<div class=\"alert alert-info alert-dismissable\">
       <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
-      <center>Preencha todos os campos!</center>
+       Preencha todos os campos! 
       </div>";
     elseif(!isset($pegaStatusPost['status']) || $pegaStatusPost['status'] == ''):
       echo "<div class=\"alert alert-info alert-dismissable\">
       <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
-      <center>Selecione um Status!</center>
+       Selecione um Status! 
       </div>";
     elseif(!isset($pegaStatusPost['campomsg']) || $pegaStatusPost['campomsg'] == ''):
       echo "<div class=\"alert alert-info alert-dismissable\">
       <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
-      <center>Escreva uma mensagem para enviar ao ciente!</center>
+       Escreva uma mensagem para enviar ao ciente! 
       </div>";
     elseif(($pegaStatusPost['forma_pagamento'] == 'Dinheiro' || $pegaStatusPost['forma_pagamento'] == 'DINHEIRO' || $pegaStatusPost['forma_pagamento'] == 'dinheiro') && $pegaStatusPost['valor_troco'] != '0,00' && !empty($pegaStatusPost['valor_troco']) && Check::Valor($pegaStatusPost['valor_troco']) <= $total):
 
       echo "<div class=\"alert alert-info alert-dismissable\">
       <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
-      <center>Opss... O valor do troco não pode ser menor que o valor total!</center>
+       Opss... O valor do troco não pode ser menor que o valor total! 
       </div>";
     else:
 
@@ -94,9 +94,9 @@ endif;
       if ($updatebanco->getResult()):
         echo "<div class=\"alert alert-success alert-dismissable\">
         <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>
-        <center>
+         
         <b class=\"alert-link\">SUCESSO!</b> STATUS ATUALIZADO.
-        </center>
+         
         </div>";
         $telefone = preg_replace("/[^0-9]/", "", $telefone);
         $telefoneEmpresa = preg_replace("/[^0-9]/", "", $telefone_empresa);
@@ -107,7 +107,7 @@ endif;
         if(!empty($confirmarenviozap)):
         ?>
         <script type="text/javascript">
-          var link1 = "https://api.whatsapp.com/send?phone=55<?=$telefone;?>&text=<?=$msgAenviar;?>";
+          var link1 = "https://api.whatsapp.com/send?phone=55<?php $telefone;?>&text=<?php $msgAenviar;?>";
           window.open( link1, "_blank");
         </script>
         <?php
@@ -117,9 +117,9 @@ endif;
         header("Refresh: 2; url={$site}{$Url[0]}/pedidos");
       else:
         echo "<div class=\"alert alert-danger alert-dismissable\">
-        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button><center>
+        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button> 
         <b class=\"alert-link\">OCORREU UM ERRO!</b> Tente novamente.
-        </center>
+         
         </div>";
       endif;
     endif;
@@ -181,10 +181,10 @@ endif;
 <script>
     function listMotoboys(id_ped) {
         <? $lerbanco->ExeRead('ws_pedidos', "WHERE user_id = :userid", "userid={$userlogin['user_id']}"); ?>
-        var listPedidos = <?=json_encode($lerbanco->getResult());?>;
+        var listPedidos = <?php json_encode($lerbanco->getResult());?>;
         
         <? $lerbanco->ExeRead('ws_motoboys', "WHERE user_id = :userid", "userid={$userlogin['user_id']}"); ?>
-        var data = <?=json_encode($lerbanco->getResult());?>;
+        var data = <?php json_encode($lerbanco->getResult());?>;
         
         var exists = false;
         if (listPedidos.length > 0) {
@@ -231,15 +231,15 @@ endif;
    }
  </style>
 
- <center>
-  <a href="<?=$site,$Url[0];?>/pedidos"><button class="btn_1"><i class="fa fa-reply" aria-hidden="true"></i> voltar</button></a>
+  
+  <a href="<?php $site,$Url[0];?>/pedidos"><button class="btn_1"><i class="fa fa-reply" aria-hidden="true"></i> voltar</button></a>
 
-  <a href="https://api.whatsapp.com/send?phone=55<?=$telefone;?>&text=🔔 Olá, você acaba de realizar um pedido conosco, pedido confirmado!"><button class="btn_1">Confirmar o Pedido <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+  <a href="https://api.whatsapp.com/send?phone=55<?php $telefone;?>&text=🔔 Olá, você acaba de realizar um pedido conosco, pedido confirmado!"><button class="btn_1">Confirmar o Pedido <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
   
   <button id="botaoPrint" class="btn_1">Imprimir Pedido <i class="icon-print-2" aria-hidden="true"></i></button></a>
   
   
-</center>
+ 
 <div> 
   <div class="container">
     <div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="row justify-content-center ">
@@ -333,19 +333,19 @@ endif;
     </div>
   </div>
 </div>
-<center>
+ 
     
     
     
  <a style="margin: 15px;" id="botaoPrint2" class="btn btn-primary">Reimprimir Pedido<i class="icon-print-2"></i></button></a>
- <button onclick="listMotoboys(<?=$id;?>);" class="btn btn-success btn-xs">Enviar ao Motoboy</button>
-</center>
+ <button onclick="listMotoboys(<?php $id;?>);" class="btn btn-success btn-xs">Enviar ao Motoboy</button>
+ 
 <div class="container">
   <div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="row justify-content-center ">
 
     <form method="post" action="#atualizaStatus">
       <div class="text__center">
-        <h3>Status do pedido: <strong><?=$status;?></strong></h3>
+        <h3>Status do pedido: <strong><?php $status;?></strong></h3>
 
         <select name="status" required class="form-control status">
          <option value="" disabled selected><b>Atualizar Status</b></option>
@@ -383,14 +383,14 @@ endif;
     <div class="form-group">
       <label for="exampleFormControlTextarea5"></label>
       <textarea id="campomsg" name="campomsg" required class="form-control" rows="5" ></textarea>
-      <center><small>Essa msg será enviada ao cliente pelo whatsapp.</small></center>
+       <small>Essa msg será enviada ao cliente pelo whatsapp.</small> 
     </div>
 
 
-    <input type="hidden" name="id" value="<?=$id;?>">
+    <input type="hidden" name="id" value="<?php $id;?>">
     <hr />
     <div class="form-group">
-      <label for="forma_pagamento"><span style="color: red;">* </span><?=$texto['msg_f_pagamento'];?></label>
+      <label for="forma_pagamento"><span style="color: red;">* </span><?php $texto['msg_f_pagamento'];?></label>
       <select class="form-control" required name="forma_pagamento" id="forma_pagamento">  
         <?php 
         $lerbanco->ExeRead('ws_formas_pagamento', 'WHERE user_id = :idus', "idus={$getu}");
@@ -398,7 +398,7 @@ endif;
           foreach ($lerbanco->getResult() as $getBancoBairros):
             extract($getBancoBairros);
             ?>
-            <option <?=(!empty($forma_pagamento) && $forma_pagamento == $f_pagamento ? "selected" : "");?> value="<?=$f_pagamento;?>"><?=$f_pagamento;?></option>
+            <option <?php (!empty($forma_pagamento) && $forma_pagamento == $f_pagamento ? "selected" : "");?> value="<?php $f_pagamento;?>"><?php $f_pagamento;?></option>
             <?php
           endforeach;
         endif;
@@ -407,12 +407,12 @@ endif;
       </select>
     </div>
     <div class="form-group">
-      <label for="valor_troco"><span style="color: red;">* </span><?=$texto['msg_troco'];?></label>
-      <input type="tel" maxlength="11" value="<?=(!empty($valor_troco) && $valor_troco != "0.00" ? Check::Real($valor_troco) : "0,00");?>" data-mask="#.##0,00" data-mask-reverse="true" name="valor_troco" id="valor_troco" class="form-control" placeholder="0,00" />
+      <label for="valor_troco"><span style="color: red;">* </span><?php $texto['msg_troco'];?></label>
+      <input type="tel" maxlength="11" value="<?php (!empty($valor_troco) && $valor_troco != "0.00" ? Check::Real($valor_troco) : "0,00");?>" data-mask="#.##0,00" data-mask-reverse="true" name="valor_troco" id="valor_troco" class="form-control" placeholder="0,00" />
     </div>
 
     <input type="hidden" name="enviarNovoStatus" value="true" />
-    <center><button type="input" class="btn_1">SALVAR ALTERAÇAO</button></center>
+     <button type="input" class="btn_1">SALVAR ALTERAÇAO</button> 
 
   </form>
 </div></div>

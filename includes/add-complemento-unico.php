@@ -77,7 +77,7 @@ endif;
 <script type="text/javascript">
 
 </script>
-<script src="<?=$site;?>js/MSFmultiSelect.js"></script>
+<script src="<?php echo $site; ?>js/MSFmultiSelect.js"></script>
 
 <style type="text/css">
 	.msf_multiselect_container .msf_multiselect {
@@ -177,7 +177,7 @@ endif;
 
 						</div>
 
-						<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+						<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
 						<input type="hidden" name="status_opcao_complemento" value="1">
 						<button class="btn btn-success"><strong>CADASTRAR<strong></button>
 					</form>
@@ -249,7 +249,7 @@ endif;
 						foreach ($lerbanco->getResult() as $extractdadositens):
 							extract($extractdadositens);
 							?>
-							<form method="post" id="formEditaradicional_<?=$id_opcao_complemento;?>">
+							<form method="post" id="formEditaradicional_<?php $id_opcao_complemento;?>">
 								<tr>	
 									<td>
 										<?php
@@ -294,14 +294,14 @@ endif;
 								</form>
 
 								<td>
-									<a href="<?=$site.$Url[0];?>/add-complemento-unico&idexcluir=<?=$id_opcao_complemento;?>"> 
-										<button id="btnExcluiradicional_<?=$id_opcao_complemento;?>" data-excluir_adicional="<?=$id_opcao_complemento;?>" type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
+									<a href="<?php $site.$Url[0];?>/add-complemento-unico&idexcluir=<?php $id_opcao_complemento;?>"> 
+										<button id="btnExcluiradicional_<?php $id_opcao_complemento;?>" data-excluir_adicional="<?php $id_opcao_complemento;?>" type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
 									</a>
 								</td>
 								<td>
-									<a href="<?=$site.$Url[0];?>/add-complemento-unico&idpausar=<?=$id_opcao_complemento;?>"> 
-										<button class="btn <?=($status_opcao_complemento == 1 ? 'btn-info' : 'btn-warning')?> btnpausaradicional">
-											<?=($status_opcao_complemento == 1 ? '<i style="font-size: 20px;" class="fa fa-pause" aria-hidden="true"></i>' : '<i style="font-size: 20px;" class="fa fa-play" aria-hidden="true"></i>')?>					
+									<a href="<?php $site.$Url[0];?>/add-complemento-unico&idpausar=<?php $id_opcao_complemento;?>"> 
+										<button class="btn <?php ($status_opcao_complemento == 1 ? 'btn-info' : 'btn-warning')?> btnpausaradicional">
+											<?php ($status_opcao_complemento == 1 ? '<i style="font-size: 20px;" class="fa fa-pause" aria-hidden="true"></i>' : '<i style="font-size: 20px;" class="fa fa-play" aria-hidden="true"></i>')?>					
 										</button>
 									</a>
 								</td>

@@ -124,9 +124,9 @@ endif;
 											$(this).prop('disabled', true);
 
 											$.ajax({
-												url: '<?=$site?>includes/loadtamanhos.php',
+												url: '<?php echo $site; ?>includes/loadtamanhos.php',
 												method: 'post',
-												data: {'user_id' : '<?=$userlogin['user_id'];?>', 'tipo_id' : getidtipo},
+												data: {'user_id' : '<?php $userlogin['user_id'];?>', 'tipo_id' : getidtipo},
 												success: function(data){
 													$('.table-responsive').html(data);								
 													$('.btngettipo').prop('disabled', false);
@@ -166,7 +166,7 @@ endif;
 											</small>
 										</div>
 									</div>
-									<input type="hidden" name="user_tipo_produto" value="<?=$userlogin['user_id'];?>">
+									<input type="hidden" name="user_tipo_produto" value="<?php $userlogin['user_id'];?>">
 									<a id="submittipo" class="btn btn-primary">Cadastrar</a>	
 									<div id="resultadoformaddtipo"></div>				
 								</form>
@@ -272,7 +272,7 @@ endif;
 
 										</div>
 									</div>
-									<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+									<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
 									<a id="submitoption" class="btn btn-primary">Cadastrar</a>					
 								</form>
 								<div id="resultadoformaddoption"></div>
@@ -306,7 +306,7 @@ endif;
 							var iddotipo = $("#id_tipo").val();
 
 							$.ajax({
-								url: '<?=$site?>includes/processaaddoptions.php',
+								url: '<?php echo $site; ?>includes/processaaddoptions.php',
 								method: 'post',
 								data: $('#formaddoptiontamanho').serialize(),
 								success: function(data){
@@ -352,7 +352,7 @@ endif;
 						}else{
 
 							$.ajax({
-								url: '<?=$site?>includes/processaaddtipo.php',
+								url: '<?php echo $site; ?>includes/processaaddtipo.php',
 								method: 'post',
 								data: $('#formaddtipo').serialize(),
 								success: function(data){
@@ -381,7 +381,7 @@ endif;
 				});
 			</script>
 
-			<script src="<?=$site;?>js/jquery.numble.min.js"></script>
+			<script src="<?php echo $site; ?>js/jquery.numble.min.js"></script>
 			
 			<script type="text/javascript">
 				$("#qtdnumero").numble({

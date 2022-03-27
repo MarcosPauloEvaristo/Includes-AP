@@ -125,7 +125,7 @@ $updatebanco = new Update();
             </div>
           </div>
         </div>
-        <input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+        <input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
         <input type="submit" name="send_delivery_distance_rate" value="Cadastrar" class="btn btn-success" />
         <br />
         <br />
@@ -147,10 +147,10 @@ $updatebanco = new Update();
                       extract($tt);                                    
                 ?>
                       <tr>
-                        <td><strong><?=$distance_rate . ' Km';?></strong></td>
-                        <td><strong><?='R$ ' . Check::real($price);?></strong></td>
+                        <td><strong><?php $distance_rate . ' Km';?></strong></td>
+                        <td><strong><?php 'R$ ' . Check::real($price);?></strong></td>
                         <td align ="right">
-                          <a title="Remover" href="<?=$site.$Url[0].'/delivery-distance-config&delete='.$id.'#addDeliveryDistanceRate';?>">
+                          <a title="Remover" href="<?php $site.$Url[0].'/delivery-distance-config&delete='.$id.'#addDeliveryDistanceRate';?>">
                             <button style="margin-top: 3px;" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
                           </a>
                         </td>

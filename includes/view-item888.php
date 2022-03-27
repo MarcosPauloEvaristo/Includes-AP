@@ -154,14 +154,14 @@ endif;
 
                  echo "
                 <div class=\"alert alert-info alert-dismissible fade show\" role=\"alert\">
-                <center>RESULTADO DA PESQUISA: 0 <BR /><strong><a href='{$site}{$Url[0]}/view-item'>CLIQUE AQUI PARA VOLTAR</a></strong></center>
+                 RESULTADO DA PESQUISA: 0 <BR /><strong><a href='{$site}{$Url[0]}/view-item'>CLIQUE AQUI PARA VOLTAR</a></strong> 
                 </div>
 
                 ";
               else:
                 echo "
                 <div class=\"alert alert-info alert-dismissible fade show\" role=\"alert\">
-                <center><strong>Sem dados a serem exibidos.</strong></center>
+                 <strong>Sem dados a serem exibidos.</strong> 
                 </div>
 
                 ";
@@ -173,7 +173,7 @@ endif;
             else:
              
                     if(!empty($search_url)):
-                        echo '<center><a href="'.$site.$Url[0].'/view-item"><button id="demo-btn-addrow" class="btn btn-outline btn-primary btn-sm"> VOLTAR PARA TODOS OS ITENS</button></a></center><br /><br />';
+                        echo ' <a href="'.$site.$Url[0].'/view-item"><button id="demo-btn-addrow" class="btn btn-outline btn-primary btn-sm"> VOLTAR PARA TODOS OS ITENS</button></a> <br /><br />';
                     endif;
            
               foreach ($lerbanco->getResult() as $getItensBanco):
@@ -203,30 +203,30 @@ endif;
                   ?>
                 </strong>
               </td>
-              <td><?=(!empty($nome_item) ? limitarTexto($nome_item, 40) : '');?></td>
-              <td><?=(!empty($preco_item) ? 'R$ '.Check::Real($preco_item) : '');?></td>
-              <td><?=(!empty($descricao_item) ? limitarTexto($descricao_item, 30) : '');?></td>
+              <td><?php (!empty($nome_item) ? limitarTexto($nome_item, 40) : '');?></td>
+              <td><?php (!empty($preco_item) ? 'R$ '.Check::Real($preco_item) : '');?></td>
+              <td><?php (!empty($descricao_item) ? limitarTexto($descricao_item, 30) : '');?></td>
 
-              <td><input type="number" data-produtoid="<?=$id;?>" class="form-control numero number_adicional" name="number_adicional" min="1" max="1000" value="<?=(!empty($number_adicional) ? $number_adicional : "")?>" placeholder="0">
+              <td><input type="number" data-produtoid="<?php $id;?>" class="form-control numero number_adicional" name="number_adicional" min="1" max="1000" value="<?php (!empty($number_adicional) ? $number_adicional : "")?>" placeholder="0">
               </td>
 
-              <td><input type="number" data-produtoid="<?=$id;?>" class="form-control numero number_adicional_pago" name="number_adicional_pago" min="1" max="1000" value="<?=(!empty($number_adicional_pago) ? $number_adicional_pago : "")?>" placeholder="0">
+              <td><input type="number" data-produtoid="<?php $id;?>" class="form-control numero number_adicional_pago" name="number_adicional_pago" min="1" max="1000" value="<?php (!empty($number_adicional_pago) ? $number_adicional_pago : "")?>" placeholder="0">
               </td>
 
               <td>
                 <div class="ckbx-style-14">
-                  <input <?=(!empty($disponivel) && $disponivel == 1 ? 'checked' : '');?> value="<?=$id;?>" type="checkbox" id="atualizar_<?=$id;?>" name="ckbx-style-14">
-                  <label class="atualizar_<?=$id;?>" for="atualizar_<?=$id;?>"></label>
+                  <input <?php (!empty($disponivel) && $disponivel == 1 ? 'checked' : '');?> value="<?php $id;?>" type="checkbox" id="atualizar_<?php $id;?>" name="ckbx-style-14">
+                  <label class="atualizar_<?php $id;?>" for="atualizar_<?php $id;?>"></label>
                 </div>                  
                 
                 <script type="text/javascript">
                   $(document).ready(function(){
-                    $('.atualizar_<?=$id;?>').click(function(){
-                      var idDoItem = $('#atualizar_<?=$id;?>').val();
+                    $('.atualizar_<?php $id;?>').click(function(){
+                      var idDoItem = $('#atualizar_<?php $id;?>').val();
                       $.ajax({
-                        url: '<?=$site;?>includes/processaDisponibilidadeItens.php',
+                        url: '<?php echo $site; ?>includes/processaDisponibilidadeItens.php',
                         method: "post",
-                        data: {'iditem' : idDoItem, 'iduser' : '<?=$userlogin['user_id'];?>'},
+                        data: {'iditem' : idDoItem, 'iduser' : '<?php $userlogin['user_id'];?>'},
 
                         success: function(data){  
                         }
@@ -238,14 +238,14 @@ endif;
                 </script>
               </td>              
               <td>
-                <center>
-                  <a href="<?=$site.$Url[0].'/up-item&id='.$id.'#upitem';?>"><p data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary" data-title="Editar"><span class="glyphicon glyphicon-pencil"></span></button></p></a>
-                </center>
+                 
+                  <a href="<?php $site.$Url[0].'/up-item&id='.$id.'#upitem';?>"><p data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary" data-title="Editar"><span class="glyphicon glyphicon-pencil"></span></button></p></a>
+                 
               </td>
               <td>
-                <center>
-                  <button data-getiddell="<?=$id;?>" class="btn btn-danger deletarItem"><span class="glyphicon glyphicon-trash"></span></button>
-                </center>
+                 
+                  <button data-getiddell="<?php $id;?>" class="btn btn-danger deletarItem"><span class="glyphicon glyphicon-trash"></span></button>
+                 
               </td>
             </tr>  
             <!-- FINAL DO LOOP DA LEITURA DO BANCO --> 
@@ -278,10 +278,10 @@ endif;
 
     var valor_total_number = $(this).val();
     var id_produto = $(this).data('produtoid');
-    var iduser = '<?=$userlogin['user_id'];?>';
+    var iduser = '<?php $userlogin['user_id'];?>';
 
     $.ajax({
-      url: '<?=$site;?>controlers/edit-opcao-adicionais-pagos.php',
+      url: '<?php echo $site; ?>controlers/edit-opcao-adicionais-pagos.php',
       method: "post",
       data: {'idproduto' : id_produto, 'valor' : valor_total_number, 'iduser' : iduser},
 
@@ -306,10 +306,10 @@ endif;
 
     var valor_total_number = $(this).val();
     var id_produto = $(this).data('produtoid');
-    var iduser = '<?=$userlogin['user_id'];?>';
+    var iduser = '<?php $userlogin['user_id'];?>';
 
     $.ajax({
-      url: '<?=$site;?>controlers/edit-opcao-adicionais.php',
+      url: '<?php echo $site; ?>controlers/edit-opcao-adicionais.php',
       method: "post",
       data: {'idproduto' : id_produto, 'valor' : valor_total_number, 'iduser' : iduser},
 
@@ -341,7 +341,7 @@ endif;
         type: 'error',
         image: {
           visible: true,
-          customImage: '<?=$site;?>img/danger.png'
+          customImage: '<?php echo $site; ?>img/danger.png'
         },
         position: 'bottom-left',
         showProgress: true,
@@ -351,9 +351,9 @@ endif;
             text: ' Deletar',
             callback: function(){
               $.ajax({
-                url: '<?=$site;?>includes/processadeletaritem.php',
+                url: '<?php echo $site; ?>includes/processadeletaritem.php',
                 method: 'post',
-                data: {'iditemdeletar' : iddoitemdel, 'iduser' : '<?=$userlogin['user_id'];?>'},
+                data: {'iditemdeletar' : iddoitemdel, 'iduser' : '<?php $userlogin['user_id'];?>'},
                 success: function(data){
                   if(data == 'true'){
                     window.location.reload(1);

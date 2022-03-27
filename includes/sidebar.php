@@ -33,7 +33,7 @@ $cart = new Cart([
 ?>
 
 
-<script src="<?= $site; ?>js/theia-sticky-sidebar.js"></script>
+<script src="<?php echo $site; ?>js/theia-sticky-sidebar.js"></script>
 <script>
 	jQuery('#sidebar').theiaStickySidebar({
 		additionalMarginTop: 80
@@ -50,9 +50,9 @@ $cart = new Cart([
 			var rash_item = $(this).data('item_hash');
 
 			$.ajax({
-				url: '<?= $site; ?>includes/processaremovercart.php',
+				url: '<?php echo $site; ?>includes/processaremovercart.php',
 				method: 'post',
-				data: {'iditem':id_item,'itemrash':rash_item, 'getpegaloja' : '<?=$_POST['getloja'];?>'},
+				data: {'iditem':id_item,'itemrash':rash_item, 'getpegaloja' : '<?php $_POST['getloja'];?>'},
 
 				success: function(data){
 					$('.remove_item').prop('disabled', false);
@@ -69,7 +69,7 @@ $cart = new Cart([
 
 <div class="theiaStickySidebar">
 	<div id="cart_box" >
-		<h3><?=$texto['msg_seu_pedido'];?> <i class="icon_cart_alt pull-right"></i></h3>					
+		<h3><?php $texto['msg_seu_pedido'];?> <i class="icon_cart_alt pull-right"></i></h3>					
 		<?php
 		if($cart->isEmpty()):
 			
@@ -128,9 +128,9 @@ $cart = new Cart([
 					$('#limparcarrinho').prop('disabled', true);
 
 					$.ajax({
-						url: '<?= $site; ?>includes/processalimparcarrinho.php',
+						url: '<?php echo $site; ?>includes/processalimparcarrinho.php',
 						method: 'post',
-						data: {'limparcart':statusclean, 'getlojal' : '<?=$_POST['getloja'];?>'},
+						data: {'limparcart':statusclean, 'getlojal' : '<?php $_POST['getloja'];?>'},
 						success: function(data){
 							$('#limparcarrinho').prop('disabled', false);
 							$('#divlimparcarrinho').html(data);
@@ -140,7 +140,7 @@ $cart = new Cart([
 				});
 			});
 		</script>
-		<form id="irpcarrinho" data-toggle="validator" action="<?=$site.$_POST['getloja'].'/';?>carrinho" method="post">
+		<form id="irpcarrinho" data-toggle="validator" action="<?php $site.$_POST['getloja'].'/';?>carrinho" method="post">
 			<hr />
 			<div class="row" id="options_2" style="padding-left: 12px;">
 
@@ -151,7 +151,7 @@ $cart = new Cart([
 							required />
 							<label for="enterega">
 								<span style="color:#444;">
-									<p style="font-size: 14px;"><?=$texto['msg_delivery'];?></p>
+									<p style="font-size: 14px;"><?php $texto['msg_delivery'];?></p>
 								</span>
 							</label>
 						</div>
@@ -164,7 +164,7 @@ $cart = new Cart([
 							required />
 							<label for="buscar">
 								<span style="color:#444;">
-									<p style="font-size: 14px;"><?=$texto['msg_Buscar_pedido'];?></p>
+									<p style="font-size: 14px;"><?php $texto['msg_Buscar_pedido'];?></p>
 								</span>
 							</label>
 						</div>
@@ -177,7 +177,7 @@ $cart = new Cart([
 							required />
 							<label for="mesa">
 								<span style="color:#444;">
-									<p style="font-size: 14px;"><?=$texto['msg_pedido_mesa'];?></p>
+									<p style="font-size: 14px;"><?php $texto['msg_pedido_mesa'];?></p>
 								</span>
 							</label>
 						</div>
@@ -195,14 +195,14 @@ $cart = new Cart([
 						<td>
 							Pedido
 							<span class="pull-right">
-								R$ <?=(!empty($cart->getAttributeTotal('preco')) ? Check::Real($cart->getAttributeTotal('preco')) : '0,00');?>
+								R$ <?php (!empty($cart->getAttributeTotal('preco')) ? Check::Real($cart->getAttributeTotal('preco')) : '0,00');?>
 
 							</span>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<?=$texto['msg_adicionais'];?> <span class="pull-right">
+							<?php $texto['msg_adicionais'];?> <span class="pull-right">
 								R$ 
 								<?php
 
@@ -244,8 +244,8 @@ $cart = new Cart([
 									<a style="color: green">
 										Desconto
 										<span class="pull-right">
-											<!--<?=$_SESSION['desconto_cupom']['desconto'];?> %-->
-											<?=($_SESSION['desconto_cupom']['type_discount'] == 1 ? $_SESSION['desconto_cupom']['desconto']." %" : "R$ ".str_replace('.',',',$_SESSION['desconto_cupom']['desconto']));?>
+											<!--<?php $_SESSION['desconto_cupom']['desconto'];?> %-->
+											<?php ($_SESSION['desconto_cupom']['type_discount'] == 1 ? $_SESSION['desconto_cupom']['desconto']." %" : "R$ ".str_replace('.',',',$_SESSION['desconto_cupom']['desconto']));?>
 										</span>
 									</a>
 								</td>
@@ -279,8 +279,8 @@ $cart = new Cart([
 				</table>	
 				<hr>
 
-				<a style="margin-bottom: 5px;" class="btn_full_outline validarCupom"><?=$texto['msg_btn_cupom'];?></a>
-				<button type="submit" class="btn_full"><?=$texto['msg_confirmar_puschase'];?></button>
+				<a style="margin-bottom: 5px;" class="btn_full_outline validarCupom"><?php $texto['msg_btn_cupom'];?></a>
+				<button type="submit" class="btn_full"><?php $texto['msg_confirmar_puschase'];?></button>
 				<script type="text/javascript">
 					$(document).ready(function(){
 						$('.validarCupom').click(function(){
@@ -288,9 +288,9 @@ $cart = new Cart([
 								function(button, text) {
 									if(button == 'info'){
 										$.ajax({
-											url: '<?=$site;?>includes/processaativacupom.php',
+											url: '<?php echo $site; ?>includes/processaativacupom.php',
 											method: 'post',
-											data: {'codigocupom' : text, 'iduser' : '<?=$getu;?>'},
+											data: {'codigocupom' : text, 'iduser' : '<?php $getu;?>'},
 											success: function(data){
 												if(data == 'erro0'){
 													x0p('Opss...', 
@@ -316,7 +316,7 @@ $cart = new Cart([
 													x0p('Parabéns!', 
 														'Desconto aplicado!', 
 														'ok', false);
-													$('#sidebar').load('<?=$site;?>includes/sidebar.php', {'getloja' : '<?=$_POST['getloja'];?>'});
+													$('#sidebar').load('<?php echo $site; ?>includes/sidebar.php', {'getloja' : '<?php $_POST['getloja'];?>'});
 												}
 
 											}
@@ -335,9 +335,9 @@ $cart = new Cart([
 			<?php if($detect->isMobile()): ?>
 				<hr />
 				<div class="box_style_2" id="help">
-					<h4><?=$texto['msg_compartilhar'];?></h4>
+					<h4><?php $texto['msg_compartilhar'];?></h4>
 					<!-- AddToAny BEGIN -->
-					<div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="<?=$site.$_POST['getloja'];?>"> 		   
+					<div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="<?php $site.$_POST['getloja'];?>"> 		   
 						<a class="a2a_button_facebook"></a>
 						<a class="a2a_button_facebook_messenger"></a>
 						<a class="a2a_button_twitter"></a>
@@ -356,7 +356,7 @@ $cart = new Cart([
 	<?php if(!$cart->isEmpty()):?>
 		<div id="whatsapp"  >
 
-			<a href="#sidebar" title="<?=$texto['msg_seu_pedido'];?>"> <span style="opacity: 0.9;" class="cart-count"><?=($cart->getTotalItem() > 0 ? (int)$cart->getTotalItem() : 0);?></span><i style="opacity: 0.6;font-size:45px;color:#27771b;" class="icon-bag"></i>
+			<a href="#sidebar" title="<?php $texto['msg_seu_pedido'];?>"> <span style="opacity: 0.9;" class="cart-count"><?php ($cart->getTotalItem() > 0 ? (int)$cart->getTotalItem() : 0);?></span><i style="opacity: 0.6;font-size:45px;color:#27771b;" class="icon-bag"></i>
 			</a>
 
 		</div>

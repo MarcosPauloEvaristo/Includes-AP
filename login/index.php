@@ -4,6 +4,8 @@ session_cache_expire(60);
 session_start();
 require('../_app/Config.inc.php');
 require('../_app/Mobile_Detect.php');
+require('../_app/Models/Login.class.php');
+
 $detect = new Mobile_Detect;
 $site = HOME;
 $login = new Login(3);
@@ -49,7 +51,7 @@ endif;
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
-	  <link href="<?=$site;?>css/suportewats.css" rel="stylesheet">
+	  <link href="<?php echo $site; ?>css/suportewats.css" rel="stylesheet">
 </head>
 <body>
 	
@@ -61,7 +63,7 @@ endif;
 					<!-- <img style="margin: 0 auto; max-width: 70%;" src="images/logo.png"/> -->
 					<span  class="login100-form-title p-b-32" style="margin-top: 15px;font-size: 20px;">
 
-						<center>Fazer Login</center>
+						 Fazer Login 
 					</span>
 					<?php
 					
@@ -192,13 +194,13 @@ endif;
 			</style>
 			<div id="social_footer">
         <ul>
-          <li><a target="_blank" href="<?=(!empty($texto['link_do_face']) ? $texto['link_do_face'] : "");?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a target="_blank" href="<?php (!empty($texto['link_do_face']) ? $texto['link_do_face'] : "");?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
           <!--<li><a href="#0"><i class="icon-twitter"></i></a></li>-->
           <!--<li><a href="#0"><i class="icon-google"></i></a></li>-->
-          <li><a target="_blank" href="<?=(!empty($texto['link_do_insta']) ? $texto['link_do_insta'] : "");?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a target="_blank" href="<?php (!empty($texto['link_do_insta']) ? $texto['link_do_insta'] : "");?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
           <!--<li><a href="#0"><i class="icon-pinterest"></i></a></li>-->
           <!--<li><a href="#0"><i class="icon-vimeo"></i></a></li>-->
-          <li><a target="_blank" href="<?=(!empty($texto['link_do_insta']) ? $texto['link_do_insta'] : "");?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+          <li><a target="_blank" href="<?php (!empty($texto['link_do_insta']) ? $texto['link_do_insta'] : "");?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
         </ul>    
       </div>
 		</div>
@@ -225,7 +227,7 @@ endif;
 <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
-<script src="<?=$site;?>js/suportewats.js"></script>
+<script src="<?php echo $site; ?>js/suportewats.js"></script>
 
 
 
@@ -247,28 +249,28 @@ endif;
               echo "$resp";
               ?>
             </h3>
-            <p style="color:#ffffff;">Clique em um de nossos representantes abaixo para conversar no WhatsApp ou envie um email para <?=$texto['emailSuporteSite'];?></p></div>
+            <p style="color:#ffffff;">Clique em um de nossos representantes abaixo para conversar no WhatsApp ou envie um email para <?php $texto['emailSuporteSite'];?></p></div>
             <div class='get-new hide'><div id='get-label'></div><div id='get-nama'></div></div></div>
             <div class='home-chat'>
               <!-- Info Contact Start -->
               <a class='informasi' href='javascript:void' title='Chat Whatsapp'>
-                <div class='info-avatar'><img src='<?=$site?>img/supportmale.png'/></div>
+                <div class='info-avatar'><img src='<?php echo $site; ?>img/supportmale.png'/></div>
                 <div class='info-chat'>
                   <span class='chat-label'>Suporte Técnico</span>
                   <span class='chat-nama'>Atendimento ao Cliente 1</span>
-                </div><span class='my-number'><?=$texto['telefoneAdministracaoTecnica'];?></span>
+                </div><span class='my-number'><?php $texto['telefoneAdministracaoTecnica'];?></span>
               </a>
               <!-- Info Contact End -->
               <!-- Info Contact Start -->
               <a class='informasi' href='javascript:void' title='Chat Whatsapp'>
-                <div class='info-avatar'><img src='<?=$site?>img/supportfemale.png'/></div>
+                <div class='info-avatar'><img src='<?php echo $site; ?>img/supportfemale.png'/></div>
                 <div class='info-chat'>
                   <span class='chat-label'>Suporte Vendas</span>
                   <span class='chat-nama'>Atendimento ao Cliente 2</span>
-                </div><span class='my-number'><?=$texto['telefoneAdministracaoVendas'];?></span>
+                </div><span class='my-number'><?php $texto['telefoneAdministracaoVendas'];?></span>
               </a>
               <!-- Info Contact End -->
-              <div class='blanter-msg'><b>HORÁRIOS: </b> de <i><?=$texto['horariosSuporteSite']?></i></div></div>
+              <div class='blanter-msg'><b>HORÁRIOS: </b> de <i><?php $texto['horariosSuporteSite']?></i></div></div>
               <div class='start-chat hide'>
                 <div class='first-msg'><span>Olá, Como posso te ajudar?</span></div>
                 <div class='blanter-msg'>

@@ -17,13 +17,13 @@
     <div class="card-body pd-40">
       <div class="row">
         <div class="col-md-3" ></a>
-          <img src="<?=$site;?>img/wp.png" width="210" class="img-thumbnail"/>
+          <img src="<?php echo $site; ?>img/wp.png" width="210" class="img-thumbnail"/>
         </div>
         <div class="col-md-9" align="justify">
           <br>
           <span style="font-size:18px"><i class="fa fa-external-link" aria-hidden="true"></i> ENVIAR LINK NO WHATSAPP</span><br><br>
           <form action="" method="post">
-            <input type="hidden" id="mensagem" value="🙋‍♀️😍 *<?=(!empty($nome_empresa) ? $nome_empresa : 'Nome_do_seu_negócio');?>* 😱😎 %0A%0A Click no link abaixo 👇 para você acessar e fazer seu pedido com mais agilidade.%0A%0A🍱 <?=trim($site.$nome_empresa_link);?> %0A%0A Estamos aguardando o seu pedido.%0A%0A🍟 🍔 🍕 🥟 🍧 🍽
+            <input type="hidden" id="mensagem" value="🙋‍♀️😍 *<?php (!empty($nome_empresa) ? $nome_empresa : 'Nome_do_seu_negócio');?>* 😱😎 %0A%0A Click no link abaixo 👇 para você acessar e fazer seu pedido com mais agilidade.%0A%0A🍱 <?php trim($site.$nome_empresa_link);?> %0A%0A Estamos aguardando o seu pedido.%0A%0A🍟 🍔 🍕 🥟 🍧 🍽
             ">
             <div class="row">
               <div class="col-md-4">
@@ -59,7 +59,7 @@
     <div class="card-body pd-40">
       <div class="row">
         <div class="col-md-3" ></a>
-          <a href="https://api.qrserver.com/v1/create-qr-code/?data=<?=trim($site.$nome_empresa_link);?>/&amp;size=400x400" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?data=<?=trim($site.$nome_empresa_link);?>/&amp;size=200x200" alt="" title="" class="img-thumbnail"/></a>
+          <a href="https://api.qrserver.com/v1/create-qr-code/?data=<?php trim($site.$nome_empresa_link);?>/&amp;size=400x400" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?data=<?php trim($site.$nome_empresa_link);?>/&amp;size=200x200" alt="" title="" class="img-thumbnail"/></a>
         </div>
         <div class="col-md-9" align="justify">
           <br>
@@ -76,7 +76,7 @@
   <div class="box_style_2" id="help">
     <h4>COMPARTILHE SEU LINK NAS REDES SOCIAIS</h4>
     <!-- AddToAny BEGIN -->
-    <div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="<?=$site.$nome_empresa_link;?>">        
+    <div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="<?php $site.$nome_empresa_link;?>">        
       <a class="a2a_button_facebook"></a>
       <a class="a2a_button_facebook_messenger"></a>
       <a class="a2a_button_twitter"></a>

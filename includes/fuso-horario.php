@@ -43,7 +43,7 @@ endif;
 						<b>Altere o fuso horário para o da sua região.</b> 
 					</p>
 					<a class="btn btn-primary" href="https://www.youtube.com/channel/UCUVhSNdrLyQ64i123Uc8btg/videos>" target="_blank"></i><span class="float-right text-center font-w-700"><strong>TUTORIAL</strong></a>
-					<h3><strong>Hora atual: </strong> <b style="color: green;"><?=date("H:i:s");?></b> </h3>
+					<h3><strong>Hora atual: </strong> <b style="color: green;"><?php date("H:i:s");?></b> </h3>
 					<br />
 					<?php
 					$getfuso = filter_input_array(INPUT_POST, FILTER_DEFAULT);

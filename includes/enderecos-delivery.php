@@ -125,7 +125,7 @@ endif;
   </div>
 </div>
 </div>
-<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
 <input type="submit" name="sendAddBairro" value="Cadastrar Endereço" class="btn btn-success" />
 <br />
 <br />
@@ -148,10 +148,10 @@ endif;
             extract($tt);                                    
         ?>
             <tr>
-              <td><strong><?=$bairro;?></strong></td>
-              <td><strong><?='R$ ' . Check::real($taxa);?></strong></td>
+              <td><strong><?php $bairro;?></strong></td>
+              <td><strong><?php 'R$ ' . Check::real($taxa);?></strong></td>
               <td align ="right">
-                <a title="Remover" href="<?=$site.$Url[0].'/delivery-distance-config&delete='.$id.'#adicionarbairro';?>">
+                <a title="Remover" href="<?php $site.$Url[0].'/delivery-distance-config&delete='.$id.'#adicionarbairro';?>">
                   <button style="margin-top: 3px;" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
                 </a>
               </td>

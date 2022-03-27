@@ -18,7 +18,7 @@ $site = HOME;
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
-  <title><?=$texto['nome_site_landing'];?> - Login</title>
+  <title><?php $texto['nome_site_landing'];?> - Login</title>
   <!-- Bootstrap Core CSS -->
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- animation CSS -->
@@ -45,9 +45,9 @@ $site = HOME;
       <div class="inner-panel">
         <a href="javascript:void(0)" class="p-20 di"><img src="../plugins/images/admin-logo.png"></a>
         <div class="lg-content">
-          <h2><?=$texto['nome_site_landing'];?> </h2>
-          <p class="text-muted"><?=$texto['descricao_site_landing'];?></p>
-          <a href="<?=$site;?>" class="btn btn-rounded btn-danger p-l-20 p-r-20"> Voltar ao site</a>
+          <h2><?php $texto['nome_site_landing'];?> </h2>
+          <p class="text-muted"><?php $texto['descricao_site_landing'];?></p>
+          <a href="<?php echo $site; ?>" class="btn btn-rounded btn-danger p-l-20 p-r-20"> Voltar ao site</a>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@ $site = HOME;
               if (!$login->getResult()):                                  
                 echo "<div class=\"alert alert-info alert-dismissable\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">X</button>
-                <center>{$login->getError()[0]}</center>
+                 {$login->getError()[0]} 
                 </div>";
               else:
                header("Location: {$site}admin/painel.php");
@@ -90,13 +90,13 @@ $site = HOME;
             if ($get == 'restrito'):
              echo "<div class=\"alert alert-info alert-dismissable\">
              <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">X</button>
-             <center><b>OOOPS!</b> Acesso Negado, favor efetue login para acessar o painel.</center>
+              <b>OOOPS!</b> Acesso Negado, favor efetue login para acessar o painel. 
              </div>";
              header("Refresh: 5; url={$site}admin/");
            elseif ($get == 'logoff'):              
              echo "<div class=\"alert alert-info alert-dismissable\">
              <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">X</button>
-             <center><b>DESLOGADO:</b> Você saiu de sua conta!</center>
+              <b>DESLOGADO:</b> Você saiu de sua conta! 
              </div>";
              header("Refresh: 5; url={$site}admin/");
            endif;

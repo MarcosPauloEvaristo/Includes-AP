@@ -236,7 +236,7 @@ endif;
           <div class="menu-item-pic">
             <div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap:wrap;justify-content:center;background-color:#ffffff;border-width: 5px;border-style:dashed;border-color:#d3394c;" class="box">
               <input type="file" name="img_item" id="file-5" class="inputfile inputfile-4" data-multiple-caption="{count} files selected" multiple />
-              <label for="file-5"><figure><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg></figure> <span><?=(!empty($img_item_explode_ponto[0]) ? $img_item_explode_ponto[0] : 'Enviar Imagem&hellip;');?></span></label>
+              <label for="file-5"><figure><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg></figure> <span><?php (!empty($img_item_explode_ponto[0]) ? $img_item_explode_ponto[0] : 'Enviar Imagem&hellip;');?></span></label>
             </div>
           </div>
         </div><br />
@@ -246,19 +246,19 @@ endif;
            <div class="col-md-8">
              <div class="form-group">
                <label><span style="color: red;">*</span> NOME:</label>
-               <input placeholder="Nome do item" required type="text"  name="nome_item" value="<?=$nome_item;?>" class="form-control">
+               <input placeholder="Nome do item" required type="text"  name="nome_item" value="<?php $nome_item;?>" class="form-control">
              </div>
            </div>
            <div class="col-md-4">
             <div class="form-group">
               <label><span style="color: red;">*</span> PREÇO BASE DO ITEM:</label>
-              <input required type="text" data-mask="#.##0,00" data-mask-reverse="true" value="<?=$preco_item;?>" maxlength="11" onkeypress="return formatar_moeda(this, '.', ',', event);" name="preco_item" class="form-control" placeholder="R$ 00,00" />
+              <input required type="text" data-mask="#.##0,00" data-mask-reverse="true" value="<?php $preco_item;?>" maxlength="11" onkeypress="return formatar_moeda(this, '.', ',', event);" name="preco_item" class="form-control" placeholder="R$ 00,00" />
             </div>
           </div>
         </div>
         <div class="form-group">
          <label><span style="color: red;">*</span> DESCRIÇÃO:</label>
-         <textarea placeholder="Escreva uma descrição do item..." style="resize:none;" name="descricao_item" required class="form-control" rows="2"><?=$descricao_item;?></textarea>
+         <textarea placeholder="Escreva uma descrição do item..." style="resize:none;" name="descricao_item" required class="form-control" rows="2"><?php $descricao_item;?></textarea>
        </div>
        <div class="form-group">
          <label>DIAS EM QUE O ITEM APARECE PARA O CLIENTE:</label>
@@ -333,9 +333,9 @@ endif;
                   var buscartamanhos = $(this).val();
 
                   $.ajax({
-                    url: '<?=$site;?>includes/buscartamanhosadditem.php',
+                    url: '<?php echo $site; ?>includes/buscartamanhosadditem.php',
                     method: 'post',
-                    data: {'user_id' : '<?=$userlogin['user_id'];?>', 'tipo_id' : buscartamanhos},
+                    data: {'user_id' : '<?php $userlogin['user_id'];?>', 'tipo_id' : buscartamanhos},
                     success: function(data){                      
                       $('#getResultmostrartamanhos').html(data);
                     }
@@ -350,13 +350,13 @@ endif;
 
       <div class="form-group">
        <div class="add_more_cat">
-        <input type="hidden" name="dia_semana" id="diasdasemana" value="<?=$dia_semana;?>">
-        <input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+        <input type="hidden" name="dia_semana" id="diasdasemana" value="<?php $dia_semana;?>">
+        <input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
         <input type="submit" class="btn_1" value="ATUALIZAR ITEM" name="atualizar_item" />
         <?php
         if(!empty($img_item) && $img_item != 'null' && $img_item != 'false'):
           ?>
-          <a href="<?=$site.$Url[0]."/up-item&id={$getIdItem}&Remover=1#upitem";?>">
+          <a href="<?php $site.$Url[0]."/up-item&id={$getIdItem}&Remover=1#upitem";?>">
             <button type="button" class="btn btn-danger">Remover Imagem</button>
           </a>
           <?php
@@ -436,7 +436,7 @@ endif;
         if($dia_semana == 'null'):
         else:
           ?>
-          value: [<?=$dia_semana;?>],
+          value: [<?php $dia_semana;?>],
         <?php endif ;?>
         multiple: true,
         placeholder: "Selecione os dias da semana",

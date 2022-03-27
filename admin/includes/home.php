@@ -11,13 +11,13 @@
         $totalclientes = $lerbanco->getRowCount();
     endif;
     ?>
-    <a href="<?=$site;?>admin/painel.php?exe=todos-os-clientes">
+    <a href="<?php echo $site; ?>admin/painel.php?exe=todos-os-clientes">
     <div class="col-lg-3 col-sm-6 col-xs-12">
         <div class="white-box">
             <h3 class="box-title">TOTAL CLIENTES</h3>
             <ul class="list-inline two-part">
                 <li><i class="icon-people text-info"></i></li>
-                <li class="text-right"><span class="counter"><?=$totalclientes;?></span></li>
+                <li class="text-right"><span class="counter"><?php $totalclientes;?></span></li>
             </ul>            
         </div>
 
@@ -35,7 +35,7 @@
             <h3 class="box-title">LOJAS CADASTRADAS</h3>
             <ul class="list-inline two-part">
                 <li><i class="icon-folder text-purple"></i></li>
-                <li class="text-right"><span class="counter"><?= $totalempresas;?></span></li>
+                <li class="text-right"><span class="counter"><?php  $totalempresas;?></span></li>
             </ul>
         </div>
     </div>
@@ -51,7 +51,7 @@
             <h3 class="box-title">PRODUTOS CADASTRADOS</h3>
             <ul class="list-inline two-part">
                 <li><i class="icon-folder-alt text-danger"></i></li>
-                <li class="text-right"><span class=""><?=$totaitens?></span></li>
+                <li class="text-right"><span class=""><?php $totaitens?></span></li>
             </ul>
         </div>
     </div>
@@ -67,7 +67,7 @@
             <h3 class="box-title">PEDIDOS REALIZADOS</h3>
             <ul class="list-inline two-part">
                 <li><i class="ti-wallet text-success"></i></li>
-                <li class="text-right"><span class=""><?=$totalpedidos;?></span></li>
+                <li class="text-right"><span class=""><?php $totalpedidos;?></span></li>
             </ul>
         </div>
     </div>
@@ -171,17 +171,17 @@ $pager->ExePager($getpage, 10);
 
 
                                 <tr>
-                                    <td style="text-align: left;"><span class="font-medium"><?=(!empty($nome_empresa) ? $nome_empresa: "");?></span></td>
+                                    <td style="text-align: left;"><span class="font-medium"><?php (!empty($nome_empresa) ? $nome_empresa: "");?></span></td>
                                     <td>
                                         <?php if(!empty($nome_empresa_link)):?>
-                                            <a href="<?=$site.$nome_empresa_link;?>" target="_blank">
-                                                <span class="font-medium" style="color: blue;cursor: pointer;"><?=(!empty($nome_empresa_link) ? $nome_empresa_link: "");?></span>
+                                            <a href="<?php $site.$nome_empresa_link;?>" target="_blank">
+                                                <span class="font-medium" style="color: blue;cursor: pointer;"><?php (!empty($nome_empresa_link) ? $nome_empresa_link: "");?></span>
                                             </a>
                                         <?php endif; ?>
                                     </td>
                                     <td>
                                         
-                                        <?=(!empty($cidade_empresa) ? $cidade_empresa : "");?>
+                                        <?php (!empty($cidade_empresa) ? $cidade_empresa : "");?>
                                     </td>
                                     <td>
 
@@ -225,36 +225,36 @@ $pager->ExePager($getpage, 10);
                                     ?>
 
                                 </td>
-                                <td><center><a href="<?=$site;?>admin/painel.php?exe=mudar-senha-cliente&id=<?=$user_id;?>"><button class="btn btn-success"><i class="fa fa-unlock-alt" aria-hidden="true"></i></button></a></center></td>
+                                <td> <a href="<?php echo $site; ?>admin/painel.php?exe=mudar-senha-cliente&id=<?php $user_id;?>"><button class="btn btn-success"><i class="fa fa-unlock-alt" aria-hidden="true"></i></button></a> </td>
                                 <td>
 
 
                                    <?php
                                    if(!empty($telefone_empresa)):
                                     ?>
-                                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55<?=$telefone_empresa;?>" target="_blank">
+                                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55<?php $telefone_empresa;?>" target="_blank">
                                         <button type="button" class="btn btn-info">                                           
                                            <i class="fa fa-whatsapp" aria-hidden="true"></i> Contato
                                        </button>
                                    </a>
                                <?php endif; ?>
 
-                               <button type="button" data-toggle="modal" data-target="#modalRenovar_<?=$user_id;?>" class="btn btn-info renovardata">
+                               <button type="button" data-toggle="modal" data-target="#modalRenovar_<?php $user_id;?>" class="btn btn-info renovardata">
                                 <i class="fa fa-calendar" aria-hidden="true"></i> Nova data de renovação
                             </button> 
 
                             <!-- MODAL -->
-                            <div class="modal fade" id="modalRenovar_<?=$user_id;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="modalRenovar_<?php $user_id;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel"><b>LOJA: </b><?=$nome_empresa;?></h5>
+                                    <h5 class="modal-title" id="exampleModalLabel"><b>LOJA: </b><?php $nome_empresa;?></h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                       <span aria-hidden="true">&times;</span>
                                   </button>
                               </div>
                               <div class="modal-body">
-                                <form method="post" id="formRenovar_<?=$user_id;?>">
+                                <form method="post" id="formRenovar_<?php $user_id;?>">
                                  <div class="form-group">
 
                                     <label>Nova data:</label>
@@ -264,9 +264,9 @@ $pager->ExePager($getpage, 10);
 
                             </div>
                             <div class="modal-footer">
-                                <input type="hidden" name="user_id" value="<?=$user_id;?>">
+                                <input type="hidden" name="user_id" value="<?php $user_id;?>">
                             </form>
-                            <button type="button" data-iddaloja="<?=$user_id;?>" class="btn btn-primary salvarnovadata">Salvar</button>
+                            <button type="button" data-iddaloja="<?php $user_id;?>" class="btn btn-primary salvarnovadata">Salvar</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                         </div>
                     </div>
@@ -275,7 +275,7 @@ $pager->ExePager($getpage, 10);
             <!-- FIM DO MODAL --> 
 
 
-            <button type="button" data-idusereloja="<?=$user_id;?>" class="btn btn-danger excluirlojaeuser">                                         
+            <button type="button" data-idusereloja="<?php $user_id;?>" class="btn btn-danger excluirlojaeuser">                                         
                <i class="fa fa-trash" aria-hidden="true"></i> Excluir
            </button>
 
@@ -346,7 +346,7 @@ echo $pager->getPaginator();
 
 
             $.ajax({
-                url: '<?=$site;?>admin/controlers/excluircliente.php',
+                url: '<?php echo $site; ?>admin/controlers/excluircliente.php',
                 method: 'post',
                 data: {'idcliente' : iduserloja},
                 success: function(data){

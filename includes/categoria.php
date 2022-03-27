@@ -25,7 +25,7 @@ endif;
 $updatebanco = new Update();
 ?>
 
-<script src="<?=$site;?>js/MSFmultiSelect.js"></script>
+<script src="<?php echo $site; ?>js/MSFmultiSelect.js"></script>
 
 <style type="text/css">
   .msf_multiselect_container .msf_multiselect {
@@ -114,275 +114,275 @@ $updatebanco = new Update();
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.hamburgers {
- background-image: url("<?=$site;?>img/burger.png");
+ background-image: url("<?php echo $site; ?>img/burger.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.cachorro-quente {
- background-image: url("<?=$site;?>img/hot-dog.png");
+ background-image: url("<?php echo $site; ?>img/hot-dog.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.taco {
- background-image: url("<?=$site;?>img/taco.png");
+ background-image: url("<?php echo $site; ?>img/taco.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.pizza {
- background-image: url("<?=$site;?>img/pizza.png");
+ background-image: url("<?php echo $site; ?>img/pizza.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.lemonade {
- background-image: url("<?=$site;?>img/lemonade.png");
+ background-image: url("<?php echo $site; ?>img/lemonade.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.can {
- background-image: url("<?=$site;?>img/can.png");
+ background-image: url("<?php echo $site; ?>img/can.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.beer {
- background-image: url("<?=$site;?>img/beer.png");
+ background-image: url("<?php echo $site; ?>img/beer.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.water {
- background-image: url("<?=$site;?>img/water.png");
+ background-image: url("<?php echo $site; ?>img/water.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.acai {
- background-image: url("<?=$site;?>img/acai.png");
+ background-image: url("<?php echo $site; ?>img/acai.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.bolos {
- background-image: url("<?=$site;?>img/bolos.png");
+ background-image: url("<?php echo $site; ?>img/bolos.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.cupcake {
- background-image: url("<?=$site;?>img/cupcake.png");
+ background-image: url("<?php echo $site; ?>img/cupcake.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.ice-cream {
- background-image: url("<?=$site;?>img/ice-cream.png");
+ background-image: url("<?php echo $site; ?>img/ice-cream.png");
  background-size: 30px auto;
 
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.truffle {
- background-image: url("<?=$site;?>img/truffle.png");
+ background-image: url("<?php echo $site; ?>img/truffle.png");
  background-size: 30px auto;
 
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.bitterballen2 {
- background-image: url("<?=$site;?>img/bitterballen2.png");
+ background-image: url("<?php echo $site; ?>img/bitterballen2.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.bitterballen {
- background-image: url("<?=$site;?>img/bitterballen.png");
+ background-image: url("<?php echo $site; ?>img/bitterballen.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.breakfast {
- background-image: url("<?=$site;?>img/breakfast.png");
+ background-image: url("<?php echo $site; ?>img/breakfast.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.chopping {
- background-image: url("<?=$site;?>img/chopping.png");
+ background-image: url("<?php echo $site; ?>img/chopping.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.grill {
- background-image: url("<?=$site;?>img/grill.png");
+ background-image: url("<?php echo $site; ?>img/grill.png");
  background-size: 30px auto;
 
 }
 .paymentWrap .paymentBtnGroup .paymentMethod .method.sopa {
- background-image: url("<?=$site;?>img/sopa.png");
+ background-image: url("<?php echo $site; ?>img/sopa.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.macarrao {
- background-image: url("<?=$site;?>img/macarao.png");
+ background-image: url("<?php echo $site; ?>img/macarao.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.pastel {
- background-image: url("<?=$site;?>img/spirra.png");
+ background-image: url("<?php echo $site; ?>img/spirra.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.espetinho {
- background-image: url("<?=$site;?>img/espetinho.png");
+ background-image: url("<?php echo $site; ?>img/espetinho.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.coxasfrango {
- background-image: url("<?=$site;?>img/coxasfrango.png");
+ background-image: url("<?php echo $site; ?>img/coxasfrango.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.combopizza {
- background-image: url("<?=$site;?>img/combopizza.png");
+ background-image: url("<?php echo $site; ?>img/combopizza.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.combohamburgue {
- background-image: url("<?=$site;?>img/combohamburgue.png");
+ background-image: url("<?php echo $site; ?>img/combohamburgue.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.combopipoca {
- background-image: url("<?=$site;?>img/combopipoca.png");
+ background-image: url("<?php echo $site; ?>img/combopipoca.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.refrigerantes {
- background-image: url("<?=$site;?>img/refrigerantes.png");
+ background-image: url("<?php echo $site; ?>img/refrigerantes.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.vinho {
- background-image: url("<?=$site;?>img/vinho.png");
+ background-image: url("<?php echo $site; ?>img/vinho.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.catchup {
- background-image: url("<?=$site;?>img/catchup.png");
+ background-image: url("<?php echo $site; ?>img/catchup.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.petisco {
- background-image: url("<?=$site;?>img/petisco.png");
+ background-image: url("<?php echo $site; ?>img/petisco.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.salgadinhos {
- background-image: url("<?=$site;?>img/salgadinhos.png");
+ background-image: url("<?php echo $site; ?>img/salgadinhos.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.camarao {
- background-image: url("<?=$site;?>img/camarao.png");
+ background-image: url("<?php echo $site; ?>img/camarao.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.peixe {
- background-image: url("<?=$site;?>img/peixe.png");
+ background-image: url("<?php echo $site; ?>img/peixe.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.japonesa {
- background-image: url("<?=$site;?>img/japonesa.png");
+ background-image: url("<?php echo $site; ?>img/japonesa.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.frutas {
- background-image: url("<?=$site;?>img/frutas.png");
+ background-image: url("<?php echo $site; ?>img/frutas.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.legumes {
- background-image: url("<?=$site;?>img/legumes.png");
+ background-image: url("<?php echo $site; ?>img/legumes.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.sacolamercado {
- background-image: url("<?=$site;?>img/sacolamercado.png");
+ background-image: url("<?php echo $site; ?>img/sacolamercado.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.carvao {
- background-image: url("<?=$site;?>img/carvao.png");
+ background-image: url("<?php echo $site; ?>img/carvao.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.biscoitos {
- background-image: url("<?=$site;?>img/biscoitos.png");
+ background-image: url("<?php echo $site; ?>img/biscoitos.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.picole {
- background-image: url("<?=$site;?>img/picole.png");
+ background-image: url("<?php echo $site; ?>img/picole.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.chocolate {
- background-image: url("<?=$site;?>img/chocolate.png");
+ background-image: url("<?php echo $site; ?>img/chocolate.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.doces {
- background-image: url("<?=$site;?>img/doces.png");
+ background-image: url("<?php echo $site; ?>img/doces.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.leite {
- background-image: url("<?=$site;?>img/leite.png");
+ background-image: url("<?php echo $site; ?>img/leite.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.drink {
- background-image: url("<?=$site;?>img/drink.png");
+ background-image: url("<?php echo $site; ?>img/drink.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.queijo {
- background-image: url("<?=$site;?>img/queijo.png");
+ background-image: url("<?php echo $site; ?>img/queijo.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.bolassorvete {
- background-image: url("<?=$site;?>img/bolassorvete.png");
+ background-image: url("<?php echo $site; ?>img/bolassorvete.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.sacola {
- background-image: url("<?=$site;?>img/sacola.png");
+ background-image: url("<?php echo $site; ?>img/sacola.png");
  background-size: 30px auto;
 
 }
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method.bandeja {
- background-image: url("<?=$site;?>img/bandeja.png");
+ background-image: url("<?php echo $site; ?>img/bandeja.png");
  background-size: 30px auto;
 
 }
@@ -447,7 +447,7 @@ endif;
    <div class="input-group">
     <span class="input-group-addon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
     <input type="text" name="nome_cat" class="form-control" placeholder="Nome da categoria...">
-    <input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>" />
+    <input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>" />
   </div>
 </div>
 </div>
@@ -828,7 +828,7 @@ endif;
     foreach($lerbanco->getResult() as $tt):
      extract($tt);                                    
      ?>
-     <a href="<?=$site.$Url[0].'/upcategoria&id='.$id.'#upcat';?>"><button style="margin-top:4px;" type="button" class="btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <?=$nome_cat;?> </button></a>
+     <a href="<?php $site.$Url[0].'/upcategoria&id='.$id.'#upcat';?>"><button style="margin-top:4px;" type="button" class="btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <?php $nome_cat;?> </button></a>
      <?php
    endforeach;
  endif;
@@ -840,17 +840,17 @@ endif;
    foreach($lerbanco->getResult() as $tt):
      extract($tt);                                    
      ?>
-     <a style="margin-top:4px;" type="button" class="btn btn-danger deletar_<?=$id;?>"><i class="fa fa-trash-o" aria-hidden="true"></i> <?=$nome_cat;?> </a>
+     <a style="margin-top:4px;" type="button" class="btn btn-danger deletar_<?php $id;?>"><i class="fa fa-trash-o" aria-hidden="true"></i> <?php $nome_cat;?> </a>
      <script type="text/javascript">
       $(document).ready(function(){
-        $(".deletar_<?=$id;?>").click(function(){
+        $(".deletar_<?php $id;?>").click(function(){
           GrowlNotification.notify({
             title: 'Atenção!',
             description: 'Tem certeza de que deseja deletar essa categoria? isso vai apagar todos os itens associados a ela.',
             type: 'error',
             image: {
               visible: true,
-              customImage: '<?=$site;?>img/danger.png'
+              customImage: '<?php echo $site; ?>img/danger.png'
             },
             position: 'bottom-left',
             showProgress: true,
@@ -860,12 +860,12 @@ endif;
                 text: 'SIM',
                 callback: function(){
                   $.ajax({
-                    url: '<?=$site;?>includes/processadeletacat.php',
+                    url: '<?php echo $site; ?>includes/processadeletacat.php',
                     method: 'post',
-                    data: {'idcat' : '<?=$id;?>', 'iduser' : '<?=$userlogin['user_id'];?>'}
+                    data: {'idcat' : '<?php $id;?>', 'iduser' : '<?php $userlogin['user_id'];?>'}
                   });
                   setTimeout(function() {
-                   window.location.replace('<?=$site.$Url[0].'/categoria';?>');
+                   window.location.replace('<?php $site.$Url[0].'/categoria';?>');
                  }, 2000);
                 }
               },

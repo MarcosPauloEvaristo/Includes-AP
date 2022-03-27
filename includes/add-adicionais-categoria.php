@@ -77,7 +77,7 @@ endif;
 <script type="text/javascript">
 
 </script>
-<script src="<?=$site;?>js/MSFmultiSelect.js"></script>
+<script src="<?php echo $site; ?>js/MSFmultiSelect.js"></script>
 
 <style type="text/css">
 	.msf_multiselect_container .msf_multiselect {
@@ -190,7 +190,7 @@ endif;
     								foreach ($lerbanco->getResult() as $cat):
     									extract($cat);
     									?>
-    									<a id="<?=$id;?>" class="list-group-item list-group-item-action" style="cursor: pointer;"><?=$nome_cat;?></a>
+    									<a id="<?php $id;?>" class="list-group-item list-group-item-action" style="cursor: pointer;"><?php $nome_cat;?></a>
     									<?
     								endforeach;
     							endif;
@@ -221,7 +221,7 @@ endif;
                         
                         </br>
 
-						<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+						<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
 						<button class="btn btn-success" type="submit"><strong>CADASTRAR</strong></button>
 					</form>
 					
@@ -316,7 +316,7 @@ endif;
 						foreach ($lerbanco->getResult() as $extractdadositens):
 							extract($extractdadositens);
 							?>
-							<form method="post" id="formEditaradicional_<?=$id;?>">
+							<form method="post" id="formEditaradicional_<?php $id;?>">
 								<tr>	
 									<td>
 										<?php
@@ -348,8 +348,8 @@ endif;
 								</form>
 
 								<td>
-									<a href="<?=$site.$Url[0];?>/add-adicionais-categoria&idexcluir=<?=$id;?>"> 
-										<button id="btnExcluiraddtCat_<?=$id;?>" data-excluir_adicional="<?=$id;?>" type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
+									<a href="<?php $site.$Url[0];?>/add-adicionais-categoria&idexcluir=<?php $id;?>"> 
+										<button id="btnExcluiraddtCat_<?php $id;?>" data-excluir_adicional="<?php $id;?>" type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
 									</a>
 								</td>
 							</tr>
@@ -406,7 +406,7 @@ endif;
                         if (isset($listImg[$i])) {
                             ?>
                             <div class="col-sm-3">
-                                <img class="img-fluid" style="cursor: pointer;" src="<?=($site.'img/'.$listImg[$i]);?>" alt="Chania" width="35" height="35" onclick="selectImg('<?=$listImg[$i];?>');" data-dismiss="modal">
+                                <img class="img-fluid" style="cursor: pointer;" src="<?php ($site.'img/'.$listImg[$i]);?>" alt="Chania" width="35" height="35" onclick="selectImg('<?php $listImg[$i];?>');" data-dismiss="modal">
                             </div>
                             <?
                         }
@@ -482,11 +482,11 @@ endif;
             if (class_a.indexOf("active") != -1) {
                 category.push($(this).attr("id"));
                 /*$.ajax({
-                    url: '<?= $site; ?>includes/adicionais-categoria-func.php',
+                    url: '<?php echo $site; ?>includes/adicionais-categoria-func.php',
 				    method: "post",
 				    type: "post",
 				    dataType: "json",
-				    data: {"action" : "list", "user_id" : "<?=$userlogin['user_id'];?>", "cat_id" : $(this).attr("id")},
+				    data: {"action" : "list", "user_id" : "<?php $userlogin['user_id'];?>", "cat_id" : $(this).attr("id")},
 				    success: function(response) {
 				        $("#content_listItens").html("");
 				        arr_listItens = [];
@@ -509,11 +509,11 @@ endif;
         
         if (category.length > 0) {
             $.ajax({
-                url: '<?= $site; ?>includes/adicionais-categoria-func.php',
+                url: '<?php echo $site; ?>includes/adicionais-categoria-func.php',
     		    method: "post",
     		    type: "post",
     		    dataType: "json",
-    		    data: {"action" : "list", "user_id" : "<?=$userlogin['user_id'];?>", "cat_id" : category},
+    		    data: {"action" : "list", "user_id" : "<?php $userlogin['user_id'];?>", "cat_id" : category},
     		    success: function(response) {
     		        var res = response;
     		        //alert(res.toString());
@@ -547,11 +547,11 @@ endif;
             var class_a = $(this).attr("class");
             if (class_a.indexOf("active") != -1) {
                 $.ajax({
-                    url: '<?= $site; ?>includes/adicionais-categoria-func.php',
+                    url: '<?php echo $site; ?>includes/adicionais-categoria-func.php',
 				    method: "post",
 				    type: "post",
 				    dataType: "json",
-				    data: {"action" : "list", "user_id" : "<?=$userlogin['user_id'];?>", "cat_id" : $(this).attr("id")},
+				    data: {"action" : "list", "user_id" : "<?php $userlogin['user_id'];?>", "cat_id" : $(this).attr("id")},
 				    success: function(response) {
 				        $("#content_listItens").html("");
 				        arr_listItens = [];

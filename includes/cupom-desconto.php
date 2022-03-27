@@ -90,8 +90,8 @@ endif;
                   </div>
                 </div>
                 
-                <input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
-                <input type="hidden" name="lojaurl" value="<?=$Url[0];?>">
+                <input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
+                <input type="hidden" name="lojaurl" value="<?php $Url[0];?>">
                 <input type="hidden" name="submitcupomconfirm" value="true">
                 <input type="hidden" name="mostrar_site" value="0">
                 <a id="submitbtncupom" class="btn btn-primary">Cadastrar Cupom</a>
@@ -130,8 +130,8 @@ endif;
                 </div>
               </div>
             </div>
-            <input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
-            <input type="hidden" name="lojaurl" value="<?=$Url[0];?>">
+            <input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
+            <input type="hidden" name="lojaurl" value="<?php $Url[0];?>">
             <input type="hidden" name="submitcupomconfirm" value="true">
             <input type="hidden" name="mostrar_site" value="0">
             <a id="submitbtncupom" class="btn btn-primary">Cadastrar Cupom</a>-->
@@ -141,7 +141,7 @@ endif;
             $(document).ready(function(){
               $('#submitbtncupom').click(function(){
                 $.ajax({
-                  url: '<?=$site;?>includes/processasubmitcupom.php',
+                  url: '<?php echo $site; ?>includes/processasubmitcupom.php',
                   method: 'post',
                   data: $('#formcupom').serialize(),
                   success: function(data){
@@ -178,10 +178,10 @@ endif;
                     extract($dadoscupons); 
                     ?>
                     <tr>
-                      <th scope="row"><?=$ativacao;?></th>
-                      <!--<td><?=$porcentagem;?> %</td>-->
-                      <td><?=($type_discount == 1 ? "$porcentagem %" : "R$ $fixed_value");?></td>
-                      <td><?=$total_vezes;?></td>
+                      <th scope="row"><?php $ativacao;?></th>
+                      <!--<td><?php $porcentagem;?> %</td>-->
+                      <td><?php ($type_discount == 1 ? "$porcentagem %" : "R$ $fixed_value");?></td>
+                      <td><?php $total_vezes;?></td>
                       <td>
                         <?php
                         $datavalidade = explode("-", $data_validade);
@@ -203,8 +203,8 @@ endif;
                       ?> 
 
                     </td>
-                    <td><button type="button" class="btn btn-defalt exibirsite" data-idcupom="<?=$id_cupom;?>"><?=($mostrar_site == 0 ? 'Não' : 'Sim');?></button></td>
-                    <td><button type="button" class="btn btn-danger excluircupom" data-idcupom="<?=$id_cupom;?>">Excluir</button></td>
+                    <td><button type="button" class="btn btn-defalt exibirsite" data-idcupom="<?php $id_cupom;?>"><?php ($mostrar_site == 0 ? 'Não' : 'Sim');?></button></td>
+                    <td><button type="button" class="btn btn-danger excluircupom" data-idcupom="<?php $id_cupom;?>">Excluir</button></td>
                   </tr>
                   <?php
                 endforeach;
@@ -255,9 +255,9 @@ endif;
       $(this).prop('disabled', true);
 
       $.ajax({
-        url: '<?=$site;?>includes/processamostrarcupom.php',
+        url: '<?php echo $site; ?>includes/processamostrarcupom.php',
         method: 'post',
-        data: {'iddocupom' : idcupom, 'url' : '<?=$Url[0];?>', 'iduser' : '<?=$userlogin['user_id'];?>'},
+        data: {'iddocupom' : idcupom, 'url' : '<?php $Url[0];?>', 'iduser' : '<?php $userlogin['user_id'];?>'},
         success: function(data){
           $('.exibirsite').prop('disabled', false);
           if(data == 'erro1'){
@@ -265,7 +265,7 @@ endif;
               'Ocorreu um arro!',
               'error', false);
           }else if(data == 'erro0'){
-            window.location.replace('<?=$site.$Url[0].'/cupom-desconto';?>');
+            window.location.replace('<?php $site.$Url[0].'/cupom-desconto';?>');
           }
 
         }
@@ -303,9 +303,9 @@ endif;
         }else if(data.button == 'info'){
 
           $.ajax({
-            url: '<?=$site;?>includes/processadeletarcupom.php',
+            url: '<?php echo $site; ?>includes/processadeletarcupom.php',
             method: 'post',
-            data: {'iddocupom' : idcupom, 'url' : '<?=$Url[0];?>', 'iduser' : '<?=$userlogin['user_id'];?>'},
+            data: {'iddocupom' : idcupom, 'url' : '<?php $Url[0];?>', 'iduser' : '<?php $userlogin['user_id'];?>'},
             success: function(data){
               $('#sucsesscupom').html(data);
               $('.excluircupom').prop('disabled', false);

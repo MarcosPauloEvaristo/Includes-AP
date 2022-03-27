@@ -90,7 +90,7 @@ endif;
 							<label for="f_pagamento">Forma de Pagameneto</label>						
 							<input type="text" id="f_pagamento" name="f_pagamento" class="form-control" placeholder="Dinheiro, Crédito Visa, etc...">
 						</div>
-						<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+						<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
 						<div class="form-group">							
 							<button type="submit" class="btn btn-success"><strong>CADASTRAR</strong></button>
 						</div>
@@ -106,9 +106,9 @@ endif;
 								extract($tt);                                    
 								?>     
 
-								<a title="Deletar" href="<?=$site.$Url[0].'/cadastrar-formas-pagamento&delete='.$id_f_pagamento;?>">
+								<a title="Deletar" href="<?php $site.$Url[0].'/cadastrar-formas-pagamento&delete='.$id_f_pagamento;?>">
 									<button style="margin-top: 3px;" type="button" class="btn btn-danger">
-										<strong><?=$f_pagamento;?> = </strong> <span class="glyphicon glyphicon-trash"></span>
+										<strong><?php $f_pagamento;?> = </strong> <span class="glyphicon glyphicon-trash"></span>
 									</button>
 								</a>
 								<br />

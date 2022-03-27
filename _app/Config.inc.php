@@ -1,5 +1,5 @@
 <?php require 'funcoes.php';
-require('_app/Conn/Conn.class.php');
+require 'Conn/Conn.class.php';
 
 /*
 if(isset($_SERVER['HTTP_HOST']) && !empty($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == 'localhost')) {
@@ -22,7 +22,7 @@ if(isset($_SERVER['HTTP_HOST']) && !empty($_SERVER['HTTP_HOST']) && ($_SERVER['H
 define('HOST', '127.0.0.1');
 define('USER', 'root');
 define('PASS', '');
-define('DBSA', 'anotarpedidos');
+define('DBSA', 'anotar1');
 define('HOME', 'https://localhost/anotarpedidos/');
 
 define("GOOGLE_MAPS_API_KEY", "AIzaSyCi4DJnXuAZIYYgtzgh5AhKk6dzWszliG4");

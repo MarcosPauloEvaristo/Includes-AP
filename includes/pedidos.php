@@ -69,13 +69,13 @@ $a = urldecode($a);
     }
   </style>
   <div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="toolbar-btn-action">
-    <a href="<?=$site.$Url[0].'/pedidos';?>" class="btn btn-default">Todos <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
-    <a href="<?=$site.$Url[0].'/pedidos&status=Aberto'?>" class="btn btn-warning">Abertos <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
-    <a href="<?=$site.$Url[0].'/pedidos&status=Em Andamento'?>" class="btn btn-info">Em Andamento <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
-    <a href="<?=$site.$Url[0].'/pedidos&status=Disponível para Retirada'?>" class="btn btn-info">Disponível para Retirada <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
-    <a href="<?=$site.$Url[0].'/pedidos&status=Saiu para Entrega'?>" class="btn btn-primary">Saiu para Entrega <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
-    <a href="<?=$site.$Url[0].'/pedidos&status=Finalizado'?>" class="btn btn-success">Finalizados <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
-    <a href="<?=$site.$Url[0].'/pedidos&status=Cancelado'?>" class="btn btn-danger">Cancelados <i class="fa fa-cutlery" aria-hidden="true"></i></a>
+    <a href="<?php $site.$Url[0].'/pedidos';?>" class="btn btn-default">Todos <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
+    <a href="<?php $site.$Url[0].'/pedidos&status=Aberto'?>" class="btn btn-warning">Abertos <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
+    <a href="<?php $site.$Url[0].'/pedidos&status=Em Andamento'?>" class="btn btn-info">Em Andamento <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
+    <a href="<?php $site.$Url[0].'/pedidos&status=Disponível para Retirada'?>" class="btn btn-info">Disponível para Retirada <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
+    <a href="<?php $site.$Url[0].'/pedidos&status=Saiu para Entrega'?>" class="btn btn-primary">Saiu para Entrega <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
+    <a href="<?php $site.$Url[0].'/pedidos&status=Finalizado'?>" class="btn btn-success">Finalizados <i class="fa fa-cutlery" aria-hidden="true"></i></a>&nbsp;
+    <a href="<?php $site.$Url[0].'/pedidos&status=Cancelado'?>" class="btn btn-danger">Cancelados <i class="fa fa-cutlery" aria-hidden="true"></i></a>
   </div>
 
   <div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="container">
@@ -187,10 +187,10 @@ $a = urldecode($a);
               </script>";
             endif;
             ?>
-            <tr id="<?=$codigo_pedido;?>" <?=($view == 0 ? "style='background-color: #34AF23;font-weight: bold;color:#ffffff'" : "");?>>
+            <tr id="<?php $codigo_pedido;?>" <?php ($view == 0 ? "style='background-color: #34AF23;font-weight: bold;color:#ffffff'" : "");?>>
               <td>
                 
-                 <strong><?=$codigo_pedido;?></strong>
+                 <strong><?php $codigo_pedido;?></strong>
              
              </td >
              <td>                    
@@ -204,16 +204,16 @@ $a = urldecode($a);
                echo '<span>'.$dataformat.' ás '.$dataH[0].':'.$dataH[1].'</span>';
                ?>   
              </td>   
-             <td><?=($opcao_delivery == 'true' ? '<strong style="color:green;">SIM</strong>' : '<strong style="color:#d9534f;">NÃO</strong>');?></td>
+             <td><?php ($opcao_delivery == 'true' ? '<strong style="color:green;">SIM</strong>' : '<strong style="color:#d9534f;">NÃO</strong>');?></td>
              <td>
                <?php
                $nome = str_replace('%20', ' ', $nome);
                $nome = ucfirst($nome);
                echo $nome;
                ?></td>
-               <td><?=formatPhone($telefone);?></td>
-               <td><?=($confirm_whatsapp == 'true' ? '<strong style="color:green;">SIM</strong>' : '<strong style="color:#d9534f;">NÃO</strong>');?></td>
-               <td>R$ <?=Check::Real($total);?></td>
+               <td><?php formatPhone($telefone);?></td>
+               <td><?php ($confirm_whatsapp == 'true' ? '<strong style="color:green;">SIM</strong>' : '<strong style="color:#d9534f;">NÃO</strong>');?></td>
+               <td>R$ <?php Check::Real($total);?></td>
                <td>                    
                 <?php
                 if($status == "Aberto"):
@@ -232,24 +232,24 @@ $a = urldecode($a);
                 ?>
               </td>
               <td>
-                <button id="verPedido_<?=$id;?>" class="btn btn-primary btn-xs">Ver Pedido</button>
+                <button id="verPedido_<?php $id;?>" class="btn btn-primary btn-xs">Ver Pedido</button>
                 <script type="text/javascript">
                   $(document).ready(function(){
 
-                    $('#verPedido_<?=$id;?>').click(function(){
-                      $('#verPedido_<?=$id;?>').html('Aguarde...');
-                      $('#verPedido_<?=$id;?>').prop('disabled', true);
+                    $('#verPedido_<?php $id;?>').click(function(){
+                      $('#verPedido_<?php $id;?>').html('Aguarde...');
+                      $('#verPedido_<?php $id;?>').prop('disabled', true);
 
                       $.ajax({
-                        url: '<?=$site;?>includes/processanotificacao.php',
+                        url: '<?php echo $site; ?>includes/processanotificacao.php',
                         method: "post",
-                        data: {'idDoPedido' : '<?=$id;?>', 'iduser' : '<?=$userlogin['user_id'];?>'},
+                        data: {'idDoPedido' : '<?php $id;?>', 'iduser' : '<?php $userlogin['user_id'];?>'},
 
                         success: function(data){        
-                          $('#verPedido_<?=$id;?>').html('Ver Pedido');
-                          $('#verPedido_<?=$id;?>').prop('disabled', false);
+                          $('#verPedido_<?php $id;?>').html('Ver Pedido');
+                          $('#verPedido_<?php $id;?>').prop('disabled', false);
                           if(data == 'true'){
-                            window.location.replace('<?=$site.$Url[0].'/ver-pedido&id='.$id;?>');
+                            window.location.replace('<?php $site.$Url[0].'/ver-pedido&id='.$id;?>');
                           }
                         }
                       });
@@ -263,27 +263,27 @@ $a = urldecode($a);
                
               <td>
                   <!--<button class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">Enviar ao Motoboy</button>-->
-                  <button onclick="listMotoboys(<?=$id;?>);" class="btn btn-success btn-xs">Enviar ao Motoboy</button> 
+                  <button onclick="listMotoboys(<?php $id;?>);" class="btn btn-success btn-xs">Enviar ao Motoboy</button> 
                       
                       <td>
-                <button id="verPedido_1<?=$id;?>" class="btn btn-primary btn-xs">Silenciar</button>
+                <button id="verPedido_1<?php $id;?>" class="btn btn-primary btn-xs">Silenciar</button>
                 <script type="text/javascript">
                   $(document).ready(function(){
 
-                    $('#verPedido_1<?=$id;?>').click(function(){
-                      $('#verPedido_1<?=$id;?>').html('Aguarde...');
-                      $('#verPedido_1<?=$id;?>').prop('disabled', true);
+                    $('#verPedido_1<?php $id;?>').click(function(){
+                      $('#verPedido_1<?php $id;?>').html('Aguarde...');
+                      $('#verPedido_1<?php $id;?>').prop('disabled', true);
 
                       $.ajax({
-                        url: '<?=$site;?>includes/processanotificacao.php',
+                        url: '<?php echo $site; ?>includes/processanotificacao.php',
                         method: "post",
-                        data: {'idDoPedido' : '<?=$id;?>', 'iduser' : '<?=$userlogin['user_id'];?>'},
+                        data: {'idDoPedido' : '<?php $id;?>', 'iduser' : '<?php $userlogin['user_id'];?>'},
 
                         success: function(data){        
-                          $('#verPedido_1<?=$id;?>').html('silenciar');
-                          $('#verPedido_1<?=$id;?>').prop('disabled', false);
+                          $('#verPedido_1<?php $id;?>').html('silenciar');
+                          $('#verPedido_1<?php $id;?>').prop('disabled', false);
                           if(data == 'false'){
-                            window.location.replace('<?=$site.$Url[0].'/ver-pedido&id='.$id;?>');
+                            window.location.replace('<?php $site.$Url[0].'/ver-pedido&id='.$id;?>');
                           }
                         }
                       });
@@ -294,12 +294,12 @@ $a = urldecode($a);
                 </script>
               </td> 
                         <td> 
-                    <a href="https://api.whatsapp.com/send?phone=55<?=$telefone;?>&text=🔔 Olá, você acaba de realizar um pedido conosco, pedido confirmado!"><button >Confirmar o Pedido <i class="btn btn-success btn-xs" class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+                    <a href="https://api.whatsapp.com/send?phone=55<?php $telefone;?>&text=🔔 Olá, você acaba de realizar um pedido conosco, pedido confirmado!"><button >Confirmar o Pedido <i class="btn btn-success btn-xs" class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
                      <td> 
                      <button  class="btn_1">Imprimir Pedido <i class="icon-print-2" aria-hidden="true"></i></button></a>
                    
   
-  </center>
+   
 <div style="display: none;"> 
   <div class="container">
     <div style="margin: 0 auto;align-items: center;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;" class="row justify-content-center ">
@@ -393,7 +393,7 @@ $a = urldecode($a);
     </div>
   </div>
 </div>
-<center>
+ 
     
               </td>
             </tr>   
@@ -434,7 +434,7 @@ $a = urldecode($a);
         <tr>
           <td>
             
-             <strong><?=$codigo_pedido;?></strong>
+             <strong><?php $codigo_pedido;?></strong>
            
          </td>
          <td>                    
@@ -448,10 +448,10 @@ $a = urldecode($a);
            echo '<span>'.$dataformat.' ás '.$dataH[0].':'.$dataH[1].'</span>';
            ?>   
          </td>   
-         <td><?=($opcao_delivery == 'true' ? 'Sim' : 'Não');?></td>
+         <td><?php ($opcao_delivery == 'true' ? 'Sim' : 'Não');?></td>
          <td><?php echo str_replace('%20', ' ', $nome);?></td>
-         <td><?=formatPhone($telefone);?></td>
-         <td>R$ <?=Check::Real($total);?></td>
+         <td><?php formatPhone($telefone);?></td>
+         <td>R$ <?php Check::Real($total);?></td>
          <td>                    
           <?php
           if($status == "Aberto"):
@@ -469,24 +469,24 @@ $a = urldecode($a);
           endif;
           ?>
         </td>
-        <td><button id="verPedido_<?=$id;?>" class="btn btn-primary btn-xs">Ver Pedido</button>
+        <td><button id="verPedido_<?php $id;?>" class="btn btn-primary btn-xs">Ver Pedido</button>
            <script type="text/javascript">
                   $(document).ready(function(){
 
-                    $('#verPedido_<?=$id;?>').click(function(){
-                      $('#verPedido_<?=$id;?>').html('Aguarde...');
-                      $('#verPedido_<?=$id;?>').prop('disabled', true);
+                    $('#verPedido_<?php $id;?>').click(function(){
+                      $('#verPedido_<?php $id;?>').html('Aguarde...');
+                      $('#verPedido_<?php $id;?>').prop('disabled', true);
 
                       $.ajax({
-                        url: '<?=$site;?>includes/processanotificacao.php',
+                        url: '<?php echo $site; ?>includes/processanotificacao.php',
                         method: "post",
-                        data: {'idDoPedido' : '<?=$id;?>', 'iduser' : '<?=$userlogin['user_id'];?>'},
+                        data: {'idDoPedido' : '<?php $id;?>', 'iduser' : '<?php $userlogin['user_id'];?>'},
 
                         success: function(data){        
-                          $('#verPedido_<?=$id;?>').html('Ver Pedido');
-                          $('#verPedido_<?=$id;?>').prop('disabled', false);
+                          $('#verPedido_<?php $id;?>').html('Ver Pedido');
+                          $('#verPedido_<?php $id;?>').prop('disabled', false);
                           if(data == 'true'){
-                            window.location.replace('<?=$site.$Url[0].'/ver-pedido&id='.$id;?>');
+                            window.location.replace('<?php $site.$Url[0].'/ver-pedido&id='.$id;?>');
                           }
                         }
                       });
@@ -497,24 +497,24 @@ $a = urldecode($a);
                 </script>
                 
                  </td>
-        <td><button id="verPedido_1<?=$id;?>" class="btn btn-primary btn-xs">Ver Pedido</button>
+        <td><button id="verPedido_1<?php $id;?>" class="btn btn-primary btn-xs">Ver Pedido</button>
            <script type="text/javascript">
                   $(document).ready(function(){
 
-                    $('#verPedido_1<?=$id;?>').click(function(){
-                      $('#verPedido_1<?=$id;?>').html('Aguarde...');
-                      $('#verPedido_1<?=$id;?>').prop('disabled', true);
+                    $('#verPedido_1<?php $id;?>').click(function(){
+                      $('#verPedido_1<?php $id;?>').html('Aguarde...');
+                      $('#verPedido_1<?php $id;?>').prop('disabled', true);
 
                       $.ajax({
-                        url: '<?=$site;?>includes/processanotificacao.php',
+                        url: '<?php echo $site; ?>includes/processanotificacao.php',
                         method: "post",
-                        data: {'idDoPedido' : '<?=$id;?>', 'iduser' : '<?=$userlogin['user_id'];?>'},
+                        data: {'idDoPedido' : '<?php $id;?>', 'iduser' : '<?php $userlogin['user_id'];?>'},
 
                         success: function(data){        
-                          $('#verPedido_1<?=$id;?>').html('Ver Pedido');
-                          $('#verPedido_1<?=$id;?>').prop('disabled', false);
+                          $('#verPedido_1<?php $id;?>').html('Ver Pedido');
+                          $('#verPedido_1<?php $id;?>').prop('disabled', false);
                           if(data == 'true'){
-                            window.location.replace('<?=$site.$Url[0].'/ver-pedido&id='.$id;?>');
+                            window.location.replace('<?php $site.$Url[0].'/ver-pedido&id='.$id;?>');
                           }
                         }
                       });
@@ -614,10 +614,10 @@ endif;
 <script>
     function listMotoboys(id_ped) {
         <? $lerbanco->ExeRead('ws_pedidos', "WHERE user_id = :userid", "userid={$userlogin['user_id']}"); ?>
-        var listPedidos = <?=json_encode($lerbanco->getResult());?>;
+        var listPedidos = <?php json_encode($lerbanco->getResult());?>;
         
         <? $lerbanco->ExeRead('ws_motoboys', "WHERE user_id = :userid", "userid={$userlogin['user_id']}"); ?>
-        var data = <?=json_encode($lerbanco->getResult());?>;
+        var data = <?php json_encode($lerbanco->getResult());?>;
         
         var exists = false;
         if (listPedidos.length > 0) {

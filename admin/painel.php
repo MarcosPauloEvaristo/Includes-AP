@@ -34,7 +34,7 @@ endif;
     <meta name="description" content="">
     <meta name="author" content="">
    <link rel="shortcut icon" type="image/png" href="assets_land/images/anotarpedido.png">
-    <title><?=$texto['nome_site_landing'];?> - Administrar</title>
+    <title><?php $texto['nome_site_landing'];?> - Administrar</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
@@ -89,10 +89,10 @@ endif;
                 <ul class="nav navbar-top-links navbar-right pull-right">
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs"><?=$_SESSION['administrador']['admin_email']; ?></b><span class="caret"></span> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs"><?php $_SESSION['administrador']['admin_email']; ?></b><span class="caret"></span> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
 
-                            <li><a href="<?=$site.'admin/painel.php'?>?logoff=true"><i class="fa fa-power-off"></i> Sair</a></li>
+                            <li><a href="<?php $site.'admin/painel.php'?>?logoff=true"><i class="fa fa-power-off"></i> Sair</a></li>
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>
@@ -115,10 +115,10 @@ endif;
                 <ul class="nav" id="side-menu">
 
                     <li class="devider"></li>
-                    <li> <a href="<?=$site?>admin/painel.php" class="waves-effect"><i class="icon-home"></i> <span class="hide-menu">Painel</span></a> </li>
-                    <li> <a href="<?=$site;?>admin/painel.php?exe=configuracoes" class="waves-effect"><i  class="mdi mdi-settings fa-fw"></i> <span class="hide-menu">Configurações</span></a> </li>
-                    <li> <a href="<?=$site;?>admin/painel.php?exe=mudar-login" class="waves-effect"><i  class="mdi mdi-settings fa-fw"></i> <span class="hide-menu">Alterar dados de login</span></a> </li>
-                      <li> <a href="<?=$site;?>admin/painel.php?exe=todos-os-clientes"><i  class="mdi mdi-account-multiple"></i> <span class="hide-menu">Todos os clientes</span></a> </li>
+                    <li> <a href="<?php echo $site; ?>admin/painel.php" class="waves-effect"><i class="icon-home"></i> <span class="hide-menu">Painel</span></a> </li>
+                    <li> <a href="<?php echo $site; ?>admin/painel.php?exe=configuracoes" class="waves-effect"><i  class="mdi mdi-settings fa-fw"></i> <span class="hide-menu">Configurações</span></a> </li>
+                    <li> <a href="<?php echo $site; ?>admin/painel.php?exe=mudar-login" class="waves-effect"><i  class="mdi mdi-settings fa-fw"></i> <span class="hide-menu">Alterar dados de login</span></a> </li>
+                      <li> <a href="<?php echo $site; ?>admin/painel.php?exe=todos-os-clientes"><i  class="mdi mdi-account-multiple"></i> <span class="hide-menu">Todos os clientes</span></a> </li>
                 </ul>
             </div>
         </div>
@@ -155,7 +155,7 @@ endif;
                 <!-- ============================================================== -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> <?=date('Y')?> &copy; <?=$texto['nome_site_landing'];?></footer>
+            <footer class="footer text-center"> <?php date('Y')?> &copy; <?php $texto['nome_site_landing'];?></footer>
         </div>
         <!-- /#page-wrapper -->
     </div>

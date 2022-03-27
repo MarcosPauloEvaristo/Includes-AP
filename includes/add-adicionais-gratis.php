@@ -77,7 +77,7 @@ endif;
 <script type="text/javascript">
 
 </script>
-<script src="<?=$site;?>js/MSFmultiSelect.js"></script>
+<script src="<?php echo $site; ?>js/MSFmultiSelect.js"></script>
 
 <style type="text/css">
 	.msf_multiselect_container .msf_multiselect {
@@ -167,7 +167,7 @@ endif;
 								foreach ($lerbanco->getResult() as $cat):
 									extract($cat);
 									?>
-									<a id="<?=$id;?>" class="list-group-item list-group-item-action" style="cursor: pointer;"><?=$nome_cat;?></a>
+									<a id="<?php $id;?>" class="list-group-item list-group-item-action" style="cursor: pointer;"><?php $nome_cat;?></a>
 								    <?
 								endforeach;
 							endif;
@@ -200,7 +200,7 @@ endif;
                         
                         </br>
 
-						<input type="hidden" name="user_id" value="<?=$userlogin['user_id'];?>">
+						<input type="hidden" name="user_id" value="<?php $userlogin['user_id'];?>">
 						<input type="hidden" name="status_adicional_gratis" value="1">
 						<button class="btn btn-success"><strong>CADASTRAR</strong></button>
 					</form>
@@ -313,7 +313,7 @@ endif;
 						foreach ($lerbanco->getResult() as $extractdadositens):
 							extract($extractdadositens);
 							?>
-							<form method="post" id="formEditaradicional_<?=$id_adicional_gratis;?>">
+							<form method="post" id="formEditaradicional_<?php $id_adicional_gratis;?>">
 								<tr>	
 									<td>
 										<?php
@@ -358,14 +358,14 @@ endif;
 								</form>
 
 								<td>
-									<a href="<?=$site.$Url[0];?>/add-adicionais-gratis&idexcluir=<?=$id_adicional_gratis;?>"> 
-										<button id="btnExcluiradicional_<?=$id_adicional_gratis;?>" data-excluir_adicional="<?=$id_adicional_gratis;?>" type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
+									<a href="<?php $site.$Url[0];?>/add-adicionais-gratis&idexcluir=<?php $id_adicional_gratis;?>"> 
+										<button id="btnExcluiradicional_<?php $id_adicional_gratis;?>" data-excluir_adicional="<?php $id_adicional_gratis;?>" type="button" class="btn btn-danger btnexcluiradicional">Excluir</button>
 									</a>
 								</td>
 								<td>
-									<a href="<?=$site.$Url[0];?>/add-adicionais-gratis&idpausar=<?=$id_adicional_gratis;?>"> 
-										<button class="btn <?=($status_adicional_gratis == 1 ? 'btn-info' : 'btn-warning')?> btnpausaradicional">
-											<?=($status_adicional_gratis == 1 ? '<i style="font-size: 20px;" class="fa fa-pause" aria-hidden="true"></i>' : '<i style="font-size: 20px;" class="fa fa-play" aria-hidden="true"></i>')?>					
+									<a href="<?php $site.$Url[0];?>/add-adicionais-gratis&idpausar=<?php $id_adicional_gratis;?>"> 
+										<button class="btn <?php ($status_adicional_gratis == 1 ? 'btn-info' : 'btn-warning')?> btnpausaradicional">
+											<?php ($status_adicional_gratis == 1 ? '<i style="font-size: 20px;" class="fa fa-pause" aria-hidden="true"></i>' : '<i style="font-size: 20px;" class="fa fa-play" aria-hidden="true"></i>')?>					
 										</button>
 									</a>
 								</td>
@@ -428,11 +428,11 @@ endif;
         
         if (category.length > 0) {
             $.ajax({
-                url: '<?= $site; ?>includes/adicionais-categoria-func.php',
+                url: '<?php echo $site; ?>includes/adicionais-categoria-func.php',
     		    method: "post",
     		    type: "post",
     		    dataType: "json",
-    		    data: {"action" : "listAdicionaisCat", "user_id" : "<?=$userlogin['user_id'];?>", "cat_id" : category},
+    		    data: {"action" : "listAdicionaisCat", "user_id" : "<?php $userlogin['user_id'];?>", "cat_id" : category},
     		    success: function(response) {
     		        var res = response;
     		        //alert(res.toString());
@@ -478,11 +478,11 @@ endif;
             var class_a = $(this).attr("class");
             if (class_a.indexOf("active") != -1) {
                 $.ajax({
-                    url: '<?= $site; ?>includes/adicionais-categoria-func.php',
+                    url: '<?php echo $site; ?>includes/adicionais-categoria-func.php',
 				    method: "post",
 				    type: "post",
 				    dataType: "json",
-				    data: {"action" : "listAdicionaisCat", "user_id" : "<?=$userlogin['user_id'];?>", "cat_id" : $(this).attr("id")},
+				    data: {"action" : "listAdicionaisCat", "user_id" : "<?php $userlogin['user_id'];?>", "cat_id" : $(this).attr("id")},
 				    success: function(response) {
 				        $("#content_listItens").html("");
 				        arr_listItens = [];

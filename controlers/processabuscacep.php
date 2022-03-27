@@ -70,11 +70,11 @@ else:
 										?>
 										
 
-										<h3><?=(!empty($nome_empresa) ? $nome_empresa : 'Nome_do_seu_negócio');?></h3>
+										<h3><?php (!empty($nome_empresa) ? $nome_empresa : 'Nome_do_seu_negócio');?></h3>
 
 										<div class="location">
-											Rua <?=$end_rua_n_empresa;?>
-											<?=$end_bairro_empresa;?> - <?=$cidade_empresa;?> - <?=$end_uf_empresa;?> <br />
+											Rua <?php $end_rua_n_empresa;?>
+											<?php $end_bairro_empresa;?> - <?php $cidade_empresa;?> - <?php $end_uf_empresa;?> <br />
 
 											<?php
             // REQUERIDOS
@@ -209,7 +209,7 @@ if($store_hours->is_open()) {
 ?>   
 
 
-<?=(!empty($minimo_delivery) && $minimo_delivery != '0.00' ? "- Valor mínimo Delivery: R$ ".Check::Real($minimo_delivery) : '');?>
+<?php (!empty($minimo_delivery) && $minimo_delivery != '0.00' ? "- Valor mínimo Delivery: R$ ".Check::Real($minimo_delivery) : '');?>
 </div>
 <ul> 
 	<?php if(!empty($confirm_delivery) && $confirm_delivery == "true"): ?>
@@ -233,7 +233,7 @@ if($store_hours->is_open()) {
 <div class="col-md-3 col-sm-3">
 	<div class="go_to">
 		<div>
-			<a href="<?=$site.$nome_empresa_link?>" class="btn_1">Ver Cardápio</a>
+			<a href="<?php $site.$nome_empresa_link?>" class="btn_1">Ver Cardápio</a>
 		</div>
 	</div>
 </div>
